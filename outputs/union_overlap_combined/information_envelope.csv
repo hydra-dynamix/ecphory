@@ -1,0 +1,19 @@
+layer,measure,value,interpretation
+RawSignal,active_set_unique_count,107.0,Distinct threshold-active unit sets observed directly in the signal stream.
+RawSignal,active_set_entropy_bits,4.788075,Entropy of threshold-active unit sets before event commitment.
+Event,event_label_unique_count,99.0,Distinct first-class coactivation event labels.
+Event,event_label_entropy_bits,4.906364,Entropy of committed event participant sets.
+Event,event_label_redundancy_fraction,0.259903,How much event-label entropy falls below maximum entropy; higher values indicate recurrence and compression opportunity.
+Event,repeated_event_instance_fraction,0.971806,Fraction of event instances whose participant set appears more than once.
+Transition,transition_unique_count,418.0,Distinct observed event-transition label pairs.
+Transition,transition_entropy_bits,7.924518,Entropy of temporal adjacency after event commitment.
+Transition,transition_redundancy_fraction,0.089906,How much transition entropy falls below maximum entropy; higher values indicate repeated temporal structure.
+Episode,episode_signature_unique_count,196.0,Distinct ordered event-label sequences.
+Episode,episode_signature_entropy_bits,7.603856,Entropy of ordered episode signatures.
+Episode,repeated_episode_instance_fraction,0.04,Fraction of episodes whose full event signature recurs.
+Motif,motif_count,273.0,Number of recurring event patterns with support >= 2.
+Motif,motif_support_mass,1960.0,Total support represented by recurring motifs across all motif lengths.
+Motif,recurring_three_event_window_fraction,0.284354,Fraction of length-3 episode windows captured by recurring motifs.
+StaticProjection,static_node_count,8.0,Participant nodes retained after collapsing event instances.
+StaticProjection,static_edge_count,28.0,Co-participation edges retained after collapsing event instances.
+System,compressibility_index,0.211388,"Composite recurrence signal across events, transitions, and length-3 motifs."

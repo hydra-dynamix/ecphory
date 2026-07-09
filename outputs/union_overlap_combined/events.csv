@@ -1,0 +1,1136 @@
+event_id,episode_id,t_start,t_end,participants,label,intensities,context,source_window,outcome
+event_00000,episode_0000,5,5,"B,C,E","{B,C,E}","{""B"": 0.8644, ""C"": 0.8131, ""E"": 0.8142}",X,union:heu_like:heu:5:5,Y1
+event_00001,episode_0000,5,7,"B,C","{B,C}","{""B"": 0.9988, ""C"": 0.9761}",X,union:sliding_window:5:7|heu_like:heu:6:7,Y1
+event_00002,episode_0000,11,11,"A,E,F","{A,E,F}","{""A"": 0.8167, ""E"": 0.9496, ""F"": 0.8143}",X,union:heu_like:heu:11:11,Y1
+event_00003,episode_0000,12,12,"E,F","{E,F}","{""E"": 0.9709, ""F"": 0.9466}",X,union:heu_like:heu:12:12,Y1
+event_00004,episode_0001,17,19,"A,B","{A,B}","{""A"": 0.9565, ""B"": 0.9456}",W,union:sliding_window:17:19|heu_like:heu:17:19,Y3
+event_00005,episode_0001,22,24,"B,G","{B,G}","{""B"": 0.9679, ""G"": 0.9359}",W,union:sliding_window:22:24|heu_like:heu:22:22|heu_like:heu:24:24,Y3
+event_00006,episode_0001,23,23,"B,F,G","{B,F,G}","{""B"": 0.9579, ""F"": 0.8126, ""G"": 0.9468}",W,union:heu_like:heu:23:23,Y3
+event_00007,episode_0001,26,26,"B,G","{B,G}","{""B"": 0.913, ""G"": 0.9138}",W,union:heu_like:heu:26:26,Y3
+event_00008,episode_0001,27,29,"E,F","{E,F}","{""E"": 0.9526, ""F"": 0.9568}",W,union:sliding_window:27:29|heu_like:heu:27:29,Y3
+event_00009,episode_0002,34,36,"A,B","{A,B}","{""A"": 0.9251, ""B"": 0.9363}",Z,union:sliding_window:34:36|heu_like:heu:34:34|heu_like:heu:36:36,Y2
+event_00010,episode_0002,35,35,"A,B,E","{A,B,E}","{""A"": 0.944, ""B"": 0.944, ""E"": 0.8054}",Z,union:heu_like:heu:35:35,Y2
+event_00011,episode_0002,39,40,"B,E,F","{B,E,F}","{""B"": 0.9169, ""E"": 0.8989, ""F"": 0.8807}",Z,union:heu_like:heu:39:40,Y2
+event_00012,episode_0002,39,41,"B,E","{B,E}","{""B"": 0.9879, ""E"": 0.9564}",Z,union:sliding_window:39:41|heu_like:heu:41:41,Y2
+event_00013,episode_0002,44,46,"E,F","{E,F}","{""E"": 0.9339, ""F"": 0.9426}",Z,union:sliding_window:44:46|heu_like:heu:44:44,Y2
+event_00014,episode_0002,45,46,"B,E,F","{B,E,F}","{""B"": 0.9046, ""E"": 0.9649, ""F"": 0.9622}",Z,union:heu_like:heu:45:46,Y2
+event_00015,episode_0003,51,53,"D,G","{D,G}","{""D"": 0.9138, ""G"": 0.9012}",N,union:sliding_window:51:53|heu_like:heu:51:52,YN
+event_00016,episode_0003,53,53,"B,D,G","{B,D,G}","{""B"": 0.81, ""D"": 0.9699, ""G"": 0.9699}",N,union:heu_like:heu:53:53,YN
+event_00017,episode_0003,54,55,"B,E","{B,E}","{""B"": 0.958, ""E"": 0.8775}",N,union:heu_like:heu:54:55,YN
+event_00018,episode_0003,58,58,"D,G","{D,G}","{""D"": 0.9723, ""G"": 0.8371}",N,union:heu_like:heu:58:58,YN
+event_00019,episode_0003,61,63,"D,H","{D,H}","{""D"": 0.9958, ""H"": 0.9649}",N,union:sliding_window:61:63|heu_like:heu:61:63,YN
+event_00020,episode_0003,64,64,"A,B","{A,B}","{""A"": 0.8444, ""B"": 0.814}",N,union:heu_like:heu:64:64,YN
+event_00021,episode_0004,68,68,"A,B,E,G","{A,B,E,G}","{""A"": 0.8, ""B"": 0.8, ""E"": 0.8, ""G"": 0.8}",X,union:heu_like:heu:68:68,Y1
+event_00022,episode_0004,68,70,"A,B","{A,B}","{""A"": 0.9964, ""B"": 0.9618}",X,union:sliding_window:68:70|heu_like:heu:69:70,Y1
+event_00023,episode_0004,73,75,"B,C","{B,C}","{""B"": 0.9738, ""C"": 0.9707}",X,union:sliding_window:73:75|heu_like:heu:73:74,Y1
+event_00024,episode_0004,75,75,"B,C,E","{B,C,E}","{""B"": 0.9724, ""C"": 0.9703, ""E"": 0.8189}",X,union:heu_like:heu:75:75,Y1
+event_00025,episode_0004,78,78,"E,F,G","{E,F,G}","{""E"": 0.8647, ""F"": 0.8169, ""G"": 0.8122}",X,union:heu_like:heu:78:78,Y1
+event_00026,episode_0004,78,80,"E,F","{E,F}","{""E"": 0.9909, ""F"": 0.9889}",X,union:sliding_window:78:80|heu_like:heu:79:80,Y1
+event_00027,episode_0005,85,85,"A,B,C","{A,B,C}","{""A"": 0.8, ""B"": 0.8, ""C"": 0.8}",Z,union:heu_like:heu:85:85,Y2
+event_00028,episode_0005,85,87,"A,B","{A,B}","{""A"": 0.9969, ""B"": 0.9578}",Z,union:sliding_window:85:87|heu_like:heu:86:86,Y2
+event_00029,episode_0005,87,87,"A,B,F","{A,B,F}","{""A"": 0.9699, ""B"": 0.9699, ""F"": 0.8104}",Z,union:heu_like:heu:87:87,Y2
+event_00030,episode_0005,90,92,"B,E","{B,E}","{""B"": 0.9648, ""E"": 0.9788}",Z,union:sliding_window:90:92|heu_like:heu:90:92,Y2
+event_00031,episode_0005,95,95,"D,E,F","{D,E,F}","{""D"": 0.8186, ""E"": 0.8755, ""F"": 0.817}",Z,union:heu_like:heu:95:95,Y2
+event_00032,episode_0005,96,96,"E,F","{E,F}","{""E"": 0.9576, ""F"": 0.9471}",Z,union:heu_like:heu:96:96,Y2
+event_00033,episode_0006,102,102,"A,B","{A,B}","{""A"": 0.8, ""B"": 0.8}",W,union:heu_like:heu:102:102,Y3
+event_00034,episode_0006,103,103,"A,B,F","{A,B,F}","{""A"": 0.944, ""B"": 0.944, ""F"": 0.8058}",W,union:heu_like:heu:103:103,Y3
+event_00035,episode_0006,108,109,"B,G","{B,G}","{""B"": 0.901, ""G"": 0.9583}",W,union:heu_like:heu:108:109,Y3
+event_00036,episode_0006,112,114,"E,F","{E,F}","{""E"": 0.9385, ""F"": 0.9361}",W,union:sliding_window:112:114|heu_like:heu:112:112|heu_like:heu:114:114,Y3
+event_00037,episode_0006,113,113,"A,E,F","{A,E,F}","{""A"": 0.8159, ""E"": 0.9473, ""F"": 0.9471}",W,union:heu_like:heu:113:113,Y3
+event_00038,episode_0007,119,121,"G,H","{G,H}","{""G"": 0.9489, ""H"": 0.9573}",N,union:sliding_window:119:121|heu_like:heu:119:121,YN
+event_00039,episode_0007,124,124,"D,E","{D,E}","{""D"": 0.8141, ""E"": 0.8188}",N,union:heu_like:heu:124:124,YN
+event_00040,episode_0007,126,126,"D,E","{D,E}","{""D"": 0.9704, ""E"": 0.895}",N,union:heu_like:heu:126:126,YN
+event_00041,episode_0007,129,129,"A,E,G","{A,E,G}","{""A"": 0.8135, ""E"": 0.8698, ""G"": 0.8191}",N,union:heu_like:heu:129:129,YN
+event_00042,episode_0007,129,131,"A,G","{A,G}","{""A"": 0.9648, ""G"": 0.9818}",N,union:sliding_window:129:131|heu_like:heu:130:130,YN
+event_00043,episode_0007,131,131,"A,G,H","{A,G,H}","{""A"": 0.9704, ""G"": 0.9705, ""H"": 0.8174}",N,union:heu_like:heu:131:131,YN
+event_00044,episode_0008,136,138,"A,B","{A,B}","{""A"": 0.9655, ""B"": 0.9563}",X,union:sliding_window:136:138|heu_like:heu:136:138,Y1
+event_00045,episode_0008,141,141,"B,C,E","{B,C,E}","{""B"": 0.8746, ""C"": 0.8174, ""E"": 0.8132}",X,union:heu_like:heu:141:141,Y1
+event_00046,episode_0008,141,143,"B,C","{B,C}","{""B"": 0.9692, ""C"": 0.9788}",X,union:sliding_window:141:143|heu_like:heu:142:142,Y1
+event_00047,episode_0008,143,143,"B,C,D","{B,C,D}","{""B"": 0.9723, ""C"": 0.9705, ""D"": 0.8133}",X,union:heu_like:heu:143:143,Y1
+event_00048,episode_0008,146,146,"D,E,F","{D,E,F}","{""D"": 0.9616, ""E"": 0.8295, ""F"": 0.8171}",X,union:heu_like:heu:146:146,Y1
+event_00049,episode_0008,146,148,"E,F","{E,F}","{""E"": 0.984, ""F"": 0.9902}",X,union:sliding_window:146:148|heu_like:heu:148:148,Y1
+event_00050,episode_0008,147,147,"E,F,H","{E,F,H}","{""E"": 0.9493, ""F"": 0.9471, ""H"": 0.8208}",X,union:heu_like:heu:147:147,Y1
+event_00051,episode_0009,153,155,"A,B","{A,B}","{""A"": 0.9612, ""B"": 0.9506}",Z,union:sliding_window:153:155|heu_like:heu:153:155,Y2
+event_00052,episode_0009,158,158,"B,E,H","{B,E,H}","{""B"": 0.8741, ""E"": 0.895, ""H"": 0.8101}",Z,union:heu_like:heu:158:158,Y2
+event_00053,episode_0009,158,160,"B,E","{B,E}","{""B"": 1.0116, ""E"": 0.9497}",Z,union:sliding_window:158:160,Y2
+event_00054,episode_0009,159,159,"B,E,G","{B,E,G}","{""B"": 0.9573, ""E"": 0.9611, ""G"": 0.813}",Z,union:heu_like:heu:159:159,Y2
+event_00055,episode_0009,160,160,"B,E,F","{B,E,F}","{""B"": 0.9723, ""E"": 0.973, ""F"": 0.8134}",Z,union:heu_like:heu:160:160,Y2
+event_00056,episode_0009,163,164,"E,F","{E,F}","{""E"": 0.9168, ""F"": 0.9119}",Z,union:heu_like:heu:163:164,Y2
+event_00057,episode_0009,165,165,"F,H","{F,H}","{""F"": 0.9721, ""H"": 0.8218}",Z,union:heu_like:heu:165:165,Y2
+event_00058,episode_0009,166,166,"C,F,G","{C,F,G}","{""C"": 0.8154, ""F"": 0.975, ""G"": 0.8198}",Z,union:heu_like:heu:166:166,Y2
+event_00059,episode_0010,170,172,"A,B","{A,B}","{""A"": 0.9484, ""B"": 0.9415}",W,union:sliding_window:170:172|heu_like:heu:170:172,Y3
+event_00060,episode_0010,175,177,"B,G","{B,G}","{""B"": 0.945, ""G"": 0.9452}",W,union:sliding_window:175:177|heu_like:heu:175:176,Y3
+event_00061,episode_0010,177,177,"B,D,G","{B,D,G}","{""B"": 0.9723, ""D"": 0.8136, ""G"": 0.9705}",W,union:heu_like:heu:177:177,Y3
+event_00062,episode_0010,180,180,"E,F","{E,F}","{""E"": 0.8155, ""F"": 0.8157}",W,union:heu_like:heu:180:180,Y3
+event_00063,episode_0010,182,182,"E,F","{E,F}","{""E"": 0.9704, ""F"": 0.8955}",W,union:heu_like:heu:182:182,Y3
+event_00064,episode_0011,187,187,"A,H","{A,H}","{""A"": 0.8, ""H"": 0.8}",N,union:heu_like:heu:187:187,YN
+event_00065,episode_0011,188,188,"D,G","{D,G}","{""D"": 0.8056, ""G"": 0.8072}",N,union:heu_like:heu:188:188,YN
+event_00066,episode_0011,189,189,"D,H","{D,H}","{""D"": 0.945, ""H"": 0.8935}",N,union:heu_like:heu:189:189,YN
+event_00067,episode_0011,192,192,"E,G","{E,G}","{""E"": 0.8154, ""G"": 0.8431}",N,union:heu_like:heu:192:192,YN
+event_00068,episode_0011,194,194,"E,G","{E,G}","{""E"": 0.9704, ""G"": 0.8981}",N,union:heu_like:heu:194:194,YN
+event_00069,episode_0011,196,196,"C,D","{C,D}","{""C"": 0.812, ""D"": 0.8234}",N,union:heu_like:heu:196:196,YN
+event_00070,episode_0011,197,199,"D,G","{D,G}","{""D"": 0.9645, ""G"": 0.9567}",N,union:sliding_window:197:199|heu_like:heu:197:197|heu_like:heu:199:199,YN
+event_00071,episode_0011,198,198,"A,D,G","{A,D,G}","{""A"": 0.8171, ""D"": 0.9707, ""G"": 0.9572}",N,union:heu_like:heu:198:198,YN
+event_00072,episode_0012,204,204,"A,B","{A,B}","{""A"": 0.8, ""B"": 0.8}",Z,union:heu_like:heu:204:204,Y2
+event_00073,episode_0012,206,206,"A,B","{A,B}","{""A"": 0.9699, ""B"": 0.8924}",Z,union:heu_like:heu:206:206,Y2
+event_00074,episode_0012,209,211,"B,E","{B,E}","{""B"": 0.9748, ""E"": 0.9554}",Z,union:sliding_window:209:211|heu_like:heu:209:211,Y2
+event_00075,episode_0012,215,215,"E,F,H","{E,F,H}","{""E"": 0.9575, ""F"": 0.8637, ""H"": 0.813}",Z,union:heu_like:heu:215:215,Y2
+event_00076,episode_0012,218,218,"A,C","{A,C}","{""A"": 0.8177, ""C"": 0.8154}",Z,union:heu_like:heu:218:218,Y2
+event_00077,episode_0013,221,223,"A,B","{A,B}","{""A"": 0.9667, ""B"": 0.9554}",X,union:sliding_window:221:223|heu_like:heu:221:223,Y1
+event_00078,episode_0013,226,228,"B,C","{B,C}","{""B"": 0.9647, ""C"": 0.962}",X,union:sliding_window:226:228|heu_like:heu:226:228,Y1
+event_00079,episode_0013,231,233,"E,F","{E,F}","{""E"": 0.9365, ""F"": 0.9365}",X,union:sliding_window:231:233|heu_like:heu:231:231|heu_like:heu:233:233,Y1
+event_00080,episode_0013,232,232,"B,E,F","{B,E,F}","{""B"": 0.8506, ""E"": 0.9473, ""F"": 0.9467}",X,union:heu_like:heu:232:232,Y1
+event_00081,episode_0014,238,240,"A,B","{A,B}","{""A"": 0.9615, ""B"": 0.9469}",W,union:sliding_window:238:240|heu_like:heu:238:240,Y3
+event_00082,episode_0014,243,244,"B,G","{B,G}","{""B"": 0.9164, ""G"": 0.8788}",W,union:heu_like:heu:243:244,Y3
+event_00083,episode_0014,245,245,"C,G","{C,G}","{""C"": 0.8136, ""G"": 0.9703}",W,union:heu_like:heu:245:245,Y3
+event_00084,episode_0014,248,250,"E,F","{E,F}","{""E"": 0.9308, ""F"": 0.9285}",W,union:sliding_window:248:250|heu_like:heu:248:248|heu_like:heu:250:250,Y3
+event_00085,episode_0014,249,249,"A,D,E,F","{A,D,E,F}","{""A"": 0.8151, ""D"": 0.812, ""E"": 0.9477, ""F"": 0.9472}",W,union:heu_like:heu:249:249,Y3
+event_00086,episode_0015,255,256,"D,H","{D,H}","{""D"": 0.872, ""H"": 0.872}",N,union:heu_like:heu:255:256,YN
+event_00087,episode_0015,260,260,"A,E,G","{A,E,G}","{""A"": 0.8134, ""E"": 0.8123, ""G"": 0.814}",N,union:heu_like:heu:260:260,YN
+event_00088,episode_0015,260,262,"A,G","{A,G}","{""A"": 0.9868, ""G"": 0.9849}",N,union:sliding_window:260:262|heu_like:heu:261:262,YN
+event_00089,episode_0015,264,264,"A,F","{A,F}","{""A"": 0.9147, ""F"": 0.8149}",N,union:heu_like:heu:264:264,YN
+event_00090,episode_0015,266,267,"E,F","{E,F}","{""E"": 0.9605, ""F"": 0.9284}",N,union:heu_like:heu:266:267,YN
+event_00091,episode_0016,272,274,"A,B","{A,B}","{""A"": 0.9742, ""B"": 0.9528}",Z,union:sliding_window:272:274|heu_like:heu:272:274,Y2
+event_00092,episode_0016,277,279,"B,E","{B,E}","{""B"": 0.9629, ""E"": 0.9325}",Z,union:sliding_window:277:279|heu_like:heu:277:278,Y2
+event_00093,episode_0016,279,279,"B,E,G","{B,E,G}","{""B"": 0.9724, ""E"": 0.9704, ""G"": 0.8121}",Z,union:heu_like:heu:279:279,Y2
+event_00094,episode_0016,280,280,"A,G","{A,G}","{""A"": 0.8263, ""G"": 0.9462}",Z,union:heu_like:heu:280:280,Y2
+event_00095,episode_0016,282,282,"E,F","{E,F}","{""E"": 0.8756, ""F"": 0.8137}",Z,union:heu_like:heu:282:282,Y2
+event_00096,episode_0016,285,285,"A,B","{A,B}","{""A"": 0.8346, ""B"": 0.831}",Z,union:heu_like:heu:285:285,Y2
+event_00097,episode_0017,289,291,"A,B","{A,B}","{""A"": 0.9797, ""B"": 0.9341}",W,union:sliding_window:289:291|heu_like:heu:289:291,Y3
+event_00098,episode_0017,294,294,"B,D,G","{B,D,G}","{""B"": 0.9143, ""D"": 0.8127, ""G"": 0.8131}",W,union:heu_like:heu:294:294,Y3
+event_00099,episode_0017,294,296,"B,G","{B,G}","{""B"": 0.9697, ""G"": 0.9836}",W,union:sliding_window:294:296|heu_like:heu:295:296,Y3
+event_00100,episode_0017,299,301,"E,F","{E,F}","{""E"": 0.9667, ""F"": 0.9467}",W,union:sliding_window:299:301|heu_like:heu:299:301,Y3
+event_00101,episode_0018,306,306,"A,B,E","{A,B,E}","{""A"": 0.8, ""B"": 0.8, ""E"": 0.8}",X,union:heu_like:heu:306:306,Y1
+event_00102,episode_0018,306,308,"A,B","{A,B}","{""A"": 0.9753, ""B"": 0.9908}",X,union:sliding_window:306:308|heu_like:heu:307:308,Y1
+event_00103,episode_0018,311,311,"A,B,C","{A,B,C}","{""A"": 0.8745, ""B"": 0.8751, ""C"": 0.8172}",X,union:heu_like:heu:311:311,Y1
+event_00104,episode_0018,311,313,"B,C","{B,C}","{""B"": 0.9725, ""C"": 1.0077}",X,union:sliding_window:311:313|heu_like:heu:313:313,Y1
+event_00105,episode_0018,312,312,"B,C,F","{B,C,F}","{""B"": 0.9575, ""C"": 0.9471, ""F"": 0.8139}",X,union:heu_like:heu:312:312,Y1
+event_00106,episode_0018,316,318,"E,F","{E,F}","{""E"": 0.9443, ""F"": 0.9497}",X,union:sliding_window:316:318|heu_like:heu:316:316|heu_like:heu:318:318,Y1
+event_00107,episode_0018,317,317,"C,E,F","{C,E,F}","{""C"": 0.8507, ""E"": 0.9469, ""F"": 0.9524}",X,union:heu_like:heu:317:317,Y1
+event_00108,episode_0019,323,325,"B,C","{B,C}","{""B"": 0.9569, ""C"": 0.9183}",N,union:sliding_window:323:325|heu_like:heu:323:325,YN
+event_00109,episode_0019,328,328,"C,E,G","{C,E,G}","{""C"": 0.8725, ""E"": 0.8131, ""G"": 0.8129}",N,union:heu_like:heu:328:328,YN
+event_00110,episode_0019,329,329,"B,C,D,H","{B,C,D,H}","{""B"": 0.8544, ""C"": 0.9571, ""D"": 0.8147, ""H"": 0.817}",N,union:heu_like:heu:329:329,YN
+event_00111,episode_0019,330,330,"B,C","{B,C}","{""B"": 0.9538, ""C"": 0.9723}",N,union:heu_like:heu:330:330,YN
+event_00112,episode_0019,331,331,"B,H","{B,H}","{""B"": 0.9717, ""H"": 0.8954}",N,union:heu_like:heu:331:331,YN
+event_00113,episode_0019,333,335,"B,D","{B,D}","{""B"": 0.9618, ""D"": 0.9406}",N,union:sliding_window:333:335|heu_like:heu:333:333|heu_like:heu:335:335,YN
+event_00114,episode_0019,334,334,"B,D,F","{B,D,F}","{""B"": 0.9644, ""D"": 0.9518, ""F"": 0.8156}",N,union:heu_like:heu:334:334,YN
+event_00115,episode_0020,340,340,"A,B,H","{A,B,H}","{""A"": 0.8, ""B"": 0.8, ""H"": 0.8}",X,union:heu_like:heu:340:340,Y1
+event_00116,episode_0020,340,342,"A,B","{A,B}","{""A"": 0.9854, ""B"": 0.9633}",X,union:sliding_window:340:342|heu_like:heu:341:342,Y1
+event_00117,episode_0020,345,347,"B,C","{B,C}","{""B"": 0.9571, ""C"": 0.9042}",X,union:sliding_window:345:347|heu_like:heu:345:345,Y1
+event_00118,episode_0020,346,347,"A,B,C","{A,B,C}","{""A"": 0.9347, ""B"": 0.965, ""C"": 0.9586}",X,union:heu_like:heu:346:347,Y1
+event_00119,episode_0020,350,350,"E,G","{E,G}","{""E"": 0.8143, ""G"": 0.8947}",X,union:heu_like:heu:350:350,Y1
+event_00120,episode_0020,351,351,"A,E,F","{A,E,F}","{""A"": 0.8542, ""E"": 0.9466, ""F"": 0.8178}",X,union:heu_like:heu:351:351,Y1
+event_00121,episode_0020,352,352,"E,F","{E,F}","{""E"": 0.9704, ""F"": 0.9472}",X,union:heu_like:heu:352:352,Y1
+event_00122,episode_0021,357,359,"A,B","{A,B}","{""A"": 0.936, ""B"": 0.9433}",Z,union:sliding_window:357:359|heu_like:heu:357:358,Y2
+event_00123,episode_0021,359,359,"A,B,C","{A,B,C}","{""A"": 0.9699, ""B"": 0.9699, ""C"": 0.8119}",Z,union:heu_like:heu:359:359,Y2
+event_00124,episode_0021,362,364,"B,E","{B,E}","{""B"": 0.9438, ""E"": 0.9167}",Z,union:sliding_window:362:364|heu_like:heu:362:363,Y2
+event_00125,episode_0021,364,364,"B,D,E","{B,D,E}","{""B"": 0.9723, ""D"": 0.8102, ""E"": 0.9704}",Z,union:heu_like:heu:364:364,Y2
+event_00126,episode_0021,367,369,"E,F","{E,F}","{""E"": 0.9666, ""F"": 0.961}",Z,union:sliding_window:367:369|heu_like:heu:367:369,Y2
+event_00127,episode_0022,374,376,"A,B","{A,B}","{""A"": 0.9279, ""B"": 0.9226}",W,union:sliding_window:374:376|heu_like:heu:374:375,Y3
+event_00128,episode_0022,376,376,"A,B,F,H","{A,B,F,H}","{""A"": 0.9699, ""B"": 0.9699, ""F"": 0.8103, ""H"": 0.8075}",W,union:heu_like:heu:376:376,Y3
+event_00129,episode_0022,379,379,"A,B,G","{A,B,G}","{""A"": 0.8768, ""B"": 0.8759, ""G"": 0.8092}",W,union:heu_like:heu:379:379,Y3
+event_00130,episode_0022,379,381,"B,G","{B,G}","{""B"": 0.9673, ""G"": 0.9627}",W,union:sliding_window:379:381|heu_like:heu:380:381,Y3
+event_00131,episode_0022,384,386,"E,F","{E,F}","{""E"": 0.9509, ""F"": 0.9426}",W,union:sliding_window:384:386|heu_like:heu:384:384|heu_like:heu:386:386,Y3
+event_00132,episode_0022,385,385,"D,E,F","{D,E,F}","{""D"": 0.8153, ""E"": 0.9469, ""F"": 0.9482}",W,union:heu_like:heu:385:385,Y3
+event_00133,episode_0023,391,393,"C,E","{C,E}","{""C"": 0.9426, ""E"": 0.9295}",N,union:sliding_window:391:393|heu_like:heu:391:391|heu_like:heu:393:393,YN
+event_00134,episode_0023,392,392,"A,C,E","{A,C,E}","{""A"": 0.8036, ""C"": 0.944, ""E"": 0.944}",N,union:heu_like:heu:392:392,YN
+event_00135,episode_0023,396,398,"E,F","{E,F}","{""E"": 0.9534, ""F"": 0.9332}",N,union:sliding_window:396:398|heu_like:heu:396:396|heu_like:heu:398:398,YN
+event_00136,episode_0023,397,397,"D,E,F","{D,E,F}","{""D"": 0.8131, ""E"": 0.957, ""F"": 0.9463}",N,union:heu_like:heu:397:397,YN
+event_00137,episode_0023,401,403,"B,C","{B,C}","{""B"": 0.9749, ""C"": 0.9591}",N,union:sliding_window:401:403|heu_like:heu:401:403,YN
+event_00138,episode_0023,405,405,"C,E","{C,E}","{""C"": 0.9113, ""E"": 0.8191}",N,union:heu_like:heu:405:405,YN
+event_00139,episode_0024,408,408,"A,B,G","{A,B,G}","{""A"": 0.8, ""B"": 0.8, ""G"": 0.8}",W,union:heu_like:heu:408:408,Y3
+event_00140,episode_0024,409,409,"A,B,E","{A,B,E}","{""A"": 0.944, ""B"": 0.944, ""E"": 0.8078}",W,union:heu_like:heu:409:409,Y3
+event_00141,episode_0024,413,415,"B,G","{B,G}","{""B"": 0.9379, ""G"": 0.9383}",W,union:sliding_window:413:415|heu_like:heu:413:413|heu_like:heu:415:415,Y3
+event_00142,episode_0024,414,414,"B,G,H","{B,G,H}","{""B"": 0.9527, ""G"": 0.9501, ""H"": 0.8177}",W,union:heu_like:heu:414:414,Y3
+event_00143,episode_0024,418,420,"E,F","{E,F}","{""E"": 0.9733, ""F"": 0.9562}",W,union:sliding_window:418:420|heu_like:heu:418:420,Y3
+event_00144,episode_0025,425,427,"A,B","{A,B}","{""A"": 0.9414, ""B"": 0.9302}",Z,union:sliding_window:425:427|heu_like:heu:425:425|heu_like:heu:427:427,Y2
+event_00145,episode_0025,426,426,"A,B,D","{A,B,D}","{""A"": 0.944, ""B"": 0.944, ""D"": 0.8047}",Z,union:heu_like:heu:426:426,Y2
+event_00146,episode_0025,430,432,"B,E","{B,E}","{""B"": 0.9797, ""E"": 0.9608}",Z,union:sliding_window:430:432|heu_like:heu:430:432,Y2
+event_00147,episode_0025,435,435,"C,E","{C,E}","{""C"": 0.8134, ""E"": 0.8769}",Z,union:heu_like:heu:435:435,Y2
+event_00148,episode_0025,436,436,"E,F","{E,F}","{""E"": 0.9578, ""F"": 0.8116}",Z,union:heu_like:heu:436:436,Y2
+event_00149,episode_0025,437,437,"E,F,G","{E,F,G}","{""E"": 0.9724, ""F"": 0.9461, ""G"": 0.8189}",Z,union:heu_like:heu:437:437,Y2
+event_00150,episode_0026,442,444,"A,B","{A,B}","{""A"": 0.9446, ""B"": 0.9636}",X,union:sliding_window:442:444|heu_like:heu:442:444,Y1
+event_00151,episode_0026,445,445,"B,D","{B,D}","{""B"": 0.9746, ""D"": 0.8095}",X,union:heu_like:heu:445:445,Y1
+event_00152,episode_0026,447,448,"B,C","{B,C}","{""B"": 0.9386, ""C"": 0.8777}",X,union:heu_like:heu:447:448,Y1
+event_00153,episode_0026,449,449,"B,F","{B,F}","{""B"": 0.9736, ""F"": 0.8144}",X,union:heu_like:heu:449:449,Y1
+event_00154,episode_0026,452,452,"E,F","{E,F}","{""E"": 0.8138, ""F"": 0.8634}",X,union:heu_like:heu:452:452,Y1
+event_00155,episode_0026,454,454,"E,F","{E,F}","{""E"": 0.9704, ""F"": 0.9023}",X,union:heu_like:heu:454:454,Y1
+event_00156,episode_0027,459,461,"D,E","{D,E}","{""D"": 0.926, ""E"": 0.9356}",N,union:sliding_window:459:461|heu_like:heu:459:461,YN
+event_00157,episode_0027,464,465,"A,B","{A,B}","{""A"": 0.8804, ""B"": 0.8817}",N,union:heu_like:heu:464:465,YN
+event_00158,episode_0027,469,471,"F,H","{F,H}","{""F"": 0.9757, ""H"": 0.9371}",N,union:sliding_window:469:471|heu_like:heu:469:469|heu_like:heu:471:471,YN
+event_00159,episode_0027,470,470,"C,F,H","{C,F,H}","{""C"": 0.8126, ""F"": 0.9703, ""H"": 0.9461}",N,union:heu_like:heu:470:470,YN
+event_00160,episode_0028,476,476,"A,B,D","{A,B,D}","{""A"": 0.8, ""B"": 0.8, ""D"": 0.8}",W,union:heu_like:heu:476:476,Y3
+event_00161,episode_0028,476,478,"A,B","{A,B}","{""A"": 0.9692, ""B"": 0.9639}",W,union:sliding_window:476:478|heu_like:heu:477:478,Y3
+event_00162,episode_0028,481,483,"B,G","{B,G}","{""B"": 0.9502, ""G"": 0.9494}",W,union:sliding_window:481:483|heu_like:heu:481:481|heu_like:heu:483:483,Y3
+event_00163,episode_0028,482,482,"B,E,G,H","{B,E,G,H}","{""B"": 0.9572, ""E"": 0.8128, ""G"": 0.9464, ""H"": 0.8131}",W,union:heu_like:heu:482:482,Y3
+event_00164,episode_0028,486,486,"F,H","{F,H}","{""F"": 0.8132, ""H"": 0.8439}",W,union:heu_like:heu:486:486,Y3
+event_00165,episode_0028,488,488,"E,F","{E,F}","{""E"": 0.8264, ""F"": 0.9703}",W,union:heu_like:heu:488:488,Y3
+event_00166,episode_0029,493,493,"A,E","{A,E}","{""A"": 0.8, ""E"": 0.8}",Z,union:heu_like:heu:493:493,Y2
+event_00167,episode_0029,494,494,"A,B,H","{A,B,H}","{""A"": 0.944, ""B"": 0.8065, ""H"": 0.8055}",Z,union:heu_like:heu:494:494,Y2
+event_00168,episode_0029,495,495,"A,B,E","{A,B,E}","{""A"": 0.9699, ""B"": 0.9452, ""E"": 0.8931}",Z,union:heu_like:heu:495:495,Y2
+event_00169,episode_0029,499,500,"B,E","{B,E}","{""B"": 0.9025, ""E"": 0.9642}",Z,union:heu_like:heu:499:500,Y2
+event_00170,episode_0029,501,501,"D,G","{D,G}","{""D"": 0.8148, ""G"": 0.8119}",Z,union:heu_like:heu:501:501,Y2
+event_00171,episode_0029,502,502,"D,E","{D,E}","{""D"": 0.9467, ""E"": 0.9126}",Z,union:heu_like:heu:502:502,Y2
+event_00172,episode_0029,503,505,"E,F","{E,F}","{""E"": 0.9641, ""F"": 0.9317}",Z,union:sliding_window:503:505|heu_like:heu:503:503|heu_like:heu:505:505,Y2
+event_00173,episode_0029,504,504,"B,E,F","{B,E,F}","{""B"": 0.8533, ""E"": 0.9736, ""F"": 0.9469}",Z,union:heu_like:heu:504:504,Y2
+event_00174,episode_0030,510,512,"A,B","{A,B}","{""A"": 0.9811, ""B"": 0.9778}",X,union:sliding_window:510:512|heu_like:heu:510:512,Y1
+event_00175,episode_0030,515,517,"B,C","{B,C}","{""B"": 0.9881, ""C"": 0.9627}",X,union:sliding_window:515:517|heu_like:heu:515:517,Y1
+event_00176,episode_0030,520,521,"E,F,G","{E,F,G}","{""E"": 0.8832, ""F"": 0.8814, ""G"": 0.8862}",X,union:heu_like:heu:520:521,Y1
+event_00177,episode_0030,520,522,"E,F","{E,F}","{""E"": 0.9992, ""F"": 0.9662}",X,union:sliding_window:520:522|heu_like:heu:522:522,Y1
+event_00178,episode_0031,527,529,"B,E","{B,E}","{""B"": 0.9623, ""E"": 0.9481}",N,union:sliding_window:527:529|heu_like:heu:527:529,YN
+event_00179,episode_0031,532,532,"A,F,H","{A,F,H}","{""A"": 0.8177, ""F"": 0.8164, ""H"": 0.9463}",N,union:heu_like:heu:532:532,YN
+event_00180,episode_0031,533,533,"A,H","{A,H}","{""A"": 0.9472, ""H"": 0.9703}",N,union:heu_like:heu:533:533,YN
+event_00181,episode_0031,537,539,"A,D","{A,D}","{""A"": 0.9595, ""D"": 0.9432}",N,union:sliding_window:537:539|heu_like:heu:537:538,YN
+event_00182,episode_0031,539,539,"A,B,D,E,H","{A,B,D,E,H}","{""A"": 0.9724, ""B"": 0.8151, ""D"": 0.9705, ""E"": 0.8127, ""H"": 0.8298}",N,union:heu_like:heu:539:539,YN
+event_00183,episode_0032,544,544,"A,B,E","{A,B,E}","{""A"": 0.8, ""B"": 0.8, ""E"": 0.8}",W,union:heu_like:heu:544:544,Y3
+event_00184,episode_0032,545,545,"A,B,H","{A,B,H}","{""A"": 0.944, ""B"": 0.944, ""H"": 0.8049}",W,union:heu_like:heu:545:545,Y3
+event_00185,episode_0032,549,549,"B,G","{B,G}","{""B"": 0.8736, ""G"": 0.8139}",W,union:heu_like:heu:549:549,Y3
+event_00186,episode_0032,550,550,"B,E,G","{B,E,G}","{""B"": 0.9572, ""E"": 0.8282, ""G"": 0.9465}",W,union:heu_like:heu:550:550,Y3
+event_00187,episode_0032,551,551,"E,G","{E,G}","{""E"": 0.9491, ""G"": 0.9704}",W,union:heu_like:heu:551:551,Y3
+event_00188,episode_0032,552,552,"A,D","{A,D}","{""A"": 0.8251, ""D"": 0.8143}",W,union:heu_like:heu:552:552,Y3
+event_00189,episode_0032,554,554,"F,G","{F,G}","{""F"": 0.8142, ""G"": 0.8765}",W,union:heu_like:heu:554:554,Y3
+event_00190,episode_0032,555,555,"E,F","{E,F}","{""E"": 0.8498, ""F"": 0.9465}",W,union:heu_like:heu:555:555,Y3
+event_00191,episode_0032,556,556,"A,E,F","{A,E,F}","{""A"": 0.8443, ""E"": 0.953, ""F"": 0.9704}",W,union:heu_like:heu:556:556,Y3
+event_00192,episode_0033,561,563,"A,B","{A,B}","{""A"": 0.9309, ""B"": 0.9478}",Z,union:sliding_window:561:563|heu_like:heu:561:563,Y2
+event_00193,episode_0033,564,564,"D,H","{D,H}","{""D"": 0.8138, ""H"": 0.8107}",Z,union:heu_like:heu:564:564,Y2
+event_00194,episode_0033,566,568,"B,E","{B,E}","{""B"": 0.9708, ""E"": 0.9859}",Z,union:sliding_window:566:568|heu_like:heu:566:568,Y2
+event_00195,episode_0033,571,573,"E,F","{E,F}","{""E"": 0.9294, ""F"": 0.9852}",Z,union:sliding_window:571:573|heu_like:heu:571:572,Y2
+event_00196,episode_0033,573,573,"C,E,F","{C,E,F}","{""C"": 0.8163, ""E"": 0.9724, ""F"": 0.9747}",Z,union:heu_like:heu:573:573,Y2
+event_00197,episode_0034,578,580,"A,B","{A,B}","{""A"": 0.9497, ""B"": 0.9449}",X,union:sliding_window:578:580|heu_like:heu:578:579,Y1
+event_00198,episode_0034,580,580,"A,B,C","{A,B,C}","{""A"": 0.9699, ""B"": 0.9699, ""C"": 0.8078}",X,union:heu_like:heu:580:580,Y1
+event_00199,episode_0034,583,583,"B,C","{B,C}","{""B"": 0.8757, ""C"": 0.8658}",X,union:heu_like:heu:583:583,Y1
+event_00200,episode_0034,585,585,"B,C","{B,C}","{""B"": 0.9024, ""C"": 0.9721}",X,union:heu_like:heu:585:585,Y1
+event_00201,episode_0034,588,590,"E,F","{E,F}","{""E"": 0.939, ""F"": 0.9346}",X,union:sliding_window:588:590|heu_like:heu:588:588|heu_like:heu:590:590,Y1
+event_00202,episode_0034,589,589,"D,E,F","{D,E,F}","{""D"": 0.814, ""E"": 0.9461, ""F"": 0.9469}",X,union:heu_like:heu:589:589,Y1
+event_00203,episode_0035,595,597,"C,D","{C,D}","{""C"": 0.9647, ""D"": 0.9492}",N,union:sliding_window:595:597|heu_like:heu:595:597,YN
+event_00204,episode_0035,598,598,"G,H","{G,H}","{""G"": 0.8128, ""H"": 0.8106}",N,union:heu_like:heu:598:598,YN
+event_00205,episode_0035,600,600,"A,E,H","{A,E,H}","{""A"": 0.8136, ""E"": 0.8139, ""H"": 0.9703}",N,union:heu_like:heu:600:600,YN
+event_00206,episode_0035,600,602,"A,E","{A,E}","{""A"": 0.9756, ""E"": 0.9976}",N,union:sliding_window:600:602|heu_like:heu:601:602,YN
+event_00207,episode_0035,605,605,"C,E,G","{C,E,G}","{""C"": 0.8182, ""E"": 0.874, ""G"": 0.8237}",N,union:heu_like:heu:605:605,YN
+event_00208,episode_0035,605,607,"E,G","{E,G}","{""E"": 0.9954, ""G"": 0.9767}",N,union:sliding_window:605:607|heu_like:heu:607:607,YN
+event_00209,episode_0035,606,606,"E,F,G","{E,F,G}","{""E"": 0.9573, ""F"": 0.8132, ""G"": 0.9483}",N,union:heu_like:heu:606:606,YN
+event_00210,episode_0036,612,612,"A,B,C,G","{A,B,C,G}","{""A"": 0.8, ""B"": 0.8, ""C"": 0.8, ""G"": 0.8}",W,union:heu_like:heu:612:612,Y3
+event_00211,episode_0036,612,614,"A,B","{A,B}","{""A"": 0.976, ""B"": 0.978}",W,union:sliding_window:612:614|heu_like:heu:613:614,Y3
+event_00212,episode_0036,617,619,"B,G","{B,G}","{""B"": 0.9729, ""G"": 0.9524}",W,union:sliding_window:617:619|heu_like:heu:617:619,Y3
+event_00213,episode_0036,623,624,"E,F","{E,F}","{""E"": 0.8794, ""F"": 0.9585}",W,union:heu_like:heu:623:624,Y3
+event_00214,episode_0037,629,629,"A,B,E","{A,B,E}","{""A"": 0.8, ""B"": 0.8, ""E"": 0.8}",Z,union:heu_like:heu:629:629,Y2
+event_00215,episode_0037,629,631,"A,B","{A,B}","{""A"": 0.9814, ""B"": 1.0034}",Z,union:sliding_window:629:631|heu_like:heu:630:631,Y2
+event_00216,episode_0037,635,635,"B,E","{B,E}","{""B"": 0.8497, ""E"": 0.9501}",Z,union:heu_like:heu:635:635,Y2
+event_00217,episode_0037,636,636,"B,C,E","{B,C,E}","{""B"": 0.9529, ""C"": 0.8178, ""E"": 0.971}",Z,union:heu_like:heu:636:636,Y2
+event_00218,episode_0037,639,641,"E,F","{E,F}","{""E"": 0.9583, ""F"": 0.9552}",Z,union:sliding_window:639:641|heu_like:heu:639:640,Y2
+event_00219,episode_0037,641,641,"E,F,H","{E,F,H}","{""E"": 0.9723, ""F"": 0.9705, ""H"": 0.8113}",Z,union:heu_like:heu:641:641,Y2
+event_00220,episode_0038,647,647,"A,B,G","{A,B,G}","{""A"": 0.8061, ""B"": 0.944, ""G"": 0.8071}",X,union:heu_like:heu:647:647,Y1
+event_00221,episode_0038,651,653,"B,C","{B,C}","{""B"": 0.9654, ""C"": 0.9705}",X,union:sliding_window:651:653|heu_like:heu:651:653,Y1
+event_00222,episode_0038,656,657,"E,F","{E,F}","{""E"": 0.8792, ""F"": 0.8825}",X,union:heu_like:heu:656:657,Y1
+event_00223,episode_0038,660,660,"C,G","{C,G}","{""C"": 0.822, ""G"": 0.813}",X,union:heu_like:heu:660:660,Y1
+event_00224,episode_0039,663,665,"F,H","{F,H}","{""F"": 0.9717, ""H"": 0.9215}",N,union:sliding_window:663:665|heu_like:heu:663:665,YN
+event_00225,episode_0039,669,670,"C,H","{C,H}","{""C"": 0.8818, ""H"": 0.9015}",N,union:heu_like:heu:669:670,YN
+event_00226,episode_0039,673,675,"E,G","{E,G}","{""E"": 0.9411, ""G"": 0.9269}",N,union:sliding_window:673:675|heu_like:heu:673:673|heu_like:heu:675:675,YN
+event_00227,episode_0039,674,674,"C,E,G","{C,E,G}","{""C"": 0.8514, ""E"": 0.9457, ""G"": 0.9459}",N,union:heu_like:heu:674:674,YN
+event_00228,episode_0040,680,680,"A,B,E,H","{A,B,E,H}","{""A"": 0.8, ""B"": 0.8, ""E"": 0.8, ""H"": 0.8}",Z,union:heu_like:heu:680:680,Y2
+event_00229,episode_0040,680,682,"A,B","{A,B}","{""A"": 0.9776, ""B"": 0.9728}",Z,union:sliding_window:680:682|heu_like:heu:681:681,Y2
+event_00230,episode_0040,682,682,"A,B,H","{A,B,H}","{""A"": 0.9699, ""B"": 0.9699, ""H"": 0.8932}",Z,union:heu_like:heu:682:682,Y2
+event_00231,episode_0040,685,687,"B,E","{B,E}","{""B"": 0.9431, ""E"": 0.9646}",Z,union:sliding_window:685:687|heu_like:heu:685:687,Y2
+event_00232,episode_0040,690,692,"E,F","{E,F}","{""E"": 0.9855, ""F"": 0.9486}",Z,union:sliding_window:690:692|heu_like:heu:690:692,Y2
+event_00233,episode_0041,697,699,"A,B","{A,B}","{""A"": 0.9284, ""B"": 0.9422}",X,union:sliding_window:697:699|heu_like:heu:697:698,Y1
+event_00234,episode_0041,699,699,"A,B,D","{A,B,D}","{""A"": 0.9699, ""B"": 0.9699, ""D"": 0.8066}",X,union:heu_like:heu:699:699,Y1
+event_00235,episode_0041,702,704,"B,C","{B,C}","{""B"": 0.9768, ""C"": 0.9599}",X,union:sliding_window:702:704|heu_like:heu:702:704,Y1
+event_00236,episode_0041,707,709,"E,F","{E,F}","{""E"": 0.9399, ""F"": 0.9823}",X,union:sliding_window:707:709|heu_like:heu:707:709,Y1
+event_00237,episode_0042,714,716,"A,B","{A,B}","{""A"": 0.9094, ""B"": 0.9021}",W,union:sliding_window:714:716|heu_like:heu:714:714,Y3
+event_00238,episode_0042,715,715,"A,B,F","{A,B,F}","{""A"": 0.944, ""B"": 0.944, ""F"": 0.8087}",W,union:heu_like:heu:715:715,Y3
+event_00239,episode_0042,716,716,"A,B,C","{A,B,C}","{""A"": 0.9699, ""B"": 0.9699, ""C"": 0.8111}",W,union:heu_like:heu:716:716,Y3
+event_00240,episode_0042,719,721,"B,G","{B,G}","{""B"": 0.9621, ""G"": 0.9327}",W,union:sliding_window:719:721|heu_like:heu:719:720,Y3
+event_00241,episode_0042,721,721,"B,D,G","{B,D,G}","{""B"": 0.9723, ""D"": 0.8119, ""G"": 0.9704}",W,union:heu_like:heu:721:721,Y3
+event_00242,episode_0042,724,726,"E,F","{E,F}","{""E"": 0.9368, ""F"": 0.9418}",W,union:sliding_window:724:726|heu_like:heu:724:725,Y3
+event_00243,episode_0042,726,726,"D,E,F","{D,E,F}","{""D"": 0.8347, ""E"": 0.9705, ""F"": 0.9705}",W,union:heu_like:heu:726:726,Y3
+event_00244,episode_0043,731,733,"A,D","{A,D}","{""A"": 0.966, ""D"": 0.9525}",N,union:sliding_window:731:733|heu_like:heu:731:733,YN
+event_00245,episode_0043,737,737,"B,F","{B,F}","{""B"": 0.8156, ""F"": 0.9468}",N,union:heu_like:heu:737:737,YN
+event_00246,episode_0043,738,738,"E,F","{E,F}","{""E"": 0.8146, ""F"": 0.9704}",N,union:heu_like:heu:738:738,YN
+event_00247,episode_0043,742,743,"A,F","{A,F}","{""A"": 0.8818, ""F"": 0.9652}",N,union:heu_like:heu:742:743,YN
+event_00248,episode_0044,748,748,"A,B","{A,B}","{""A"": 0.8, ""B"": 0.8}",W,union:heu_like:heu:748:748,Y3
+event_00249,episode_0044,750,750,"A,B,D","{A,B,D}","{""A"": 0.8933, ""B"": 0.8938, ""D"": 0.8062}",W,union:heu_like:heu:750:750,Y3
+event_00250,episode_0044,754,755,"B,G","{B,G}","{""B"": 0.9017, ""G"": 0.9582}",W,union:heu_like:heu:754:755,Y3
+event_00251,episode_0044,758,758,"E,F","{E,F}","{""E"": 0.8166, ""F"": 0.8159}",W,union:heu_like:heu:758:758,Y3
+event_00252,episode_0044,759,759,"E,G","{E,G}","{""E"": 0.947, ""G"": 0.8523}",W,union:heu_like:heu:759:759,Y3
+event_00253,episode_0044,760,760,"E,F","{E,F}","{""E"": 0.9705, ""F"": 0.8964}",W,union:heu_like:heu:760:760,Y3
+event_00254,episode_0045,765,767,"A,B","{A,B}","{""A"": 0.9446, ""B"": 0.9374}",Z,union:sliding_window:765:767|heu_like:heu:765:765|heu_like:heu:767:767,Y2
+event_00255,episode_0045,766,766,"A,B,D","{A,B,D}","{""A"": 0.944, ""B"": 0.944, ""D"": 0.8055}",Z,union:heu_like:heu:766:766,Y2
+event_00256,episode_0045,770,770,"B,E","{B,E}","{""B"": 0.8753, ""E"": 0.8102}",Z,union:heu_like:heu:770:770,Y2
+event_00257,episode_0045,772,772,"B,E","{B,E}","{""B"": 0.9724, ""E"": 0.8948}",Z,union:heu_like:heu:772:772,Y2
+event_00258,episode_0045,775,775,"E,G","{E,G}","{""E"": 0.8702, ""G"": 0.8103}",Z,union:heu_like:heu:775:775,Y2
+event_00259,episode_0045,776,777,"E,F","{E,F}","{""E"": 0.9644, ""F"": 0.8804}",Z,union:heu_like:heu:776:777,Y2
+event_00260,episode_0046,782,782,"A,B,H","{A,B,H}","{""A"": 0.8, ""B"": 0.8, ""H"": 0.8}",X,union:heu_like:heu:782:782,Y1
+event_00261,episode_0046,782,784,"A,B","{A,B}","{""A"": 0.9552, ""B"": 0.993}",X,union:sliding_window:782:784|heu_like:heu:783:783,Y1
+event_00262,episode_0046,784,784,"A,B,F","{A,B,F}","{""A"": 0.9699, ""B"": 0.9699, ""F"": 0.8089}",X,union:heu_like:heu:784:784,Y1
+event_00263,episode_0046,787,787,"B,C,F","{B,C,F}","{""B"": 0.8762, ""C"": 0.8135, ""F"": 0.8639}",X,union:heu_like:heu:787:787,Y1
+event_00264,episode_0046,787,789,"B,C","{B,C}","{""B"": 0.99, ""C"": 0.9651}",X,union:sliding_window:787:789|heu_like:heu:788:789,Y1
+event_00265,episode_0046,792,792,"B,E,F","{B,E,F}","{""B"": 0.8739, ""E"": 0.8141, ""F"": 0.8323}",X,union:heu_like:heu:792:792,Y1
+event_00266,episode_0046,792,794,"E,F","{E,F}","{""E"": 0.9792, ""F"": 0.9743}",X,union:sliding_window:792:794|heu_like:heu:793:794,Y1
+event_00267,episode_0047,799,801,"B,H","{B,H}","{""B"": 0.9297, ""H"": 0.9274}",N,union:sliding_window:799:801|heu_like:heu:799:800,YN
+event_00268,episode_0047,801,801,"B,G,H","{B,G,H}","{""B"": 0.9699, ""G"": 0.8106, ""H"": 0.9699}",N,union:heu_like:heu:801:801,YN
+event_00269,episode_0047,804,806,"C,G","{C,G}","{""C"": 0.9796, ""G"": 0.9814}",N,union:sliding_window:804:806|heu_like:heu:804:806,YN
+event_00270,episode_0047,809,809,"C,F,G","{C,F,G}","{""C"": 0.8728, ""F"": 0.8147, ""G"": 0.8748}",N,union:heu_like:heu:809:809,YN
+event_00271,episode_0047,809,811,"F,G","{F,G}","{""F"": 0.9956, ""G"": 0.9983}",N,union:sliding_window:809:811|heu_like:heu:810:811,YN
+event_00272,episode_0048,816,818,"A,B","{A,B}","{""A"": 0.9748, ""B"": 0.9638}",X,union:sliding_window:816:818|heu_like:heu:816:818,Y1
+event_00273,episode_0048,821,823,"B,C","{B,C}","{""B"": 0.9932, ""C"": 0.958}",X,union:sliding_window:821:823|heu_like:heu:821:823,Y1
+event_00274,episode_0048,826,826,"E,F","{E,F}","{""E"": 0.8131, ""F"": 0.8169}",X,union:heu_like:heu:826:826,Y1
+event_00275,episode_0048,828,828,"C,E,F","{C,E,F}","{""C"": 0.8373, ""E"": 0.8947, ""F"": 0.9705}",X,union:heu_like:heu:828:828,Y1
+event_00276,episode_0049,833,835,"A,B","{A,B}","{""A"": 0.9289, ""B"": 0.9506}",W,union:sliding_window:833:835|heu_like:heu:833:835,Y3
+event_00277,episode_0049,838,840,"B,G","{B,G}","{""B"": 0.9738, ""G"": 0.9435}",W,union:sliding_window:838:840|heu_like:heu:838:840,Y3
+event_00278,episode_0049,843,845,"E,F","{E,F}","{""E"": 0.9761, ""F"": 0.9447}",W,union:sliding_window:843:845|heu_like:heu:843:845,Y3
+event_00279,episode_0050,850,850,"A,B,F","{A,B,F}","{""A"": 0.8, ""B"": 0.8, ""F"": 0.8}",Z,union:heu_like:heu:850:850,Y2
+event_00280,episode_0050,850,852,"A,B","{A,B}","{""A"": 0.9546, ""B"": 1.0052}",Z,union:sliding_window:850:852|heu_like:heu:851:852,Y2
+event_00281,episode_0050,855,855,"B,D,E,H","{B,D,E,H}","{""B"": 0.8743, ""D"": 0.8124, ""E"": 0.8109, ""H"": 0.8175}",Z,union:heu_like:heu:855:855,Y2
+event_00282,episode_0050,855,857,"B,E","{B,E}","{""B"": 0.9897, ""E"": 0.9913}",Z,union:sliding_window:855:857|heu_like:heu:856:857,Y2
+event_00283,episode_0050,860,860,"B,E,F","{B,E,F}","{""B"": 0.8769, ""E"": 0.8709, ""F"": 0.8133}",Z,union:heu_like:heu:860:860,Y2
+event_00284,episode_0050,860,862,"E,F","{E,F}","{""E"": 0.9731, ""F"": 0.9658}",Z,union:sliding_window:860:862|heu_like:heu:861:861,Y2
+event_00285,episode_0050,862,862,"E,F,G","{E,F,G}","{""E"": 0.9722, ""F"": 0.9703, ""G"": 0.8209}",Z,union:heu_like:heu:862:862,Y2
+event_00286,episode_0051,867,867,"F,G","{F,G}","{""F"": 0.8, ""G"": 0.8}",N,union:heu_like:heu:867:867,YN
+event_00287,episode_0051,869,869,"F,G","{F,G}","{""F"": 0.8934, ""G"": 0.9699}",N,union:heu_like:heu:869:869,YN
+event_00288,episode_0051,872,872,"D,E,H","{D,E,H}","{""D"": 0.8149, ""E"": 0.8109, ""H"": 0.8125}",N,union:heu_like:heu:872:872,YN
+event_00289,episode_0051,872,874,"D,H","{D,H}","{""D"": 0.9915, ""H"": 0.9795}",N,union:sliding_window:872:874|heu_like:heu:873:874,YN
+event_00290,episode_0051,877,877,"B,F,G","{B,F,G}","{""B"": 0.8195, ""F"": 0.817, ""G"": 0.8225}",N,union:heu_like:heu:877:877,YN
+event_00291,episode_0051,877,879,"B,G","{B,G}","{""B"": 0.9832, ""G"": 0.9692}",N,union:sliding_window:877:879|heu_like:heu:878:878,YN
+event_00292,episode_0051,879,879,"A,B,E,G,H","{A,B,E,G,H}","{""A"": 0.8175, ""B"": 0.9706, ""E"": 0.8219, ""G"": 0.9706, ""H"": 0.8364}",N,union:heu_like:heu:879:879,YN
+event_00293,episode_0052,884,884,"A,B,G","{A,B,G}","{""A"": 0.8, ""B"": 0.8, ""G"": 0.8}",Z,union:heu_like:heu:884:884,Y2
+event_00294,episode_0052,885,885,"B,E","{B,E}","{""B"": 0.944, ""E"": 0.8049}",Z,union:heu_like:heu:885:885,Y2
+event_00295,episode_0052,886,886,"B,G","{B,G}","{""B"": 0.9699, ""G"": 0.8948}",Z,union:heu_like:heu:886:886,Y2
+event_00296,episode_0052,889,891,"B,E","{B,E}","{""B"": 0.9589, ""E"": 0.9558}",Z,union:sliding_window:889:891|heu_like:heu:889:889|heu_like:heu:891:891,Y2
+event_00297,episode_0052,890,890,"B,C,E","{B,C,E}","{""B"": 0.9579, ""C"": 0.8155, ""E"": 0.952}",Z,union:heu_like:heu:890:890,Y2
+event_00298,episode_0052,894,896,"E,F","{E,F}","{""E"": 0.9681, ""F"": 0.9085}",Z,union:sliding_window:894:896|heu_like:heu:894:896,Y2
+event_00299,episode_0053,901,903,"A,B","{A,B}","{""A"": 0.9308, ""B"": 0.9415}",X,union:sliding_window:901:903|heu_like:heu:901:901|heu_like:heu:903:903,Y1
+event_00300,episode_0053,902,902,"A,B,H","{A,B,H}","{""A"": 0.944, ""B"": 0.944, ""H"": 0.8064}",X,union:heu_like:heu:902:902,Y1
+event_00301,episode_0053,905,905,"D,F","{D,F}","{""D"": 0.8127, ""F"": 0.813}",X,union:heu_like:heu:905:905,Y1
+event_00302,episode_0053,906,908,"B,C","{B,C}","{""B"": 0.9869, ""C"": 0.9687}",X,union:sliding_window:906:908|heu_like:heu:906:908,Y1
+event_00303,episode_0053,911,913,"E,F","{E,F}","{""E"": 0.9317, ""F"": 0.9821}",X,union:sliding_window:911:913|heu_like:heu:911:912,Y1
+event_00304,episode_0053,913,913,"B,E,F","{B,E,F}","{""B"": 0.835, ""E"": 0.9705, ""F"": 0.9748}",X,union:heu_like:heu:913:913,Y1
+event_00305,episode_0054,918,918,"A,B","{A,B}","{""A"": 0.8, ""B"": 0.8}",W,union:heu_like:heu:918:918,Y3
+event_00306,episode_0054,920,920,"A,B,D,E,F","{A,B,D,E,F}","{""A"": 0.9699, ""B"": 0.8936, ""D"": 0.8099, ""E"": 0.8083, ""F"": 0.8064}",W,union:heu_like:heu:920:920,Y3
+event_00307,episode_0054,923,925,"B,G","{B,G}","{""B"": 0.9499, ""G"": 0.981}",W,union:sliding_window:923:925|heu_like:heu:923:925,Y3
+event_00308,episode_0054,928,930,"E,F","{E,F}","{""E"": 0.9566, ""F"": 0.952}",W,union:sliding_window:928:930|heu_like:heu:928:930,Y3
+event_00309,episode_0055,935,937,"E,H","{E,H}","{""E"": 0.9262, ""H"": 0.9371}",N,union:sliding_window:935:937|heu_like:heu:935:935|heu_like:heu:937:937,YN
+event_00310,episode_0055,936,936,"B,E,H","{B,E,H}","{""B"": 0.8052, ""E"": 0.944, ""H"": 0.944}",N,union:heu_like:heu:936:936,YN
+event_00311,episode_0055,938,938,"B,C","{B,C}","{""B"": 0.8946, ""C"": 0.8108}",N,union:heu_like:heu:938:938,YN
+event_00312,episode_0055,941,942,"B,H","{B,H}","{""B"": 0.9117, ""H"": 0.9651}",N,union:heu_like:heu:941:942,YN
+event_00313,episode_0055,945,947,"D,G","{D,G}","{""D"": 0.9377, ""G"": 0.9408}",N,union:sliding_window:945:947|heu_like:heu:945:945|heu_like:heu:947:947,YN
+event_00314,episode_0055,946,946,"D,E,G","{D,E,G}","{""D"": 0.946, ""E"": 0.8225, ""G"": 0.9465}",N,union:heu_like:heu:946:946,YN
+event_00315,episode_0056,952,952,"A,B","{A,B}","{""A"": 0.8, ""B"": 0.8}",Z,union:heu_like:heu:952:952,Y2
+event_00316,episode_0056,953,953,"B,E","{B,E}","{""B"": 0.944, ""E"": 0.8038}",Z,union:heu_like:heu:953:953,Y2
+event_00317,episode_0056,954,954,"A,B","{A,B}","{""A"": 0.8949, ""B"": 0.9699}",Z,union:heu_like:heu:954:954,Y2
+event_00318,episode_0056,957,959,"B,E","{B,E}","{""B"": 0.9403, ""E"": 0.9688}",Z,union:sliding_window:957:959|heu_like:heu:957:958,Y2
+event_00319,episode_0056,959,959,"B,C,E","{B,C,E}","{""B"": 0.9724, ""C"": 0.8174, ""E"": 0.9733}",Z,union:heu_like:heu:959:959,Y2
+event_00320,episode_0056,962,964,"E,F","{E,F}","{""E"": 0.975, ""F"": 0.9473}",Z,union:sliding_window:962:964|heu_like:heu:962:964,Y2
+event_00321,episode_0056,965,965,"C,D","{C,D}","{""C"": 0.8253, ""D"": 0.8173}",Z,union:heu_like:heu:965:965,Y2
+event_00322,episode_0057,969,971,"A,B","{A,B}","{""A"": 0.9426, ""B"": 0.9444}",W,union:sliding_window:969:971|heu_like:heu:969:969|heu_like:heu:971:971,Y3
+event_00323,episode_0057,970,970,"A,B,C","{A,B,C}","{""A"": 0.944, ""B"": 0.944, ""C"": 0.806}",W,union:heu_like:heu:970:970,Y3
+event_00324,episode_0057,974,976,"B,G","{B,G}","{""B"": 0.9565, ""G"": 0.9139}",W,union:sliding_window:974:976|heu_like:heu:974:976,Y3
+event_00325,episode_0057,979,979,"B,E,F","{B,E,F}","{""B"": 0.876, ""E"": 0.8137, ""F"": 0.8156}",W,union:heu_like:heu:979:979,Y3
+event_00326,episode_0058,986,986,"A,B,C","{A,B,C}","{""A"": 0.8, ""B"": 0.8, ""C"": 0.8}",X,union:heu_like:heu:986:986,Y1
+event_00327,episode_0058,986,988,"A,B","{A,B}","{""A"": 0.9674, ""B"": 0.9759}",X,union:sliding_window:986:988|heu_like:heu:987:987,Y1
+event_00328,episode_0058,988,988,"A,B,E","{A,B,E}","{""A"": 0.9699, ""B"": 0.9699, ""E"": 0.8084}",X,union:heu_like:heu:988:988,Y1
+event_00329,episode_0058,991,993,"B,C","{B,C}","{""B"": 0.9551, ""C"": 0.9362}",X,union:sliding_window:991:993|heu_like:heu:991:992,Y1
+event_00330,episode_0058,993,993,"B,C,E","{B,C,E}","{""B"": 0.9723, ""C"": 0.9711, ""E"": 0.8345}",X,union:heu_like:heu:993:993,Y1
+event_00331,episode_0058,996,998,"E,F","{E,F}","{""E"": 0.9594, ""F"": 0.9321}",X,union:sliding_window:996:998|heu_like:heu:996:996|heu_like:heu:998:998,Y1
+event_00332,episode_0058,997,997,"A,E,F","{A,E,F}","{""A"": 0.8174, ""E"": 0.9559, ""F"": 0.9464}",X,union:heu_like:heu:997:997,Y1
+event_00333,episode_0059,1003,1003,"C,F,H","{C,F,H}","{""C"": 0.8, ""F"": 0.8, ""H"": 0.8}",N,union:heu_like:heu:1003:1003,YN
+event_00334,episode_0059,1005,1005,"C,F","{C,F}","{""C"": 0.9699, ""F"": 0.8945}",N,union:heu_like:heu:1005:1005,YN
+event_00335,episode_0059,1007,1007,"A,G","{A,G}","{""A"": 0.8144, ""G"": 0.8139}",N,union:heu_like:heu:1007:1007,YN
+event_00336,episode_0059,1008,1008,"A,D,E","{A,D,E}","{""A"": 0.9466, ""D"": 0.8944, ""E"": 0.8099}",N,union:heu_like:heu:1008:1008,YN
+event_00337,episode_0059,1008,1010,"D,E","{D,E}","{""D"": 0.9687, ""E"": 0.998}",N,union:sliding_window:1008:1010|heu_like:heu:1009:1009,YN
+event_00338,episode_0059,1010,1010,"A,D,E","{A,D,E}","{""A"": 0.9086, ""D"": 0.973, ""E"": 0.9702}",N,union:heu_like:heu:1010:1010,YN
+event_00339,episode_0059,1013,1015,"B,E","{B,E}","{""B"": 0.8951, ""E"": 0.9152}",N,union:sliding_window:1013:1015|heu_like:heu:1013:1013,YN
+event_00340,episode_0059,1014,1014,"A,B,E,H","{A,B,E,H}","{""A"": 0.8503, ""B"": 0.9468, ""E"": 0.9576, ""H"": 0.8184}",N,union:heu_like:heu:1014:1014,YN
+event_00341,episode_0059,1015,1015,"B,D,E,F","{B,D,E,F}","{""B"": 0.9704, ""D"": 0.8375, ""E"": 0.9724, ""F"": 0.8173}",N,union:heu_like:heu:1015:1015,YN
+event_00342,episode_0060,1020,1022,"A,B","{A,B}","{""A"": 0.9197, ""B"": 0.9276}",W,union:sliding_window:1020:1022|heu_like:heu:1020:1021,Y3
+event_00343,episode_0060,1022,1022,"A,B,F","{A,B,F}","{""A"": 0.9699, ""B"": 0.9699, ""F"": 0.8052}",W,union:heu_like:heu:1022:1022,Y3
+event_00344,episode_0060,1025,1027,"B,G","{B,G}","{""B"": 0.9794, ""G"": 0.9156}",W,union:sliding_window:1025:1027|heu_like:heu:1025:1026,Y3
+event_00345,episode_0060,1027,1027,"B,D,G","{B,D,G}","{""B"": 0.9723, ""D"": 0.8169, ""G"": 0.9703}",W,union:heu_like:heu:1027:1027,Y3
+event_00346,episode_0060,1030,1032,"E,F","{E,F}","{""E"": 0.9619, ""F"": 0.9668}",W,union:sliding_window:1030:1032|heu_like:heu:1030:1032,Y3
+event_00347,episode_0060,1033,1033,"A,G","{A,G}","{""A"": 0.8202, ""G"": 0.824}",W,union:heu_like:heu:1033:1033,Y3
+event_00348,episode_0061,1037,1037,"A,B,C","{A,B,C}","{""A"": 0.8, ""B"": 0.8, ""C"": 0.8}",Z,union:heu_like:heu:1037:1037,Y2
+event_00349,episode_0061,1037,1039,"A,B","{A,B}","{""A"": 0.9863, ""B"": 0.9794}",Z,union:sliding_window:1037:1039|heu_like:heu:1039:1039,Y2
+event_00350,episode_0061,1038,1038,"A,B,E","{A,B,E}","{""A"": 0.944, ""B"": 0.944, ""E"": 0.8058}",Z,union:heu_like:heu:1038:1038,Y2
+event_00351,episode_0061,1042,1044,"B,E","{B,E}","{""B"": 0.955, ""E"": 0.9452}",Z,union:sliding_window:1042:1044|heu_like:heu:1042:1043,Y2
+event_00352,episode_0061,1044,1044,"A,B,E","{A,B,E}","{""A"": 0.8366, ""B"": 0.9723, ""E"": 0.9715}",Z,union:heu_like:heu:1044:1044,Y2
+event_00353,episode_0061,1047,1049,"E,F","{E,F}","{""E"": 0.9501, ""F"": 0.9808}",Z,union:sliding_window:1047:1049|heu_like:heu:1047:1048,Y2
+event_00354,episode_0061,1049,1049,"A,E,F","{A,E,F}","{""A"": 0.8304, ""E"": 0.9724, ""F"": 0.973}",Z,union:heu_like:heu:1049:1049,Y2
+event_00355,episode_0062,1054,1056,"A,B","{A,B}","{""A"": 0.9489, ""B"": 0.9459}",X,union:sliding_window:1054:1056|heu_like:heu:1054:1056,Y1
+event_00356,episode_0062,1059,1061,"B,C","{B,C}","{""B"": 0.9853, ""C"": 0.9347}",X,union:sliding_window:1059:1061|heu_like:heu:1059:1061,Y1
+event_00357,episode_0062,1064,1064,"B,E,F","{B,E,F}","{""B"": 0.8756, ""E"": 0.8168, ""F"": 0.8131}",X,union:heu_like:heu:1064:1064,Y1
+event_00358,episode_0062,1064,1066,"E,F","{E,F}","{""E"": 1.0113, ""F"": 0.9786}",X,union:sliding_window:1064:1066|heu_like:heu:1065:1066,Y1
+event_00359,episode_0063,1071,1071,"B,G","{B,G}","{""B"": 0.8, ""G"": 0.8}",N,union:heu_like:heu:1071:1071,YN
+event_00360,episode_0063,1073,1073,"B,E,G","{B,E,G}","{""B"": 0.8952, ""E"": 0.8131, ""G"": 0.9699}",N,union:heu_like:heu:1073:1073,YN
+event_00361,episode_0063,1074,1074,"D,E","{D,E}","{""D"": 0.8129, ""E"": 0.9464}",N,union:heu_like:heu:1074:1074,YN
+event_00362,episode_0063,1076,1078,"F,G","{F,G}","{""F"": 0.9575, ""G"": 0.985}",N,union:sliding_window:1076:1078|heu_like:heu:1076:1078,YN
+event_00363,episode_0063,1081,1083,"E,G","{E,G}","{""E"": 0.944, ""G"": 0.9923}",N,union:sliding_window:1081:1083|heu_like:heu:1081:1083,YN
+event_00364,episode_0064,1088,1090,"A,B","{A,B}","{""A"": 0.9394, ""B"": 0.9223}",W,union:sliding_window:1088:1090|heu_like:heu:1088:1089,Y3
+event_00365,episode_0064,1090,1090,"A,B,C","{A,B,C}","{""A"": 0.9699, ""B"": 0.9699, ""C"": 0.8109}",W,union:heu_like:heu:1090:1090,Y3
+event_00366,episode_0064,1093,1095,"B,G","{B,G}","{""B"": 0.9385, ""G"": 0.9661}",W,union:sliding_window:1093:1095|heu_like:heu:1093:1095,Y3
+event_00367,episode_0064,1098,1098,"A,E,F","{A,E,F}","{""A"": 0.8308, ""E"": 0.8141, ""F"": 0.8158}",W,union:heu_like:heu:1098:1098,Y3
+event_00368,episode_0064,1098,1100,"E,F","{E,F}","{""E"": 0.9971, ""F"": 0.9896}",W,union:sliding_window:1098:1100|heu_like:heu:1100:1100,Y3
+event_00369,episode_0064,1099,1099,"B,E,F","{B,E,F}","{""B"": 0.8533, ""E"": 0.9465, ""F"": 0.9468}",W,union:heu_like:heu:1099:1099,Y3
+event_00370,episode_0064,1101,1101,"D,E","{D,E}","{""D"": 0.8188, ""E"": 0.9747}",W,union:heu_like:heu:1101:1101,Y3
+event_00371,episode_0065,1105,1105,"A,B,G","{A,B,G}","{""A"": 0.8, ""B"": 0.8, ""G"": 0.8}",Z,union:heu_like:heu:1105:1105,Y2
+event_00372,episode_0065,1105,1107,"A,B","{A,B}","{""A"": 1.01, ""B"": 0.9595}",Z,union:sliding_window:1105:1107|heu_like:heu:1106:1107,Y2
+event_00373,episode_0065,1110,1112,"B,E","{B,E}","{""B"": 0.9645, ""E"": 0.9453}",Z,union:sliding_window:1110:1112|heu_like:heu:1110:1112,Y2
+event_00374,episode_0065,1115,1117,"E,F","{E,F}","{""E"": 0.94, ""F"": 0.9375}",Z,union:sliding_window:1115:1117|heu_like:heu:1115:1115|heu_like:heu:1117:1117,Y2
+event_00375,episode_0065,1116,1116,"D,E,F","{D,E,F}","{""D"": 0.8168, ""E"": 0.9574, ""F"": 0.9485}",Z,union:heu_like:heu:1116:1116,Y2
+event_00376,episode_0066,1122,1124,"A,B","{A,B}","{""A"": 0.9351, ""B"": 0.9531}",X,union:sliding_window:1122:1124|heu_like:heu:1122:1123,Y1
+event_00377,episode_0066,1124,1124,"A,B,E","{A,B,E}","{""A"": 0.9699, ""B"": 0.9699, ""E"": 0.8092}",X,union:heu_like:heu:1124:1124,Y1
+event_00378,episode_0066,1125,1125,"E,G","{E,G}","{""E"": 0.9457, ""G"": 0.8106}",X,union:heu_like:heu:1125:1125,Y1
+event_00379,episode_0066,1127,1127,"B,C,D,F","{B,C,D,F}","{""B"": 0.8727, ""C"": 0.8175, ""D"": 0.8113, ""F"": 0.8142}",X,union:heu_like:heu:1127:1127,Y1
+event_00380,episode_0066,1127,1129,"B,C","{B,C}","{""B"": 0.9629, ""C"": 0.9828}",X,union:sliding_window:1127:1129|heu_like:heu:1128:1129,Y1
+event_00381,episode_0066,1132,1134,"E,F","{E,F}","{""E"": 0.9535, ""F"": 0.9524}",X,union:sliding_window:1132:1134|heu_like:heu:1132:1134,Y1
+event_00382,episode_0067,1139,1141,"F,H","{F,H}","{""F"": 0.9459, ""H"": 0.9462}",N,union:sliding_window:1139:1141|heu_like:heu:1139:1141,YN
+event_00383,episode_0067,1144,1146,"B,C","{B,C}","{""B"": 0.9229, ""C"": 0.9294}",N,union:sliding_window:1144:1146|heu_like:heu:1144:1145,YN
+event_00384,episode_0067,1146,1146,"B,C,D","{B,C,D}","{""B"": 0.9703, ""C"": 0.9703, ""D"": 0.8182}",N,union:heu_like:heu:1146:1146,YN
+event_00385,episode_0067,1149,1149,"B,C","{B,C}","{""B"": 0.8714, ""C"": 0.8745}",N,union:heu_like:heu:1149:1149,YN
+event_00386,episode_0067,1150,1150,"B,C,G","{B,C,G}","{""B"": 0.9569, ""C"": 0.9574, ""G"": 0.8223}",N,union:heu_like:heu:1150:1150,YN
+event_00387,episode_0068,1156,1156,"A,B,G,H","{A,B,G,H}","{""A"": 0.8, ""B"": 0.8, ""G"": 0.8, ""H"": 0.8}",W,union:heu_like:heu:1156:1156,Y3
+event_00388,episode_0068,1157,1157,"A,B,H","{A,B,H}","{""A"": 0.944, ""B"": 0.944, ""H"": 0.944}",W,union:heu_like:heu:1157:1157,Y3
+event_00389,episode_0068,1161,1161,"A,B,G","{A,B,G}","{""A"": 0.9059, ""B"": 0.874, ""G"": 0.8347}",W,union:heu_like:heu:1161:1161,Y3
+event_00390,episode_0068,1161,1163,"B,G","{B,G}","{""B"": 0.9706, ""G"": 0.9996}",W,union:sliding_window:1161:1163|heu_like:heu:1162:1163,Y3
+event_00391,episode_0068,1166,1168,"E,F","{E,F}","{""E"": 0.8955, ""F"": 0.8841}",W,union:sliding_window:1166:1168|heu_like:heu:1166:1166,Y3
+event_00392,episode_0068,1167,1167,"D,E,F","{D,E,F}","{""D"": 0.8152, ""E"": 0.947, ""F"": 0.9473}",W,union:heu_like:heu:1167:1167,Y3
+event_00393,episode_0068,1168,1168,"E,F,H","{E,F,H}","{""E"": 0.9705, ""F"": 0.9705, ""H"": 0.8155}",W,union:heu_like:heu:1168:1168,Y3
+event_00394,episode_0069,1173,1175,"A,B","{A,B}","{""A"": 0.9499, ""B"": 0.9619}",X,union:sliding_window:1173:1175|heu_like:heu:1173:1175,Y1
+event_00395,episode_0069,1178,1180,"B,C","{B,C}","{""B"": 1.0084, ""C"": 0.8971}",X,union:sliding_window:1178:1180|heu_like:heu:1178:1178,Y1
+event_00396,episode_0069,1179,1179,"B,C,G","{B,C,G}","{""B"": 0.9736, ""C"": 0.9471, ""G"": 0.8132}",X,union:heu_like:heu:1179:1179,Y1
+event_00397,episode_0069,1180,1180,"B,C,D","{B,C,D}","{""B"": 0.9752, ""C"": 0.9705, ""D"": 0.8163}",X,union:heu_like:heu:1180:1180,Y1
+event_00398,episode_0069,1184,1184,"E,F","{E,F}","{""E"": 0.8098, ""F"": 0.9482}",X,union:heu_like:heu:1184:1184,Y1
+event_00399,episode_0069,1185,1185,"B,E,F","{B,E,F}","{""B"": 0.8343, ""E"": 0.9458, ""F"": 0.9707}",X,union:heu_like:heu:1185:1185,Y1
+event_00400,episode_0069,1186,1186,"C,E","{C,E}","{""C"": 0.8224, ""E"": 0.9702}",X,union:heu_like:heu:1186:1186,Y1
+event_00401,episode_0070,1190,1192,"A,B","{A,B}","{""A"": 0.9226, ""B"": 0.9234}",Z,union:sliding_window:1190:1192|heu_like:heu:1190:1191,Y2
+event_00402,episode_0070,1192,1192,"A,B,E","{A,B,E}","{""A"": 0.9699, ""B"": 0.9699, ""E"": 0.8095}",Z,union:heu_like:heu:1192:1192,Y2
+event_00403,episode_0070,1195,1197,"B,E","{B,E}","{""B"": 0.9637, ""E"": 0.9799}",Z,union:sliding_window:1195:1197|heu_like:heu:1195:1196,Y2
+event_00404,episode_0070,1197,1197,"B,C,E","{B,C,E}","{""B"": 0.9723, ""C"": 0.8133, ""E"": 0.972}",Z,union:heu_like:heu:1197:1197,Y2
+event_00405,episode_0070,1200,1202,"E,F","{E,F}","{""E"": 0.9587, ""F"": 0.9181}",Z,union:sliding_window:1200:1202|heu_like:heu:1200:1200,Y2
+event_00406,episode_0070,1201,1201,"C,E,F","{C,E,F}","{""C"": 0.8481, ""E"": 0.9572, ""F"": 0.9471}",Z,union:heu_like:heu:1201:1201,Y2
+event_00407,episode_0070,1202,1202,"E,F,G","{E,F,G}","{""E"": 0.9723, ""F"": 0.9705, ""G"": 0.8641}",Z,union:heu_like:heu:1202:1202,Y2
+event_00408,episode_0071,1207,1209,"B,G","{B,G}","{""B"": 0.9467, ""G"": 0.9361}",N,union:sliding_window:1207:1209|heu_like:heu:1207:1207|heu_like:heu:1209:1209,YN
+event_00409,episode_0071,1208,1208,"B,C,G","{B,C,G}","{""B"": 0.944, ""C"": 0.8041, ""G"": 0.944}",N,union:heu_like:heu:1208:1208,YN
+event_00410,episode_0071,1212,1212,"B,C,G","{B,C,G}","{""B"": 0.8746, ""C"": 0.8438, ""G"": 0.874}",N,union:heu_like:heu:1212:1212,YN
+event_00411,episode_0071,1212,1214,"B,C","{B,C}","{""B"": 0.9921, ""C"": 0.9936}",N,union:sliding_window:1212:1214|heu_like:heu:1213:1214,YN
+event_00412,episode_0071,1217,1219,"C,E","{C,E}","{""C"": 0.982, ""E"": 0.9544}",N,union:sliding_window:1217:1219|heu_like:heu:1217:1219,YN
+event_00413,episode_0071,1220,1220,"A,F","{A,F}","{""A"": 0.8142, ""F"": 0.8124}",N,union:heu_like:heu:1220:1220,YN
+event_00414,episode_0072,1224,1226,"A,B","{A,B}","{""A"": 0.9309, ""B"": 0.9404}",W,union:sliding_window:1224:1226|heu_like:heu:1224:1224|heu_like:heu:1226:1226,Y3
+event_00415,episode_0072,1225,1225,"A,B,G","{A,B,G}","{""A"": 0.944, ""B"": 0.944, ""G"": 0.8054}",W,union:heu_like:heu:1225:1225,Y3
+event_00416,episode_0072,1230,1230,"B,G","{B,G}","{""B"": 0.8531, ""G"": 0.9526}",W,union:heu_like:heu:1230:1230,Y3
+event_00417,episode_0072,1231,1231,"B,E,G","{B,E,G}","{""B"": 0.9536, ""E"": 0.8631, ""G"": 0.9715}",W,union:heu_like:heu:1231:1231,Y3
+event_00418,episode_0072,1234,1236,"E,F","{E,F}","{""E"": 0.9544, ""F"": 0.9541}",W,union:sliding_window:1234:1236|heu_like:heu:1234:1236,Y3
+event_00419,episode_0073,1241,1243,"A,B","{A,B}","{""A"": 0.9422, ""B"": 0.9798}",Z,union:sliding_window:1241:1243|heu_like:heu:1241:1243,Y2
+event_00420,episode_0073,1246,1248,"B,E","{B,E}","{""B"": 0.9529, ""E"": 0.9408}",Z,union:sliding_window:1246:1248|heu_like:heu:1246:1246|heu_like:heu:1248:1248,Y2
+event_00421,episode_0073,1247,1247,"B,E,F","{B,E,F}","{""B"": 0.9576, ""E"": 0.9462, ""F"": 0.8147}",Z,union:heu_like:heu:1247:1247,Y2
+event_00422,episode_0073,1250,1250,"D,E","{D,E}","{""D"": 0.8154, ""E"": 0.9123}",Z,union:heu_like:heu:1250:1250,Y2
+event_00423,episode_0073,1251,1253,"E,F","{E,F}","{""E"": 0.9843, ""F"": 0.9571}",Z,union:sliding_window:1251:1253|heu_like:heu:1251:1251|heu_like:heu:1253:1253,Y2
+event_00424,episode_0073,1252,1252,"B,E,F","{B,E,F}","{""B"": 0.8508, ""E"": 0.9736, ""F"": 0.9629}",Z,union:heu_like:heu:1252:1252,Y2
+event_00425,episode_0074,1258,1260,"A,B","{A,B}","{""A"": 0.9556, ""B"": 0.9524}",X,union:sliding_window:1258:1260|heu_like:heu:1258:1260,Y1
+event_00426,episode_0074,1262,1262,"A,B","{A,B}","{""A"": 0.9126, ""B"": 0.9128}",X,union:heu_like:heu:1262:1262,Y1
+event_00427,episode_0074,1263,1265,"B,C","{B,C}","{""B"": 0.9871, ""C"": 0.9468}",X,union:sliding_window:1263:1265|heu_like:heu:1263:1265,Y1
+event_00428,episode_0074,1268,1270,"E,F","{E,F}","{""E"": 0.9641, ""F"": 0.9778}",X,union:sliding_window:1268:1270|heu_like:heu:1268:1270,Y1
+event_00429,episode_0074,1271,1271,"C,H","{C,H}","{""C"": 0.8306, ""H"": 0.8113}",X,union:heu_like:heu:1271:1271,Y1
+event_00430,episode_0075,1275,1275,"A,G,H","{A,G,H}","{""A"": 0.8, ""G"": 0.8, ""H"": 0.8}",N,union:heu_like:heu:1275:1275,YN
+event_00431,episode_0075,1275,1277,"G,H","{G,H}","{""G"": 0.9977, ""H"": 0.991}",N,union:sliding_window:1275:1277|heu_like:heu:1276:1277,YN
+event_00432,episode_0075,1280,1282,"D,F","{D,F}","{""D"": 0.9729, ""F"": 0.9477}",N,union:sliding_window:1280:1282|heu_like:heu:1280:1282,YN
+event_00433,episode_0075,1285,1285,"A,C,H","{A,C,H}","{""A"": 0.9471, ""C"": 0.8114, ""H"": 0.8174}",N,union:heu_like:heu:1285:1285,YN
+event_00434,episode_0075,1285,1287,"C,H","{C,H}","{""C"": 0.9908, ""H"": 0.9856}",N,union:sliding_window:1285:1287|heu_like:heu:1287:1287,YN
+event_00435,episode_0075,1286,1286,"C,F,H","{C,F,H}","{""C"": 0.9461, ""F"": 0.852, ""H"": 0.9471}",N,union:heu_like:heu:1286:1286,YN
+event_00436,episode_0076,1292,1294,"A,B","{A,B}","{""A"": 0.8845, ""B"": 0.8876}",X,union:sliding_window:1292:1294|heu_like:heu:1292:1292,Y1
+event_00437,episode_0076,1293,1294,"A,B,C","{A,B,C}","{""A"": 0.957, ""B"": 0.957, ""C"": 0.8736}",X,union:heu_like:heu:1293:1294,Y1
+event_00438,episode_0076,1297,1299,"B,C","{B,C}","{""B"": 0.9631, ""C"": 0.9654}",X,union:sliding_window:1297:1299|heu_like:heu:1297:1298,Y1
+event_00439,episode_0076,1299,1299,"A,B,C","{A,B,C}","{""A"": 0.8391, ""B"": 0.9724, ""C"": 0.9723}",X,union:heu_like:heu:1299:1299,Y1
+event_00440,episode_0076,1302,1302,"B,E,F","{B,E,F}","{""B"": 0.8747, ""E"": 0.8199, ""F"": 0.8131}",X,union:heu_like:heu:1302:1302,Y1
+event_00441,episode_0076,1302,1304,"E,F","{E,F}","{""E"": 0.9799, ""F"": 0.9914}",X,union:sliding_window:1302:1304|heu_like:heu:1303:1304,Y1
+event_00442,episode_0077,1309,1309,"A,B,E","{A,B,E}","{""A"": 0.8, ""B"": 0.8, ""E"": 0.8}",Z,union:heu_like:heu:1309:1309,Y2
+event_00443,episode_0077,1309,1311,"A,B","{A,B}","{""A"": 0.9907, ""B"": 0.9738}",Z,union:sliding_window:1309:1311|heu_like:heu:1310:1311,Y2
+event_00444,episode_0077,1314,1314,"B,E","{B,E}","{""B"": 0.8756, ""E"": 0.8292}",Z,union:heu_like:heu:1314:1314,Y2
+event_00445,episode_0077,1316,1316,"B,E,F,G","{B,E,F,G}","{""B"": 0.9724, ""E"": 0.8966, ""F"": 0.8173, ""G"": 0.8139}",Z,union:heu_like:heu:1316:1316,Y2
+event_00446,episode_0077,1319,1319,"C,E,F","{C,E,F}","{""C"": 0.8181, ""E"": 0.8701, ""F"": 0.8643}",Z,union:heu_like:heu:1319:1319,Y2
+event_00447,episode_0077,1321,1321,"E,F","{E,F}","{""E"": 0.9027, ""F"": 0.972}",Z,union:heu_like:heu:1321:1321,Y2
+event_00448,episode_0078,1326,1326,"A,B,E","{A,B,E}","{""A"": 0.8, ""B"": 0.8, ""E"": 0.8}",W,union:heu_like:heu:1326:1326,Y3
+event_00449,episode_0078,1326,1328,"A,B","{A,B}","{""A"": 0.9585, ""B"": 0.9874}",W,union:sliding_window:1326:1328|heu_like:heu:1327:1328,Y3
+event_00450,episode_0078,1331,1332,"D,G","{D,G}","{""D"": 0.8799, ""G"": 0.9281}",W,union:heu_like:heu:1331:1332,Y3
+event_00451,episode_0078,1333,1333,"B,G","{B,G}","{""B"": 0.8372, ""G"": 0.973}",W,union:heu_like:heu:1333:1333,Y3
+event_00452,episode_0078,1336,1338,"E,F","{E,F}","{""E"": 0.9286, ""F"": 0.9274}",W,union:sliding_window:1336:1338|heu_like:heu:1336:1336|heu_like:heu:1338:1338,Y3
+event_00453,episode_0078,1337,1337,"C,E,F","{C,E,F}","{""C"": 0.8154, ""E"": 0.9471, ""F"": 0.9465}",W,union:heu_like:heu:1337:1337,Y3
+event_00454,episode_0079,1343,1345,"A,G","{A,G}","{""A"": 0.9227, ""G"": 0.9405}",N,union:sliding_window:1343:1345|heu_like:heu:1343:1343|heu_like:heu:1345:1345,YN
+event_00455,episode_0079,1344,1344,"A,E,G","{A,E,G}","{""A"": 0.944, ""E"": 0.8093, ""G"": 0.944}",N,union:heu_like:heu:1344:1344,YN
+event_00456,episode_0079,1348,1348,"A,B,H","{A,B,H}","{""A"": 0.8724, ""B"": 0.8108, ""H"": 0.8096}",N,union:heu_like:heu:1348:1348,YN
+event_00457,episode_0079,1348,1350,"B,H","{B,H}","{""B"": 0.9765, ""H"": 0.9306}",N,union:sliding_window:1348:1350|heu_like:heu:1349:1350,YN
+event_00458,episode_0079,1353,1355,"A,E","{A,E}","{""A"": 0.9742, ""E"": 0.8968}",N,union:sliding_window:1353:1355|heu_like:heu:1353:1353,YN
+event_00459,episode_0079,1354,1354,"A,E,G","{A,E,G}","{""A"": 0.9714, ""E"": 0.9474, ""G"": 0.8174}",N,union:heu_like:heu:1354:1354,YN
+event_00460,episode_0079,1355,1355,"A,E,F","{A,E,F}","{""A"": 0.9749, ""E"": 0.9705, ""F"": 0.8164}",N,union:heu_like:heu:1355:1355,YN
+event_00461,episode_0080,1360,1362,"A,B","{A,B}","{""A"": 0.94, ""B"": 0.9348}",X,union:sliding_window:1360:1362|heu_like:heu:1360:1360|heu_like:heu:1362:1362,Y1
+event_00462,episode_0080,1361,1361,"A,B,E","{A,B,E}","{""A"": 0.944, ""B"": 0.944, ""E"": 0.8063}",X,union:heu_like:heu:1361:1361,Y1
+event_00463,episode_0080,1365,1367,"B,C","{B,C}","{""B"": 0.9568, ""C"": 0.9447}",X,union:sliding_window:1365:1367|heu_like:heu:1365:1367,Y1
+event_00464,episode_0080,1371,1371,"D,E","{D,E}","{""D"": 0.8169, ""E"": 0.8154}",X,union:heu_like:heu:1371:1371,Y1
+event_00465,episode_0080,1372,1372,"E,F","{E,F}","{""E"": 0.9468, ""F"": 0.8965}",X,union:heu_like:heu:1372:1372,Y1
+event_00466,episode_0081,1377,1377,"A,B,G","{A,B,G}","{""A"": 0.8, ""B"": 0.8, ""G"": 0.8}",W,union:heu_like:heu:1377:1377,Y3
+event_00467,episode_0081,1378,1378,"B,H","{B,H}","{""B"": 0.944, ""H"": 0.8074}",W,union:heu_like:heu:1378:1378,Y3
+event_00468,episode_0081,1379,1379,"A,B","{A,B}","{""A"": 0.8942, ""B"": 0.9699}",W,union:heu_like:heu:1379:1379,Y3
+event_00469,episode_0081,1383,1383,"B,G,H","{B,G,H}","{""B"": 0.8753, ""G"": 0.9496, ""H"": 0.8331}",W,union:heu_like:heu:1383:1383,Y3
+event_00470,episode_0081,1384,1384,"B,G","{B,G}","{""B"": 0.9576, ""G"": 0.9709}",W,union:heu_like:heu:1384:1384,Y3
+event_00471,episode_0081,1387,1389,"E,F","{E,F}","{""E"": 0.9419, ""F"": 0.9422}",W,union:sliding_window:1387:1389|heu_like:heu:1387:1387|heu_like:heu:1389:1389,Y3
+event_00472,episode_0081,1388,1388,"E,F,G","{E,F,G}","{""E"": 0.9464, ""F"": 0.9468, ""G"": 0.8515}",W,union:heu_like:heu:1388:1388,Y3
+event_00473,episode_0082,1394,1396,"A,B","{A,B}","{""A"": 0.9595, ""B"": 0.9442}",Z,union:sliding_window:1394:1396|heu_like:heu:1394:1396,Y2
+event_00474,episode_0082,1399,1399,"B,E","{B,E}","{""B"": 0.8736, ""E"": 0.8955}",Z,union:heu_like:heu:1399:1399,Y2
+event_00475,episode_0082,1400,1400,"B,G","{B,G}","{""B"": 0.9572, ""G"": 0.8088}",Z,union:heu_like:heu:1400:1400,Y2
+event_00476,episode_0082,1401,1401,"B,E","{B,E}","{""B"": 0.9723, ""E"": 0.9044}",Z,union:heu_like:heu:1401:1401,Y2
+event_00477,episode_0082,1404,1406,"E,F","{E,F}","{""E"": 0.9459, ""F"": 0.9356}",Z,union:sliding_window:1404:1406|heu_like:heu:1404:1405,Y2
+event_00478,episode_0082,1406,1406,"B,E,F","{B,E,F}","{""B"": 0.8362, ""E"": 0.9722, ""F"": 0.9704}",Z,union:heu_like:heu:1406:1406,Y2
+event_00479,episode_0083,1411,1411,"B,E","{B,E}","{""B"": 0.8, ""E"": 0.8}",X,union:heu_like:heu:1411:1411,Y1
+event_00480,episode_0083,1412,1412,"B,F","{B,F}","{""B"": 0.944, ""F"": 0.8014}",X,union:heu_like:heu:1412:1412,Y1
+event_00481,episode_0083,1413,1413,"A,B","{A,B}","{""A"": 0.8065, ""B"": 0.9699}",X,union:heu_like:heu:1413:1413,Y1
+event_00482,episode_0083,1416,1418,"B,C","{B,C}","{""B"": 0.9299, ""C"": 0.9381}",X,union:sliding_window:1416:1418|heu_like:heu:1416:1417,Y1
+event_00483,episode_0083,1418,1418,"B,C,D","{B,C,D}","{""B"": 0.9724, ""C"": 0.973, ""D"": 0.8136}",X,union:heu_like:heu:1418:1418,Y1
+event_00484,episode_0083,1422,1422,"E,F","{E,F}","{""E"": 0.8165, ""F"": 0.9467}",X,union:heu_like:heu:1422:1422,Y1
+event_00485,episode_0083,1423,1423,"B,E,F","{B,E,F}","{""B"": 0.8407, ""E"": 0.947, ""F"": 0.9704}",X,union:heu_like:heu:1423:1423,Y1
+event_00486,episode_0084,1428,1430,"A,B","{A,B}","{""A"": 0.9314, ""B"": 0.935}",W,union:sliding_window:1428:1430|heu_like:heu:1428:1429,Y3
+event_00487,episode_0084,1430,1430,"A,B,E","{A,B,E}","{""A"": 0.9699, ""B"": 0.9699, ""E"": 0.8097}",W,union:heu_like:heu:1430:1430,Y3
+event_00488,episode_0084,1431,1431,"A,C,D","{A,C,D}","{""A"": 0.9746, ""C"": 0.8109, ""D"": 0.8125}",W,union:heu_like:heu:1431:1431,Y3
+event_00489,episode_0084,1433,1435,"B,G","{B,G}","{""B"": 0.9544, ""G"": 0.913}",W,union:sliding_window:1433:1435|heu_like:heu:1433:1433,Y3
+event_00490,episode_0084,1434,1434,"B,G,H","{B,G,H}","{""B"": 0.9573, ""G"": 0.9465, ""H"": 0.8136}",W,union:heu_like:heu:1434:1434,Y3
+event_00491,episode_0084,1435,1435,"B,C,G","{B,C,G}","{""B"": 0.9723, ""C"": 0.8445, ""G"": 0.9704}",W,union:heu_like:heu:1435:1435,Y3
+event_00492,episode_0084,1438,1440,"E,F","{E,F}","{""E"": 0.9401, ""F"": 0.9326}",W,union:sliding_window:1438:1440|heu_like:heu:1438:1438|heu_like:heu:1440:1440,Y3
+event_00493,episode_0084,1439,1439,"E,F,G","{E,F,G}","{""E"": 0.9469, ""F"": 0.947, ""G"": 0.852}",W,union:heu_like:heu:1439:1439,Y3
+event_00494,episode_0085,1445,1445,"A,B,F","{A,B,F}","{""A"": 0.8, ""B"": 0.8, ""F"": 0.8}",Z,union:heu_like:heu:1445:1445,Y2
+event_00495,episode_0085,1445,1447,"A,B","{A,B}","{""A"": 0.9835, ""B"": 0.979}",Z,union:sliding_window:1445:1447|heu_like:heu:1446:1447,Y2
+event_00496,episode_0085,1451,1452,"B,E","{B,E}","{""B"": 0.9024, ""E"": 0.9582}",Z,union:heu_like:heu:1451:1452,Y2
+event_00497,episode_0085,1455,1457,"E,F","{E,F}","{""E"": 0.9766, ""F"": 0.9432}",Z,union:sliding_window:1455:1457|heu_like:heu:1455:1457,Y2
+event_00498,episode_0086,1462,1463,"A,B","{A,B}","{""A"": 0.872, ""B"": 0.872}",Z,union:heu_like:heu:1462:1463,Y2
+event_00499,episode_0086,1464,1464,"A,G","{A,G}","{""A"": 0.9699, ""G"": 0.8104}",Z,union:heu_like:heu:1464:1464,Y2
+event_00500,episode_0086,1467,1467,"B,E","{B,E}","{""B"": 0.8538, ""E"": 0.8158}",Z,union:heu_like:heu:1467:1467,Y2
+event_00501,episode_0086,1469,1469,"B,E","{B,E}","{""B"": 0.8994, ""E"": 0.9704}",Z,union:heu_like:heu:1469:1469,Y2
+event_00502,episode_0086,1472,1472,"A,E","{A,E}","{""A"": 0.8171, ""E"": 0.8757}",Z,union:heu_like:heu:1472:1472,Y2
+event_00503,episode_0086,1473,1474,"E,F","{E,F}","{""E"": 0.965, ""F"": 0.8805}",Z,union:heu_like:heu:1473:1474,Y2
+event_00504,episode_0087,1479,1481,"A,B","{A,B}","{""A"": 0.9442, ""B"": 0.9624}",X,union:sliding_window:1479:1481|heu_like:heu:1479:1481,Y1
+event_00505,episode_0087,1484,1486,"B,C","{B,C}","{""B"": 0.9429, ""C"": 0.9552}",X,union:sliding_window:1484:1486|heu_like:heu:1484:1486,Y1
+event_00506,episode_0087,1489,1489,"E,F,H","{E,F,H}","{""E"": 0.8148, ""F"": 0.8142, ""H"": 0.8129}",X,union:heu_like:heu:1489:1489,Y1
+event_00507,episode_0087,1489,1491,"E,F","{E,F}","{""E"": 1.0108, ""F"": 0.9778}",X,union:sliding_window:1489:1491|heu_like:heu:1490:1491,Y1
+event_00508,episode_0088,1496,1498,"A,B","{A,B}","{""A"": 0.9493, ""B"": 0.9759}",W,union:sliding_window:1496:1498|heu_like:heu:1496:1498,Y3
+event_00509,episode_0088,1502,1502,"B,G","{B,G}","{""B"": 0.9575, ""G"": 0.8136}",W,union:heu_like:heu:1502:1502,Y3
+event_00510,episode_0088,1503,1503,"B,E,G","{B,E,G}","{""B"": 0.9723, ""E"": 0.8123, ""G"": 0.9465}",W,union:heu_like:heu:1503:1503,Y3
+event_00511,episode_0088,1506,1508,"E,F","{E,F}","{""E"": 0.957, ""F"": 0.9395}",W,union:sliding_window:1506:1508|heu_like:heu:1506:1507,Y3
+event_00512,episode_0088,1508,1508,"C,E,F","{C,E,F}","{""C"": 0.8152, ""E"": 0.972, ""F"": 0.9704}",W,union:heu_like:heu:1508:1508,Y3
+event_00513,episode_0088,1509,1509,"B,E","{B,E}","{""B"": 0.8277, ""E"": 0.975}",W,union:heu_like:heu:1509:1509,Y3
+event_00514,episode_0089,1513,1514,"A,B","{A,B}","{""A"": 0.872, ""B"": 0.872}",X,union:heu_like:heu:1513:1514,Y1
+event_00515,episode_0089,1518,1520,"B,C","{B,C}","{""B"": 0.9629, ""C"": 0.9441}",X,union:sliding_window:1518:1520|heu_like:heu:1518:1520,Y1
+event_00516,episode_0089,1523,1524,"E,F","{E,F}","{""E"": 0.8812, ""F"": 0.881}",X,union:heu_like:heu:1523:1524,Y1
+event_00517,episode_0090,1530,1532,"A,B","{A,B}","{""A"": 0.938, ""B"": 0.9537}",Z,union:sliding_window:1530:1532|heu_like:heu:1530:1531,Y2
+event_00518,episode_0090,1532,1532,"A,B,E","{A,B,E}","{""A"": 0.9699, ""B"": 0.9699, ""E"": 0.8062}",Z,union:heu_like:heu:1532:1532,Y2
+event_00519,episode_0090,1535,1537,"B,E","{B,E}","{""B"": 0.9463, ""E"": 0.9577}",Z,union:sliding_window:1535:1537|heu_like:heu:1535:1535|heu_like:heu:1537:1537,Y2
+event_00520,episode_0090,1536,1536,"B,C,E","{B,C,E}","{""B"": 0.9571, ""C"": 0.815, ""E"": 0.956}",Z,union:heu_like:heu:1536:1536,Y2
+event_00521,episode_0090,1540,1540,"B,E","{B,E}","{""B"": 0.8755, ""E"": 0.8744}",Z,union:heu_like:heu:1540:1540,Y2
+event_00522,episode_0090,1541,1542,"E,F","{E,F}","{""E"": 0.9649, ""F"": 0.8825}",Z,union:heu_like:heu:1541:1542,Y2
+event_00523,episode_0091,1547,1549,"A,B","{A,B}","{""A"": 0.9455, ""B"": 0.9389}",W,union:sliding_window:1547:1549|heu_like:heu:1547:1549,Y3
+event_00524,episode_0091,1552,1554,"B,G","{B,G}","{""B"": 0.9477, ""G"": 0.9303}",W,union:sliding_window:1552:1554|heu_like:heu:1552:1554,Y3
+event_00525,episode_0091,1558,1559,"E,F","{E,F}","{""E"": 0.8813, ""F"": 0.9585}",W,union:heu_like:heu:1558:1559,Y3
+event_00526,episode_0092,1564,1566,"A,B","{A,B}","{""A"": 0.9393, ""B"": 0.9714}",Z,union:sliding_window:1564:1566|heu_like:heu:1564:1566,Y2
+event_00527,episode_0092,1569,1571,"B,E","{B,E}","{""B"": 0.9722, ""E"": 0.961}",Z,union:sliding_window:1569:1571|heu_like:heu:1569:1571,Y2
+event_00528,episode_0092,1574,1574,"E,F","{E,F}","{""E"": 0.8736, ""F"": 0.8163}",Z,union:heu_like:heu:1574:1574,Y2
+event_00529,episode_0092,1576,1576,"E,F","{E,F}","{""E"": 0.9723, ""F"": 0.8963}",Z,union:heu_like:heu:1576:1576,Y2
+event_00530,episode_0093,1581,1581,"A,B,F","{A,B,F}","{""A"": 0.8, ""B"": 0.8, ""F"": 0.8}",X,union:heu_like:heu:1581:1581,Y1
+event_00531,episode_0093,1581,1583,"A,B","{A,B}","{""A"": 1.0102, ""B"": 0.9884}",X,union:sliding_window:1581:1583|heu_like:heu:1582:1583,Y1
+event_00532,episode_0093,1586,1588,"B,C","{B,C}","{""B"": 0.9902, ""C"": 0.9295}",X,union:sliding_window:1586:1588|heu_like:heu:1586:1587,Y1
+event_00533,episode_0093,1588,1588,"B,C,F","{B,C,F}","{""B"": 0.9752, ""C"": 0.9704, ""F"": 0.8253}",X,union:heu_like:heu:1588:1588,Y1
+event_00534,episode_0093,1591,1593,"E,F","{E,F}","{""E"": 0.9274, ""F"": 0.9482}",X,union:sliding_window:1591:1593|heu_like:heu:1591:1591|heu_like:heu:1593:1593,Y1
+event_00535,episode_0093,1592,1592,"E,F,H","{E,F,H}","{""E"": 0.9466, ""F"": 0.9557, ""H"": 0.8134}",X,union:heu_like:heu:1592:1592,Y1
+event_00536,episode_0094,1598,1600,"A,B","{A,B}","{""A"": 0.9557, ""B"": 0.9963}",W,union:sliding_window:1598:1600|heu_like:heu:1598:1600,Y3
+event_00537,episode_0094,1603,1605,"B,G","{B,G}","{""B"": 0.9569, ""G"": 0.9545}",W,union:sliding_window:1603:1605|heu_like:heu:1603:1604,Y3
+event_00538,episode_0094,1605,1605,"B,C,G","{B,C,G}","{""B"": 0.9724, ""C"": 0.8116, ""G"": 0.9704}",W,union:heu_like:heu:1605:1605,Y3
+event_00539,episode_0094,1608,1610,"E,F","{E,F}","{""E"": 0.9734, ""F"": 0.9711}",W,union:sliding_window:1608:1610|heu_like:heu:1608:1610,Y3
+event_00540,episode_0095,1616,1616,"A,B,E","{A,B,E}","{""A"": 0.8033, ""B"": 0.944, ""E"": 0.8073}",X,union:heu_like:heu:1616:1616,Y1
+event_00541,episode_0095,1618,1618,"B,D","{B,D}","{""B"": 0.9087, ""D"": 0.8099}",X,union:heu_like:heu:1618:1618,Y1
+event_00542,episode_0095,1620,1622,"B,C","{B,C}","{""B"": 0.9736, ""C"": 0.9224}",X,union:sliding_window:1620:1622|heu_like:heu:1620:1620|heu_like:heu:1622:1622,Y1
+event_00543,episode_0095,1621,1621,"B,C,D","{B,C,D}","{""B"": 0.9629, ""C"": 0.9461, ""D"": 0.8631}",X,union:heu_like:heu:1621:1621,Y1
+event_00544,episode_0095,1625,1627,"E,F","{E,F}","{""E"": 0.918, ""F"": 0.9683}",X,union:sliding_window:1625:1627|heu_like:heu:1625:1627,Y1
+event_00545,episode_0096,1632,1634,"A,B","{A,B}","{""A"": 0.8576, ""B"": 0.9031}",Z,union:sliding_window:1632:1634|heu_like:heu:1632:1632,Y2
+event_00546,episode_0096,1633,1633,"A,B,G","{A,B,G}","{""A"": 0.944, ""B"": 0.944, ""G"": 0.8017}",Z,union:heu_like:heu:1633:1633,Y2
+event_00547,episode_0096,1634,1634,"A,B,C","{A,B,C}","{""A"": 0.9699, ""B"": 0.9699, ""C"": 0.8085}",Z,union:heu_like:heu:1634:1634,Y2
+event_00548,episode_0096,1637,1639,"B,E","{B,E}","{""B"": 0.9768, ""E"": 0.9506}",Z,union:sliding_window:1637:1639|heu_like:heu:1637:1639,Y2
+event_00549,episode_0096,1642,1644,"E,F","{E,F}","{""E"": 0.9455, ""F"": 0.9603}",Z,union:sliding_window:1642:1644|heu_like:heu:1642:1642|heu_like:heu:1644:1644,Y2
+event_00550,episode_0096,1643,1643,"B,E,F","{B,E,F}","{""B"": 0.8505, ""E"": 0.9574, ""F"": 0.9607}",Z,union:heu_like:heu:1643:1643,Y2
+event_00551,episode_0097,1650,1651,"A,B","{A,B}","{""A"": 0.875, ""B"": 0.957}",W,union:heu_like:heu:1650:1651,Y3
+event_00552,episode_0097,1654,1656,"B,G","{B,G}","{""B"": 0.9541, ""G"": 0.9023}",W,union:sliding_window:1654:1656|heu_like:heu:1654:1654,Y3
+event_00553,episode_0097,1655,1655,"B,D,G","{B,D,G}","{""B"": 0.9575, ""D"": 0.8149, ""G"": 0.9464}",W,union:heu_like:heu:1655:1655,Y3
+event_00554,episode_0097,1656,1656,"B,F,G","{B,F,G}","{""B"": 0.9724, ""F"": 0.8141, ""G"": 0.9703}",W,union:heu_like:heu:1656:1656,Y3
+event_00555,episode_0097,1659,1661,"E,F","{E,F}","{""E"": 0.9743, ""F"": 0.9724}",W,union:sliding_window:1659:1661|heu_like:heu:1659:1661,Y3
+event_00556,episode_0098,1666,1668,"A,B","{A,B}","{""A"": 0.9334, ""B"": 0.8992}",Z,union:sliding_window:1666:1668|heu_like:heu:1666:1666,Y2
+event_00557,episode_0098,1667,1667,"A,B,C","{A,B,C}","{""A"": 0.944, ""B"": 0.944, ""C"": 0.8072}",Z,union:heu_like:heu:1667:1667,Y2
+event_00558,episode_0098,1668,1668,"A,B,H","{A,B,H}","{""A"": 0.9699, ""B"": 0.9699, ""H"": 0.809}",Z,union:heu_like:heu:1668:1668,Y2
+event_00559,episode_0098,1671,1673,"B,E","{B,E}","{""B"": 0.9747, ""E"": 0.9671}",Z,union:sliding_window:1671:1673|heu_like:heu:1671:1673,Y2
+event_00560,episode_0098,1676,1676,"C,E,F,G","{C,E,F,G}","{""C"": 0.8148, ""E"": 0.9645, ""F"": 0.8251, ""G"": 0.8159}",Z,union:heu_like:heu:1676:1676,Y2
+event_00561,episode_0098,1676,1678,"E,F","{E,F}","{""E"": 0.9763, ""F"": 0.9944}",Z,union:sliding_window:1676:1678,Y2
+event_00562,episode_0098,1677,1677,"A,E,F","{A,E,F}","{""A"": 0.8207, ""E"": 0.9736, ""F"": 0.9485}",Z,union:heu_like:heu:1677:1677,Y2
+event_00563,episode_0098,1678,1678,"E,F,H","{E,F,H}","{""E"": 0.9753, ""F"": 0.9707, ""H"": 0.819}",Z,union:heu_like:heu:1678:1678,Y2
+event_00564,episode_0099,1683,1685,"A,B","{A,B}","{""A"": 0.9351, ""B"": 0.9204}",X,union:sliding_window:1683:1685|heu_like:heu:1683:1683|heu_like:heu:1685:1685,Y1
+event_00565,episode_0099,1684,1684,"A,B,D,E","{A,B,D,E}","{""A"": 0.944, ""B"": 0.944, ""D"": 0.8058, ""E"": 0.8051}",X,union:heu_like:heu:1684:1684,Y1
+event_00566,episode_0099,1688,1690,"B,C","{B,C}","{""B"": 0.9516, ""C"": 0.9463}",X,union:sliding_window:1688:1690|heu_like:heu:1688:1688|heu_like:heu:1690:1690,Y1
+event_00567,episode_0099,1689,1689,"A,B,C,H","{A,B,C,H}","{""A"": 0.8524, ""B"": 0.957, ""C"": 0.9469, ""H"": 0.8181}",X,union:heu_like:heu:1689:1689,Y1
+event_00568,episode_0099,1694,1695,"E,F","{E,F}","{""E"": 0.9588, ""F"": 0.8802}",X,union:heu_like:heu:1694:1695,Y1
+event_00569,episode_0100,1700,1702,"A,B","{A,B}","{""A"": 0.9479, ""B"": 0.9496}",W,union:sliding_window:1700:1702|heu_like:heu:1700:1702,Y3
+event_00570,episode_0100,1706,1706,"B,F,G","{B,F,G}","{""B"": 0.9572, ""F"": 0.8143, ""G"": 0.8096}",W,union:heu_like:heu:1706:1706,Y3
+event_00571,episode_0100,1707,1707,"B,G","{B,G}","{""B"": 0.9723, ""G"": 0.9457}",W,union:heu_like:heu:1707:1707,Y3
+event_00572,episode_0100,1710,1710,"A,E,F,G","{A,E,F,G}","{""A"": 0.8221, ""E"": 0.8168, ""F"": 0.8439, ""G"": 0.8766}",W,union:heu_like:heu:1710:1710,Y3
+event_00573,episode_0100,1710,1712,"E,F","{E,F}","{""E"": 0.9896, ""F"": 1.0065}",W,union:sliding_window:1710:1712|heu_like:heu:1712:1712,Y3
+event_00574,episode_0100,1711,1711,"B,E,F","{B,E,F}","{""B"": 0.8487, ""E"": 0.947, ""F"": 0.9519}",W,union:heu_like:heu:1711:1711,Y3
+event_00575,episode_0101,1717,1719,"A,B","{A,B}","{""A"": 0.9374, ""B"": 0.9273}",Z,union:sliding_window:1717:1719|heu_like:heu:1717:1717|heu_like:heu:1719:1719,Y2
+event_00576,episode_0101,1718,1718,"A,B,F","{A,B,F}","{""A"": 0.944, ""B"": 0.944, ""F"": 0.8065}",Z,union:heu_like:heu:1718:1718,Y2
+event_00577,episode_0101,1722,1724,"B,E","{B,E}","{""B"": 0.9573, ""E"": 0.9284}",Z,union:sliding_window:1722:1724|heu_like:heu:1722:1722|heu_like:heu:1724:1724,Y2
+event_00578,episode_0101,1723,1723,"A,B,C,E","{A,B,C,E}","{""A"": 0.8486, ""B"": 0.9574, ""C"": 0.8145, ""E"": 0.9459}",Z,union:heu_like:heu:1723:1723,Y2
+event_00579,episode_0101,1727,1729,"E,F","{E,F}","{""E"": 0.9555, ""F"": 0.9544}",Z,union:sliding_window:1727:1729|heu_like:heu:1727:1729,Y2
+event_00580,episode_0102,1734,1736,"A,B","{A,B}","{""A"": 0.898, ""B"": 0.9127}",X,union:sliding_window:1734:1736|heu_like:heu:1734:1734,Y1
+event_00581,episode_0102,1735,1735,"A,B,D","{A,B,D}","{""A"": 0.944, ""B"": 0.944, ""D"": 0.8071}",X,union:heu_like:heu:1735:1735,Y1
+event_00582,episode_0102,1736,1736,"A,B,G","{A,B,G}","{""A"": 0.9699, ""B"": 0.9699, ""G"": 0.8084}",X,union:heu_like:heu:1736:1736,Y1
+event_00583,episode_0102,1739,1741,"B,C","{B,C}","{""B"": 0.9773, ""C"": 0.942}",X,union:sliding_window:1739:1741|heu_like:heu:1739:1740,Y1
+event_00584,episode_0102,1741,1741,"B,C,F","{B,C,F}","{""B"": 0.9722, ""C"": 0.9703, ""F"": 0.8133}",X,union:heu_like:heu:1741:1741,Y1
+event_00585,episode_0102,1744,1744,"E,F","{E,F}","{""E"": 0.8121, ""F"": 0.8658}",X,union:heu_like:heu:1744:1744,Y1
+event_00586,episode_0102,1746,1746,"E,F","{E,F}","{""E"": 0.9703, ""F"": 0.9022}",X,union:heu_like:heu:1746:1746,Y1
+event_00587,episode_0103,1752,1752,"A,B,H","{A,B,H}","{""A"": 0.944, ""B"": 0.8059, ""H"": 0.8032}",W,union:heu_like:heu:1752:1752,Y3
+event_00588,episode_0103,1753,1753,"A,B","{A,B}","{""A"": 0.9699, ""B"": 0.9451}",W,union:heu_like:heu:1753:1753,Y3
+event_00589,episode_0103,1756,1758,"B,G","{B,G}","{""B"": 0.9619, ""G"": 0.9346}",W,union:sliding_window:1756:1758|heu_like:heu:1756:1756|heu_like:heu:1758:1758,Y3
+event_00590,episode_0103,1757,1757,"B,F,G","{B,F,G}","{""B"": 0.9573, ""F"": 0.8147, ""G"": 0.9465}",W,union:heu_like:heu:1757:1757,Y3
+event_00591,episode_0103,1762,1763,"E,F","{E,F}","{""E"": 0.8821, ""F"": 0.9619}",W,union:heu_like:heu:1762:1763,Y3
+event_00592,episode_0104,1768,1770,"A,B","{A,B}","{""A"": 0.9655, ""B"": 0.9286}",Z,union:sliding_window:1768:1770|heu_like:heu:1768:1770,Y2
+event_00593,episode_0104,1773,1773,"B,E,H","{B,E,H}","{""B"": 0.8744, ""E"": 0.8171, ""H"": 0.8136}",Z,union:heu_like:heu:1773:1773,Y2
+event_00594,episode_0104,1773,1775,"B,E","{B,E}","{""B"": 0.9901, ""E"": 0.9672}",Z,union:sliding_window:1773:1775|heu_like:heu:1774:1775,Y2
+event_00595,episode_0104,1778,1778,"D,E,F,H","{D,E,F,H}","{""D"": 0.8146, ""E"": 0.9134, ""F"": 0.8283, ""H"": 0.8342}",Z,union:heu_like:heu:1778:1778,Y2
+event_00596,episode_0104,1778,1780,"E,F","{E,F}","{""E"": 0.9967, ""F"": 0.9657}",Z,union:sliding_window:1778:1780|heu_like:heu:1780:1780,Y2
+event_00597,episode_0104,1779,1779,"B,E,F","{B,E,F}","{""B"": 0.906, ""E"": 0.9644, ""F"": 0.9491}",Z,union:heu_like:heu:1779:1779,Y2
+event_00598,episode_0105,1785,1787,"A,B","{A,B}","{""A"": 0.9349, ""B"": 0.9297}",W,union:sliding_window:1785:1787|heu_like:heu:1785:1785|heu_like:heu:1787:1787,Y3
+event_00599,episode_0105,1786,1786,"A,B,H","{A,B,H}","{""A"": 0.944, ""B"": 0.944, ""H"": 0.8064}",W,union:heu_like:heu:1786:1786,Y3
+event_00600,episode_0105,1790,1790,"B,F,G","{B,F,G}","{""B"": 0.8754, ""F"": 0.8143, ""G"": 0.8954}",W,union:heu_like:heu:1790:1790,Y3
+event_00601,episode_0105,1790,1792,"B,G","{B,G}","{""B"": 0.9804, ""G"": 0.9727}",W,union:sliding_window:1790:1792|heu_like:heu:1791:1791,Y3
+event_00602,episode_0105,1792,1792,"A,B,G","{A,B,G}","{""A"": 0.8371, ""B"": 0.9724, ""G"": 0.973}",W,union:heu_like:heu:1792:1792,Y3
+event_00603,episode_0105,1795,1795,"E,F,H","{E,F,H}","{""E"": 0.8129, ""F"": 0.8358, ""H"": 0.8115}",W,union:heu_like:heu:1795:1795,Y3
+event_00604,episode_0105,1795,1797,"E,F","{E,F}","{""E"": 0.9578, ""F"": 0.9706}",W,union:sliding_window:1795:1797|heu_like:heu:1796:1797,Y3
+event_00605,episode_0106,1802,1804,"A,B","{A,B}","{""A"": 0.9355, ""B"": 0.9329}",X,union:sliding_window:1802:1804|heu_like:heu:1802:1804,Y1
+event_00606,episode_0106,1806,1806,"C,F","{C,F}","{""C"": 0.8154, ""F"": 0.8129}",X,union:heu_like:heu:1806:1806,Y1
+event_00607,episode_0106,1807,1807,"B,C,D","{B,C,D}","{""B"": 0.8739, ""C"": 0.9468, ""D"": 0.8163}",X,union:heu_like:heu:1807:1807,Y1
+event_00608,episode_0106,1807,1809,"B,C","{B,C}","{""B"": 0.9871, ""C"": 0.9849}",X,union:sliding_window:1807:1809|heu_like:heu:1808:1809,Y1
+event_00609,episode_0106,1812,1814,"E,F","{E,F}","{""E"": 0.9942, ""F"": 0.9468}",X,union:sliding_window:1812:1814|heu_like:heu:1812:1814,Y1
+event_00610,episode_0107,1819,1821,"A,B","{A,B}","{""A"": 0.9404, ""B"": 0.9535}",X,union:sliding_window:1819:1821|heu_like:heu:1819:1821,Y1
+event_00611,episode_0107,1822,1822,"C,H","{C,H}","{""C"": 0.8111, ""H"": 0.8119}",X,union:heu_like:heu:1822:1822,Y1
+event_00612,episode_0107,1824,1826,"B,C","{B,C}","{""B"": 0.9601, ""C"": 0.9574}",X,union:sliding_window:1824:1826|heu_like:heu:1824:1826,Y1
+event_00613,episode_0107,1829,1831,"E,F","{E,F}","{""E"": 0.9261, ""F"": 0.9452}",X,union:sliding_window:1829:1831|heu_like:heu:1829:1830,Y1
+event_00614,episode_0107,1831,1831,"D,E,F","{D,E,F}","{""D"": 0.8157, ""E"": 0.9704, ""F"": 0.9704}",X,union:heu_like:heu:1831:1831,Y1
+event_00615,episode_0108,1836,1836,"A,B,D","{A,B,D}","{""A"": 0.8, ""B"": 0.8, ""D"": 0.8}",W,union:heu_like:heu:1836:1836,Y3
+event_00616,episode_0108,1836,1838,"A,B","{A,B}","{""A"": 0.9673, ""B"": 0.9735}",W,union:sliding_window:1836:1838|heu_like:heu:1837:1838,Y3
+event_00617,episode_0108,1841,1841,"B,G","{B,G}","{""B"": 0.8762, ""G"": 0.8115}",W,union:heu_like:heu:1841:1841,Y3
+event_00618,episode_0108,1843,1843,"B,G","{B,G}","{""B"": 0.9, ""G"": 0.9703}",W,union:heu_like:heu:1843:1843,Y3
+event_00619,episode_0108,1846,1846,"D,E,F","{D,E,F}","{""D"": 0.8184, ""E"": 0.8127, ""F"": 0.8141}",W,union:heu_like:heu:1846:1846,Y3
+event_00620,episode_0108,1846,1848,"E,F","{E,F}","{""E"": 0.9873, ""F"": 0.9571}",W,union:sliding_window:1846:1848|heu_like:heu:1847:1848,Y3
+event_00621,episode_0109,1853,1855,"A,B","{A,B}","{""A"": 0.9303, ""B"": 0.9473}",Z,union:sliding_window:1853:1855|heu_like:heu:1853:1855,Y2
+event_00622,episode_0109,1856,1856,"C,F","{C,F}","{""C"": 0.8114, ""F"": 0.8119}",Z,union:heu_like:heu:1856:1856,Y2
+event_00623,episode_0109,1858,1860,"B,E","{B,E}","{""B"": 0.9611, ""E"": 0.9237}",Z,union:sliding_window:1858:1860|heu_like:heu:1858:1858|heu_like:heu:1860:1860,Y2
+event_00624,episode_0109,1859,1859,"B,E,F","{B,E,F}","{""B"": 0.9569, ""E"": 0.9461, ""F"": 0.8642}",Z,union:heu_like:heu:1859:1859,Y2
+event_00625,episode_0109,1863,1865,"E,F","{E,F}","{""E"": 0.9469, ""F"": 0.9416}",Z,union:sliding_window:1863:1865|heu_like:heu:1863:1863|heu_like:heu:1865:1865,Y2
+event_00626,episode_0109,1864,1864,"E,F,H","{E,F,H}","{""E"": 0.9574, ""F"": 0.9522, ""H"": 0.8116}",Z,union:heu_like:heu:1864:1864,Y2
+event_00627,episode_0110,1870,1872,"A,B","{A,B}","{""A"": 0.924, ""B"": 0.9493}",Z,union:sliding_window:1870:1872|heu_like:heu:1870:1871,Y2
+event_00628,episode_0110,1872,1872,"A,B,F","{A,B,F}","{""A"": 0.9699, ""B"": 0.9699, ""F"": 0.8072}",Z,union:heu_like:heu:1872:1872,Y2
+event_00629,episode_0110,1875,1877,"B,E","{B,E}","{""B"": 0.9831, ""E"": 0.9589}",Z,union:sliding_window:1875:1877|heu_like:heu:1875:1877,Y2
+event_00630,episode_0110,1880,1881,"E,F","{E,F}","{""E"": 0.9164, ""F"": 0.8832}",Z,union:heu_like:heu:1880:1881,Y2
+event_00631,episode_0110,1882,1882,"A,F","{A,F}","{""A"": 0.8162, ""F"": 0.9705}",Z,union:heu_like:heu:1882:1882,Y2
+event_00632,episode_0111,1887,1887,"A,B,E","{A,B,E}","{""A"": 0.8, ""B"": 0.8, ""E"": 0.8}",W,union:heu_like:heu:1887:1887,Y3
+event_00633,episode_0111,1889,1889,"A,B","{A,B}","{""A"": 0.9699, ""B"": 0.8931}",W,union:heu_like:heu:1889:1889,Y3
+event_00634,episode_0111,1892,1892,"B,G,H","{B,G,H}","{""B"": 0.8702, ""G"": 0.8134, ""H"": 0.9464}",W,union:heu_like:heu:1892:1892,Y3
+event_00635,episode_0111,1892,1894,"B,G","{B,G}","{""B"": 0.9827, ""G"": 0.9968}",W,union:sliding_window:1892:1894|heu_like:heu:1893:1894,Y3
+event_00636,episode_0111,1897,1897,"E,F,G","{E,F,G}","{""E"": 0.8948, ""F"": 0.8171, ""G"": 0.8746}",W,union:heu_like:heu:1897:1897,Y3
+event_00637,episode_0111,1897,1899,"E,F","{E,F}","{""E"": 1.0237, ""F"": 1.0426}",W,union:sliding_window:1897:1899,Y3
+event_00638,episode_0111,1898,1898,"D,E,F","{D,E,F}","{""D"": 0.815, ""E"": 0.9611, ""F"": 0.9471}",W,union:heu_like:heu:1898:1898,Y3
+event_00639,episode_0111,1899,1899,"B,E,F","{B,E,F}","{""B"": 0.8349, ""E"": 0.973, ""F"": 0.9705}",W,union:heu_like:heu:1899:1899,Y3
+event_00640,episode_0112,1904,1904,"A,B,H","{A,B,H}","{""A"": 0.8, ""B"": 0.8, ""H"": 0.8}",X,union:heu_like:heu:1904:1904,Y1
+event_00641,episode_0112,1904,1906,"A,B","{A,B}","{""A"": 0.9865, ""B"": 0.9834}",X,union:sliding_window:1904:1906|heu_like:heu:1905:1906,Y1
+event_00642,episode_0112,1909,1909,"B,C,F","{B,C,F}","{""B"": 0.8715, ""C"": 0.9465, ""F"": 0.8153}",X,union:heu_like:heu:1909:1909,Y1
+event_00643,episode_0112,1909,1911,"B,C","{B,C}","{""B"": 0.9794, ""C"": 0.9814}",X,union:sliding_window:1909:1911|heu_like:heu:1911:1911,Y1
+event_00644,episode_0112,1910,1910,"B,C,E","{B,C,E}","{""B"": 0.9569, ""C"": 0.9704, ""E"": 0.8124}",X,union:heu_like:heu:1910:1910,Y1
+event_00645,episode_0112,1914,1916,"E,F","{E,F}","{""E"": 0.9293, ""F"": 0.9607}",X,union:sliding_window:1914:1916|heu_like:heu:1914:1916,Y1
+event_00646,episode_0112,1918,1918,"A,H","{A,H}","{""A"": 0.8145, ""H"": 0.8153}",X,union:heu_like:heu:1918:1918,Y1
+event_00647,episode_0113,1922,1923,"A,B","{A,B}","{""A"": 0.8766, ""B"": 0.957}",Z,union:heu_like:heu:1922:1923,Y2
+event_00648,episode_0113,1925,1925,"C,H","{C,H}","{""C"": 0.8164, ""H"": 0.8102}",Z,union:heu_like:heu:1925:1925,Y2
+event_00649,episode_0113,1927,1927,"B,E","{B,E}","{""B"": 0.9577, ""E"": 0.8146}",Z,union:heu_like:heu:1927:1927,Y2
+event_00650,episode_0113,1928,1928,"B,E,F","{B,E,F}","{""B"": 0.9724, ""E"": 0.9466, ""F"": 0.8092}",Z,union:heu_like:heu:1928:1928,Y2
+event_00651,episode_0113,1931,1931,"E,F,H","{E,F,H}","{""E"": 0.8756, ""F"": 0.8642, ""H"": 0.8279}",Z,union:heu_like:heu:1931:1931,Y2
+event_00652,episode_0113,1931,1933,"E,F","{E,F}","{""E"": 1.0036, ""F"": 0.9659}",Z,union:sliding_window:1931:1933|heu_like:heu:1932:1933,Y2
+event_00653,episode_0114,1938,1940,"A,B","{A,B}","{""A"": 0.9256, ""B"": 0.941}",X,union:sliding_window:1938:1940|heu_like:heu:1938:1939,Y1
+event_00654,episode_0114,1940,1940,"A,B,G","{A,B,G}","{""A"": 0.9699, ""B"": 0.9699, ""G"": 0.8079}",X,union:heu_like:heu:1940:1940,Y1
+event_00655,episode_0114,1943,1943,"B,C,H","{B,C,H}","{""B"": 0.8756, ""C"": 0.817, ""H"": 0.8144}",X,union:heu_like:heu:1943:1943,Y1
+event_00656,episode_0114,1943,1945,"B,C","{B,C}","{""B"": 0.9479, ""C"": 0.9807}",X,union:sliding_window:1943:1945|heu_like:heu:1944:1945,Y1
+event_00657,episode_0114,1948,1948,"E,F,G","{E,F,G}","{""E"": 0.8156, ""F"": 0.8144, ""G"": 0.8214}",X,union:heu_like:heu:1948:1948,Y1
+event_00658,episode_0114,1948,1950,"E,F","{E,F}","{""E"": 0.9817, ""F"": 0.9965}",X,union:sliding_window:1948:1950|heu_like:heu:1950:1950,Y1
+event_00659,episode_0114,1949,1949,"A,E,F","{A,E,F}","{""A"": 0.8213, ""E"": 0.9468, ""F"": 0.9466}",X,union:heu_like:heu:1949:1949,Y1
+event_00660,episode_0115,1955,1957,"A,B","{A,B}","{""A"": 0.9097, ""B"": 0.8955}",W,union:sliding_window:1955:1957|heu_like:heu:1955:1955,Y3
+event_00661,episode_0115,1956,1956,"A,B,C","{A,B,C}","{""A"": 0.944, ""B"": 0.944, ""C"": 0.807}",W,union:heu_like:heu:1956:1956,Y3
+event_00662,episode_0115,1957,1957,"A,B,E","{A,B,E}","{""A"": 0.9699, ""B"": 0.9699, ""E"": 0.8109}",W,union:heu_like:heu:1957:1957,Y3
+event_00663,episode_0115,1960,1962,"B,G","{B,G}","{""B"": 0.9637, ""G"": 0.9522}",W,union:sliding_window:1960:1962|heu_like:heu:1960:1962,Y3
+event_00664,episode_0115,1963,1963,"A,H","{A,H}","{""A"": 0.8278, ""H"": 0.815}",W,union:heu_like:heu:1963:1963,Y3
+event_00665,episode_0115,1965,1967,"E,F","{E,F}","{""E"": 0.9301, ""F"": 0.9373}",W,union:sliding_window:1965:1967|heu_like:heu:1965:1965|heu_like:heu:1967:1967,Y3
+event_00666,episode_0115,1966,1966,"E,F,G","{E,F,G}","{""E"": 0.9473, ""F"": 0.9463, ""G"": 0.8523}",W,union:heu_like:heu:1966:1966,Y3
+event_00667,episode_0116,1972,1972,"A,B,C","{A,B,C}","{""A"": 0.8, ""B"": 0.8, ""C"": 0.8}",W,union:heu_like:heu:1972:1972,Y3
+event_00668,episode_0116,1973,1973,"A,B","{A,B}","{""A"": 0.944, ""B"": 0.944}",W,union:heu_like:heu:1973:1973,Y3
+event_00669,episode_0116,1974,1974,"B,D","{B,D}","{""B"": 0.9699, ""D"": 0.8066}",W,union:heu_like:heu:1974:1974,Y3
+event_00670,episode_0116,1977,1977,"B,G","{B,G}","{""B"": 0.8776, ""G"": 0.81}",W,union:heu_like:heu:1977:1977,Y3
+event_00671,episode_0116,1979,1979,"B,G","{B,G}","{""B"": 0.9724, ""G"": 0.8932}",W,union:heu_like:heu:1979:1979,Y3
+event_00672,episode_0116,1982,1984,"E,F","{E,F}","{""E"": 0.9687, ""F"": 1.0042}",W,union:sliding_window:1982:1984|heu_like:heu:1982:1984,Y3
+event_00673,episode_0117,1989,1991,"A,B","{A,B}","{""A"": 0.943, ""B"": 0.9505}",X,union:sliding_window:1989:1991|heu_like:heu:1989:1991,Y1
+event_00674,episode_0117,1994,1996,"B,C","{B,C}","{""B"": 0.958, ""C"": 0.9295}",X,union:sliding_window:1994:1996|heu_like:heu:1994:1995,Y1
+event_00675,episode_0117,1996,1996,"B,C,D","{B,C,D}","{""B"": 0.9724, ""C"": 0.9703, ""D"": 0.8179}",X,union:heu_like:heu:1996:1996,Y1
+event_00676,episode_0117,1999,2001,"E,F","{E,F}","{""E"": 0.944, ""F"": 0.9355}",X,union:sliding_window:1999:2001|heu_like:heu:1999:1999|heu_like:heu:2001:2001,Y1
+event_00677,episode_0117,2000,2000,"D,E,F","{D,E,F}","{""D"": 0.8429, ""E"": 0.9459, ""F"": 0.9471}",X,union:heu_like:heu:2000:2000,Y1
+event_00678,episode_0118,2006,2008,"A,B","{A,B}","{""A"": 0.9361, ""B"": 0.9582}",Z,union:sliding_window:2006:2008|heu_like:heu:2006:2008,Y2
+event_00679,episode_0118,2011,2013,"B,E","{B,E}","{""B"": 0.975, ""E"": 0.9322}",Z,union:sliding_window:2011:2013|heu_like:heu:2011:2012,Y2
+event_00680,episode_0118,2013,2013,"A,B,E,F","{A,B,E,F}","{""A"": 0.8384, ""B"": 0.9723, ""E"": 0.9704, ""F"": 0.8129}",Z,union:heu_like:heu:2013:2013,Y2
+event_00681,episode_0118,2016,2016,"E,F,H","{E,F,H}","{""E"": 0.8777, ""F"": 0.9095, ""H"": 0.8112}",Z,union:heu_like:heu:2016:2016,Y2
+event_00682,episode_0118,2016,2018,"E,F","{E,F}","{""E"": 0.9739, ""F"": 0.9757}",Z,union:sliding_window:2016:2018|heu_like:heu:2017:2017,Y2
+event_00683,episode_0118,2018,2018,"D,E,F","{D,E,F}","{""D"": 0.8161, ""E"": 0.9724, ""F"": 0.9735}",Z,union:heu_like:heu:2018:2018,Y2
+event_00684,episode_0119,2023,2025,"A,B","{A,B}","{""A"": 0.9516, ""B"": 0.9645}",W,union:sliding_window:2023:2025|heu_like:heu:2023:2025,Y3
+event_00685,episode_0119,2028,2030,"B,G","{B,G}","{""B"": 0.968, ""G"": 0.9641}",W,union:sliding_window:2028:2030|heu_like:heu:2028:2030,Y3
+event_00686,episode_0119,2033,2035,"E,F","{E,F}","{""E"": 0.9351, ""F"": 0.9457}",W,union:sliding_window:2033:2035|heu_like:heu:2033:2033|heu_like:heu:2035:2035,Y3
+event_00687,episode_0119,2034,2034,"D,E,F","{D,E,F}","{""D"": 0.8126, ""E"": 0.9462, ""F"": 0.9467}",W,union:heu_like:heu:2034:2034,Y3
+event_00688,episode_0120,2040,2040,"A,B,D","{A,B,D}","{""A"": 0.8, ""B"": 0.8, ""D"": 0.8}",X,union:heu_like:heu:2040:2040,Y1
+event_00689,episode_0120,2040,2042,"A,B","{A,B}","{""A"": 0.9799, ""B"": 0.9859}",X,union:sliding_window:2040:2042|heu_like:heu:2041:2041,Y1
+event_00690,episode_0120,2042,2042,"A,B,C","{A,B,C}","{""A"": 0.9699, ""B"": 0.9699, ""C"": 0.8087}",X,union:heu_like:heu:2042:2042,Y1
+event_00691,episode_0120,2045,2047,"B,C","{B,C}","{""B"": 0.9513, ""C"": 0.9448}",X,union:sliding_window:2045:2047|heu_like:heu:2045:2045|heu_like:heu:2047:2047,Y1
+event_00692,episode_0120,2046,2046,"B,C,E,H","{B,C,E,H}","{""B"": 0.9575, ""C"": 0.9551, ""E"": 0.8142, ""H"": 0.812}",X,union:heu_like:heu:2046:2046,Y1
+event_00693,episode_0120,2050,2050,"E,F,H","{E,F,H}","{""E"": 0.8479, ""F"": 0.823, ""H"": 0.8419}",X,union:heu_like:heu:2050:2050,Y1
+event_00694,episode_0120,2052,2052,"E,F","{E,F}","{""E"": 0.8994, ""F"": 0.9707}",X,union:heu_like:heu:2052:2052,Y1
+event_00695,episode_0121,2057,2058,"A,B","{A,B}","{""A"": 0.872, ""B"": 0.872}",Z,union:heu_like:heu:2057:2058,Y2
+event_00696,episode_0121,2059,2059,"A,F","{A,F}","{""A"": 0.9699, ""F"": 0.8148}",Z,union:heu_like:heu:2059:2059,Y2
+event_00697,episode_0121,2062,2064,"B,E","{B,E}","{""B"": 0.9227, ""E"": 0.954}",Z,union:sliding_window:2062:2064|heu_like:heu:2062:2063,Y2
+event_00698,episode_0121,2064,2064,"A,B,E","{A,B,E}","{""A"": 0.8344, ""B"": 0.9715, ""E"": 0.9703}",Z,union:heu_like:heu:2064:2064,Y2
+event_00699,episode_0121,2067,2069,"E,F","{E,F}","{""E"": 0.9382, ""F"": 0.9283}",Z,union:sliding_window:2067:2069|heu_like:heu:2067:2067|heu_like:heu:2069:2069,Y2
+event_00700,episode_0121,2068,2068,"B,E,F","{B,E,F}","{""B"": 0.875, ""E"": 0.9574, ""F"": 0.9479}",Z,union:heu_like:heu:2068:2068,Y2
+event_00701,episode_0122,2074,2075,"A,B","{A,B}","{""A"": 0.872, ""B"": 0.872}",W,union:heu_like:heu:2074:2075,Y3
+event_00702,episode_0122,2079,2081,"B,G","{B,G}","{""B"": 0.9613, ""G"": 0.9612}",W,union:sliding_window:2079:2081|heu_like:heu:2079:2081,Y3
+event_00703,episode_0122,2084,2084,"E,F,G","{E,F,G}","{""E"": 0.8145, ""F"": 0.8139, ""G"": 0.8758}",W,union:heu_like:heu:2084:2084,Y3
+event_00704,episode_0122,2084,2086,"E,F","{E,F}","{""E"": 0.9828, ""F"": 0.9838}",W,union:sliding_window:2084:2086|heu_like:heu:2085:2086,Y3
+event_00705,episode_0123,2091,2091,"A,B","{A,B}","{""A"": 0.8, ""B"": 0.8}",X,union:heu_like:heu:2091:2091,Y1
+event_00706,episode_0123,2093,2093,"A,B","{A,B}","{""A"": 0.9699, ""B"": 0.8929}",X,union:heu_like:heu:2093:2093,Y1
+event_00707,episode_0123,2094,2094,"A,E","{A,E}","{""A"": 0.9746, ""E"": 0.8122}",X,union:heu_like:heu:2094:2094,Y1
+event_00708,episode_0123,2096,2098,"B,C","{B,C}","{""B"": 0.9567, ""C"": 0.9544}",X,union:sliding_window:2096:2098|heu_like:heu:2096:2098,Y1
+event_00709,episode_0123,2101,2101,"E,F","{E,F}","{""E"": 0.8194, ""F"": 0.8128}",X,union:heu_like:heu:2101:2101,Y1
+event_00710,episode_0123,2103,2103,"E,F","{E,F}","{""E"": 0.895, ""F"": 0.9703}",X,union:heu_like:heu:2103:2103,Y1
+event_00711,episode_0124,2108,2108,"A,B,H","{A,B,H}","{""A"": 0.8, ""B"": 0.8, ""H"": 0.8}",Z,union:heu_like:heu:2108:2108,Y2
+event_00712,episode_0124,2108,2110,"A,B","{A,B}","{""A"": 0.9903, ""B"": 0.9716}",Z,union:sliding_window:2108:2110|heu_like:heu:2109:2110,Y2
+event_00713,episode_0124,2114,2115,"B,E","{B,E}","{""B"": 0.9012, ""E"": 0.9585}",Z,union:heu_like:heu:2114:2115,Y2
+event_00714,episode_0124,2118,2120,"E,F","{E,F}","{""E"": 0.9659, ""F"": 0.9302}",Z,union:sliding_window:2118:2120|heu_like:heu:2118:2118|heu_like:heu:2120:2120,Y2
+event_00715,episode_0124,2119,2119,"D,E,F","{D,E,F}","{""D"": 0.8125, ""E"": 0.958, ""F"": 0.9467}",Z,union:heu_like:heu:2119:2119,Y2
+event_00716,episode_0125,2126,2126,"A,B,C","{A,B,C}","{""A"": 0.944, ""B"": 0.806, ""C"": 0.809}",W,union:heu_like:heu:2126:2126,Y3
+event_00717,episode_0125,2127,2127,"A,B","{A,B}","{""A"": 0.9699, ""B"": 0.9451}",W,union:heu_like:heu:2127:2127,Y3
+event_00718,episode_0125,2130,2132,"B,G","{B,G}","{""B"": 0.9486, ""G"": 0.9462}",W,union:sliding_window:2130:2132|heu_like:heu:2130:2131,Y3
+event_00719,episode_0125,2132,2132,"B,F,G","{B,F,G}","{""B"": 0.9722, ""F"": 0.8132, ""G"": 0.9704}",W,union:heu_like:heu:2132:2132,Y3
+event_00720,episode_0125,2135,2137,"E,F","{E,F}","{""E"": 0.9317, ""F"": 1.0042}",W,union:sliding_window:2135:2137|heu_like:heu:2135:2137,Y3
+event_00721,episode_0126,2142,2142,"A,B,E","{A,B,E}","{""A"": 0.8, ""B"": 0.8, ""E"": 0.8}",Z,union:heu_like:heu:2142:2142,Y2
+event_00722,episode_0126,2142,2144,"A,B","{A,B}","{""A"": 0.9903, ""B"": 0.9588}",Z,union:sliding_window:2142:2144|heu_like:heu:2144:2144,Y2
+event_00723,episode_0126,2143,2143,"A,B,H","{A,B,H}","{""A"": 0.944, ""B"": 0.944, ""H"": 0.81}",Z,union:heu_like:heu:2143:2143,Y2
+event_00724,episode_0126,2147,2147,"B,E","{B,E}","{""B"": 0.8775, ""E"": 0.8353}",Z,union:heu_like:heu:2147:2147,Y2
+event_00725,episode_0126,2149,2149,"A,B,D,E","{A,B,D,E}","{""A"": 0.834, ""B"": 0.9029, ""D"": 0.8152, ""E"": 0.9711}",Z,union:heu_like:heu:2149:2149,Y2
+event_00726,episode_0126,2152,2154,"E,F","{E,F}","{""E"": 0.9529, ""F"": 0.9706}",Z,union:sliding_window:2152:2154|heu_like:heu:2152:2153,Y2
+event_00727,episode_0126,2154,2154,"B,E,F","{B,E,F}","{""B"": 0.836, ""E"": 0.9724, ""F"": 0.973}",Z,union:heu_like:heu:2154:2154,Y2
+event_00728,episode_0127,2159,2161,"A,B","{A,B}","{""A"": 0.9673, ""B"": 0.9788}",X,union:sliding_window:2159:2161|heu_like:heu:2159:2161,Y1
+event_00729,episode_0127,2164,2166,"B,C","{B,C}","{""B"": 0.9761, ""C"": 0.9489}",X,union:sliding_window:2164:2166|heu_like:heu:2164:2166,Y1
+event_00730,episode_0127,2169,2171,"E,F","{E,F}","{""E"": 0.9912, ""F"": 0.9345}",X,union:sliding_window:2169:2171|heu_like:heu:2169:2170,Y1
+event_00731,episode_0127,2171,2171,"C,E,F","{C,E,F}","{""C"": 0.8371, ""E"": 0.9747, ""F"": 0.9704}",X,union:heu_like:heu:2171:2171,Y1
+event_00732,episode_0127,2172,2172,"A,D","{A,D}","{""A"": 0.8151, ""D"": 0.813}",X,union:heu_like:heu:2172:2172,Y1
+event_00733,episode_0127,2173,2173,"C,D","{C,D}","{""C"": 0.8979, ""D"": 0.9463}",X,union:heu_like:heu:2173:2173,Y1
+event_00734,episode_0128,2176,2178,"A,B","{A,B}","{""A"": 0.9363, ""B"": 0.9296}",Z,union:sliding_window:2176:2178|heu_like:heu:2176:2176|heu_like:heu:2178:2178,Y2
+event_00735,episode_0128,2177,2177,"A,B,D","{A,B,D}","{""A"": 0.944, ""B"": 0.944, ""D"": 0.8059}",Z,union:heu_like:heu:2177:2177,Y2
+event_00736,episode_0128,2181,2183,"B,E","{B,E}","{""B"": 0.9706, ""E"": 0.9388}",Z,union:sliding_window:2181:2183|heu_like:heu:2181:2183,Y2
+event_00737,episode_0128,2186,2186,"E,F","{E,F}","{""E"": 0.8757, ""F"": 0.8158}",Z,union:heu_like:heu:2186:2186,Y2
+event_00738,episode_0128,2188,2188,"E,F","{E,F}","{""E"": 0.9033, ""F"": 0.9704}",Z,union:heu_like:heu:2188:2188,Y2
+event_00739,episode_0129,2193,2195,"A,B","{A,B}","{""A"": 0.9068, ""B"": 0.9066}",W,union:sliding_window:2193:2195|heu_like:heu:2193:2194,Y3
+event_00740,episode_0129,2195,2195,"A,B,D,G,H","{A,B,D,G,H}","{""A"": 0.9699, ""B"": 0.9699, ""D"": 0.8077, ""G"": 0.806, ""H"": 0.8116}",W,union:heu_like:heu:2195:2195,Y3
+event_00741,episode_0129,2198,2200,"B,G","{B,G}","{""B"": 0.9802, ""G"": 0.9693}",W,union:sliding_window:2198:2200|heu_like:heu:2198:2200,Y3
+event_00742,episode_0129,2201,2201,"E,G","{E,G}","{""E"": 0.8119, ""G"": 0.975}",W,union:heu_like:heu:2201:2201,Y3
+event_00743,episode_0129,2203,2205,"E,F","{E,F}","{""E"": 0.9722, ""F"": 0.941}",W,union:sliding_window:2203:2205|heu_like:heu:2203:2203|heu_like:heu:2205:2205,Y3
+event_00744,episode_0129,2204,2204,"E,F,G","{E,F,G}","{""E"": 0.9611, ""F"": 0.9467, ""G"": 0.8765}",W,union:heu_like:heu:2204:2204,Y3
+event_00745,episode_0130,2210,2212,"A,B","{A,B}","{""A"": 0.9356, ""B"": 0.9463}",X,union:sliding_window:2210:2212|heu_like:heu:2210:2212,Y1
+event_00746,episode_0130,2215,2217,"B,C","{B,C}","{""B"": 0.965, ""C"": 0.9561}",X,union:sliding_window:2215:2217|heu_like:heu:2215:2217,Y1
+event_00747,episode_0130,2220,2222,"E,F","{E,F}","{""E"": 0.9476, ""F"": 0.9133}",X,union:sliding_window:2220:2222|heu_like:heu:2220:2221,Y1
+event_00748,episode_0130,2222,2222,"D,E,F","{D,E,F}","{""D"": 0.8143, ""E"": 0.9704, ""F"": 0.9704}",X,union:heu_like:heu:2222:2222,Y1
+event_00749,episode_0131,2227,2227,"A,B,C","{A,B,C}","{""A"": 0.8, ""B"": 0.8, ""C"": 0.8}",Z,union:heu_like:heu:2227:2227,Y2
+event_00750,episode_0131,2229,2229,"A,B","{A,B}","{""A"": 0.8944, ""B"": 0.9699}",Z,union:heu_like:heu:2229:2229,Y2
+event_00751,episode_0131,2232,2234,"B,E","{B,E}","{""B"": 0.9465, ""E"": 0.9546}",Z,union:sliding_window:2232:2234|heu_like:heu:2232:2233,Y2
+event_00752,episode_0131,2234,2234,"B,C,E","{B,C,E}","{""B"": 0.9723, ""C"": 0.8209, ""E"": 0.9704}",Z,union:heu_like:heu:2234:2234,Y2
+event_00753,episode_0131,2238,2238,"A,B,E,F","{A,B,E,F}","{""A"": 0.8184, ""B"": 0.9072, ""E"": 0.8486, ""F"": 0.9463}",Z,union:heu_like:heu:2238:2238,Y2
+event_00754,episode_0131,2239,2239,"E,F","{E,F}","{""E"": 0.9527, ""F"": 0.9703}",Z,union:heu_like:heu:2239:2239,Y2
+event_00755,episode_0132,2244,2244,"A,B,C","{A,B,C}","{""A"": 0.8, ""B"": 0.8, ""C"": 0.8}",X,union:heu_like:heu:2244:2244,Y1
+event_00756,episode_0132,2244,2246,"A,B","{A,B}","{""A"": 0.9957, ""B"": 0.9944}",X,union:sliding_window:2244:2246|heu_like:heu:2246:2246,Y1
+event_00757,episode_0132,2245,2245,"A,B,F","{A,B,F}","{""A"": 0.944, ""B"": 0.944, ""F"": 0.8074}",X,union:heu_like:heu:2245:2245,Y1
+event_00758,episode_0132,2249,2251,"B,C","{B,C}","{""B"": 0.9557, ""C"": 0.9268}",X,union:sliding_window:2249:2251|heu_like:heu:2249:2250,Y1
+event_00759,episode_0132,2251,2251,"B,C,H","{B,C,H}","{""B"": 0.9724, ""C"": 0.971, ""H"": 0.8121}",X,union:heu_like:heu:2251:2251,Y1
+event_00760,episode_0132,2253,2253,"A,B","{A,B}","{""A"": 0.8253, ""B"": 0.9126}",X,union:heu_like:heu:2253:2253,Y1
+event_00761,episode_0132,2254,2256,"E,F","{E,F}","{""E"": 0.9738, ""F"": 0.9722}",X,union:sliding_window:2254:2256|heu_like:heu:2254:2256,Y1
+event_00762,episode_0132,2257,2257,"D,E","{D,E}","{""D"": 0.812, ""E"": 0.9747}",X,union:heu_like:heu:2257:2257,Y1
+event_00763,episode_0133,2261,2263,"A,B","{A,B}","{""A"": 0.9479, ""B"": 0.9114}",W,union:sliding_window:2261:2263|heu_like:heu:2261:2262,Y3
+event_00764,episode_0133,2263,2263,"A,B,H","{A,B,H}","{""A"": 0.9699, ""B"": 0.9699, ""H"": 0.8105}",W,union:heu_like:heu:2263:2263,Y3
+event_00765,episode_0133,2266,2268,"B,G","{B,G}","{""B"": 0.979, ""G"": 0.9415}",W,union:sliding_window:2266:2268|heu_like:heu:2266:2268,Y3
+event_00766,episode_0133,2269,2269,"A,F","{A,F}","{""A"": 0.8287, ""F"": 0.817}",W,union:heu_like:heu:2269:2269,Y3
+event_00767,episode_0133,2271,2271,"A,E,F","{A,E,F}","{""A"": 0.8972, ""E"": 0.8098, ""F"": 0.8942}",W,union:heu_like:heu:2271:2271,Y3
+event_00768,episode_0133,2272,2272,"E,F","{E,F}","{""E"": 0.9458, ""F"": 0.9609}",W,union:heu_like:heu:2272:2272,Y3
+event_00769,episode_0134,2278,2278,"A,B","{A,B}","{""A"": 0.8, ""B"": 0.8}",Z,union:heu_like:heu:2278:2278,Y2
+event_00770,episode_0134,2280,2280,"A,B","{A,B}","{""A"": 0.9699, ""B"": 0.8936}",Z,union:heu_like:heu:2280:2280,Y2
+event_00771,episode_0134,2283,2285,"B,E","{B,E}","{""B"": 0.9435, ""E"": 0.9624}",Z,union:sliding_window:2283:2285|heu_like:heu:2283:2284,Y2
+event_00772,episode_0134,2285,2285,"B,D,E","{B,D,E}","{""B"": 0.9722, ""D"": 0.8171, ""E"": 0.9702}",Z,union:heu_like:heu:2285:2285,Y2
+event_00773,episode_0134,2288,2290,"E,F","{E,F}","{""E"": 0.9611, ""F"": 0.9576}",Z,union:sliding_window:2288:2290|heu_like:heu:2288:2289,Y2
+event_00774,episode_0134,2290,2290,"B,C,D,E,F","{B,C,D,E,F}","{""B"": 0.837, ""C"": 0.817, ""D"": 0.8324, ""E"": 0.9723, ""F"": 0.9704}",Z,union:heu_like:heu:2290:2290,Y2
+event_00775,episode_0134,2292,2292,"C,H","{C,H}","{""C"": 0.8959, ""H"": 0.811}",Z,union:heu_like:heu:2292:2292,Y2
+event_00776,episode_0135,2295,2297,"A,B","{A,B}","{""A"": 0.9559, ""B"": 0.9506}",X,union:sliding_window:2295:2297|heu_like:heu:2295:2297,Y1
+event_00777,episode_0135,2300,2302,"B,C","{B,C}","{""B"": 0.9635, ""C"": 0.9842}",X,union:sliding_window:2300:2302|heu_like:heu:2300:2302,Y1
+event_00778,episode_0135,2305,2307,"E,F","{E,F}","{""E"": 0.9367, ""F"": 0.9286}",X,union:sliding_window:2305:2307|heu_like:heu:2305:2305|heu_like:heu:2307:2307,Y1
+event_00779,episode_0135,2306,2306,"D,E,F","{D,E,F}","{""D"": 0.8087, ""E"": 0.9466, ""F"": 0.9468}",X,union:heu_like:heu:2306:2306,Y1
+event_00780,episode_0136,2312,2312,"A,B,F","{A,B,F}","{""A"": 0.8, ""B"": 0.8, ""F"": 0.8}",W,union:heu_like:heu:2312:2312,Y3
+event_00781,episode_0136,2312,2314,"A,B","{A,B}","{""A"": 0.9814, ""B"": 0.9784}",W,union:sliding_window:2312:2314|heu_like:heu:2314:2314,Y3
+event_00782,episode_0136,2313,2313,"A,B,C,F","{A,B,C,F}","{""A"": 0.944, ""B"": 0.944, ""C"": 0.804, ""F"": 0.944}",W,union:heu_like:heu:2313:2313,Y3
+event_00783,episode_0136,2317,2319,"B,G","{B,G}","{""B"": 0.9639, ""G"": 0.9622}",W,union:sliding_window:2317:2319|heu_like:heu:2317:2319,Y3
+event_00784,episode_0136,2322,2323,"C,E,F","{C,E,F}","{""C"": 0.8807, ""E"": 0.927, ""F"": 0.883}",W,union:heu_like:heu:2322:2323,Y3
+event_00785,episode_0136,2322,2324,"E,F","{E,F}","{""E"": 1.0053, ""F"": 0.9959}",W,union:sliding_window:2322:2324|heu_like:heu:2324:2324,Y3
+event_00786,episode_0137,2329,2329,"A,B","{A,B}","{""A"": 0.8, ""B"": 0.8}",W,union:heu_like:heu:2329:2329,Y3
+event_00787,episode_0137,2331,2331,"A,B","{A,B}","{""A"": 0.8931, ""B"": 0.9699}",W,union:heu_like:heu:2331:2331,Y3
+event_00788,episode_0137,2334,2336,"B,G","{B,G}","{""B"": 0.9736, ""G"": 0.9459}",W,union:sliding_window:2334:2336|heu_like:heu:2334:2336,Y3
+event_00789,episode_0137,2340,2340,"B,E,F","{B,E,F}","{""B"": 0.8525, ""E"": 0.9469, ""F"": 0.8147}",W,union:heu_like:heu:2340:2340,Y3
+event_00790,episode_0137,2341,2341,"E,F","{E,F}","{""E"": 0.9705, ""F"": 0.9466}",W,union:heu_like:heu:2341:2341,Y3
+event_00791,episode_0137,2343,2343,"A,B","{A,B}","{""A"": 0.8162, ""B"": 0.8653}",W,union:heu_like:heu:2343:2343,Y3
+event_00792,episode_0138,2346,2348,"A,B","{A,B}","{""A"": 0.9485, ""B"": 0.9672}",Z,union:sliding_window:2346:2348|heu_like:heu:2346:2348,Y2
+event_00793,episode_0138,2351,2351,"B,D,E","{B,D,E}","{""B"": 0.8767, ""D"": 0.8141, ""E"": 0.8137}",Z,union:heu_like:heu:2351:2351,Y2
+event_00794,episode_0138,2351,2353,"B,E","{B,E}","{""B"": 1.0013, ""E"": 0.9898}",Z,union:sliding_window:2351:2353|heu_like:heu:2352:2353,Y2
+event_00795,episode_0138,2356,2356,"E,F,G","{E,F,G}","{""E"": 0.8751, ""F"": 0.816, ""G"": 0.814}",Z,union:heu_like:heu:2356:2356,Y2
+event_00796,episode_0138,2356,2358,"E,F","{E,F}","{""E"": 0.9994, ""F"": 0.9748}",Z,union:sliding_window:2356:2358|heu_like:heu:2357:2358,Y2
+event_00797,episode_0139,2363,2363,"A,C","{A,C}","{""A"": 0.8, ""C"": 0.8}",X,union:heu_like:heu:2363:2363,Y1
+event_00798,episode_0139,2364,2365,"A,B","{A,B}","{""A"": 0.957, ""B"": 0.8773}",X,union:heu_like:heu:2364:2365,Y1
+event_00799,episode_0139,2368,2368,"B,C","{B,C}","{""B"": 0.8719, ""C"": 0.8303}",X,union:heu_like:heu:2368:2368,Y1
+event_00800,episode_0139,2369,2369,"B,C,D","{B,C,D}","{""B"": 0.9569, ""C"": 0.9494, ""D"": 0.8118}",X,union:heu_like:heu:2369:2369,Y1
+event_00801,episode_0139,2374,2374,"D,E","{D,E}","{""D"": 0.9023, ""E"": 0.8132}",X,union:heu_like:heu:2374:2374,Y1
+event_00802,episode_0139,2375,2375,"E,F,H","{E,F,H}","{""E"": 0.9464, ""F"": 0.8946, ""H"": 0.8122}",X,union:heu_like:heu:2375:2375,Y1
+event_00803,episode_0140,2380,2382,"A,B","{A,B}","{""A"": 0.9432, ""B"": 0.9559}",Z,union:sliding_window:2380:2382|heu_like:heu:2380:2381,Y2
+event_00804,episode_0140,2382,2382,"A,B,D","{A,B,D}","{""A"": 0.9699, ""B"": 0.9699, ""D"": 0.8121}",Z,union:heu_like:heu:2382:2382,Y2
+event_00805,episode_0140,2385,2385,"A,B,D,E","{A,B,D,E}","{""A"": 0.8748, ""B"": 0.8766, ""D"": 0.864, ""E"": 0.8935}",Z,union:heu_like:heu:2385:2385,Y2
+event_00806,episode_0140,2386,2386,"B,C,E","{B,C,E}","{""B"": 0.9578, ""C"": 0.8099, ""E"": 0.9608}",Z,union:heu_like:heu:2386:2386,Y2
+event_00807,episode_0140,2387,2387,"B,C,D","{B,C,D}","{""B"": 0.9724, ""C"": 0.9458, ""D"": 0.9016}",Z,union:heu_like:heu:2387:2387,Y2
+event_00808,episode_0140,2390,2392,"E,F","{E,F}","{""E"": 0.9857, ""F"": 0.9718}",Z,union:sliding_window:2390:2392|heu_like:heu:2390:2392,Y2
+event_00809,episode_0141,2397,2397,"A,B","{A,B}","{""A"": 0.8, ""B"": 0.8}",X,union:heu_like:heu:2397:2397,Y1
+event_00810,episode_0141,2399,2399,"A,B","{A,B}","{""A"": 0.9699, ""B"": 0.8928}",X,union:heu_like:heu:2399:2399,Y1
+event_00811,episode_0141,2402,2402,"B,C,D,F,H","{B,C,D,F,H}","{""B"": 0.9625, ""C"": 0.8126, ""D"": 0.8089, ""F"": 0.8144, ""H"": 0.8161}",X,union:heu_like:heu:2402:2402,Y1
+event_00812,episode_0141,2402,2404,"B,C","{B,C}","{""B"": 0.9851, ""C"": 0.9933}",X,union:sliding_window:2402:2404|heu_like:heu:2404:2404,Y1
+event_00813,episode_0141,2403,2403,"A,B,C","{A,B,C}","{""A"": 0.8537, ""B"": 0.9733, ""C"": 0.9463}",X,union:heu_like:heu:2403:2403,Y1
+event_00814,episode_0141,2407,2409,"E,F","{E,F}","{""E"": 0.9338, ""F"": 0.9589}",X,union:sliding_window:2407:2409|heu_like:heu:2407:2409,Y1
+event_00815,episode_0142,2414,2416,"A,B","{A,B}","{""A"": 0.9553, ""B"": 0.9395}",W,union:sliding_window:2414:2416|heu_like:heu:2414:2416,Y3
+event_00816,episode_0142,2417,2417,"B,D","{B,D}","{""B"": 0.9746, ""D"": 0.8143}",W,union:heu_like:heu:2417:2417,Y3
+event_00817,episode_0142,2419,2421,"B,G","{B,G}","{""B"": 0.9644, ""G"": 0.9313}",W,union:sliding_window:2419:2421|heu_like:heu:2419:2420,Y3
+event_00818,episode_0142,2421,2421,"B,D,G","{B,D,G}","{""B"": 0.9736, ""D"": 0.8738, ""G"": 0.9704}",W,union:heu_like:heu:2421:2421,Y3
+event_00819,episode_0142,2424,2424,"B,E,F","{B,E,F}","{""B"": 0.8772, ""E"": 0.8165, ""F"": 0.8169}",W,union:heu_like:heu:2424:2424,Y3
+event_00820,episode_0142,2425,2425,"C,F","{C,F}","{""C"": 0.8178, ""F"": 0.947}",W,union:heu_like:heu:2425:2425,Y3
+event_00821,episode_0142,2426,2426,"E,F","{E,F}","{""E"": 0.8948, ""F"": 0.9705}",W,union:heu_like:heu:2426:2426,Y3
+event_00822,episode_0143,2431,2431,"A,B,D","{A,B,D}","{""A"": 0.8, ""B"": 0.8, ""D"": 0.8}",X,union:heu_like:heu:2431:2431,Y1
+event_00823,episode_0143,2433,2433,"A,B","{A,B}","{""A"": 0.8966, ""B"": 0.9699}",X,union:heu_like:heu:2433:2433,Y1
+event_00824,episode_0143,2436,2438,"B,C","{B,C}","{""B"": 0.9356, ""C"": 0.8999}",X,union:sliding_window:2436:2438|heu_like:heu:2436:2436,Y1
+event_00825,episode_0143,2437,2437,"B,C,E","{B,C,E}","{""B"": 0.9575, ""C"": 0.9463, ""E"": 0.8095}",X,union:heu_like:heu:2437:2437,Y1
+event_00826,episode_0143,2438,2438,"B,C,E,H","{B,C,E,H}","{""B"": 0.9723, ""C"": 0.9703, ""E"": 0.9457, ""H"": 0.814}",X,union:heu_like:heu:2438:2438,Y1
+event_00827,episode_0143,2441,2442,"E,F","{E,F}","{""E"": 0.9136, ""F"": 0.8809}",X,union:heu_like:heu:2441:2442,Y1
+event_00828,episode_0144,2448,2448,"A,B,D","{A,B,D}","{""A"": 0.8, ""B"": 0.8, ""D"": 0.8}",Z,union:heu_like:heu:2448:2448,Y2
+event_00829,episode_0144,2448,2450,"A,B","{A,B}","{""A"": 0.9613, ""B"": 0.9766}",Z,union:sliding_window:2448:2450|heu_like:heu:2449:2450,Y2
+event_00830,episode_0144,2453,2455,"B,E","{B,E}","{""B"": 0.97, ""E"": 0.9341}",Z,union:sliding_window:2453:2455|heu_like:heu:2453:2454,Y2
+event_00831,episode_0144,2455,2455,"B,E,F,G","{B,E,F,G}","{""B"": 0.9723, ""E"": 0.973, ""F"": 0.8181, ""G"": 0.8131}",Z,union:heu_like:heu:2455:2455,Y2
+event_00832,episode_0144,2457,2457,"C,E","{C,E}","{""C"": 0.8133, ""E"": 0.9128}",Z,union:heu_like:heu:2457:2457,Y2
+event_00833,episode_0144,2459,2459,"E,F","{E,F}","{""E"": 0.9068, ""F"": 0.9556}",Z,union:heu_like:heu:2459:2459,Y2
+event_00834,episode_0145,2465,2467,"A,B","{A,B}","{""A"": 0.9509, ""B"": 0.9417}",W,union:sliding_window:2465:2467|heu_like:heu:2465:2467,Y3
+event_00835,episode_0145,2470,2472,"B,G","{B,G}","{""B"": 0.997, ""G"": 0.9447}",W,union:sliding_window:2470:2472|heu_like:heu:2470:2471,Y3
+event_00836,episode_0145,2472,2472,"A,B,G","{A,B,G}","{""A"": 0.8344, ""B"": 0.9752, ""G"": 0.973}",W,union:heu_like:heu:2472:2472,Y3
+event_00837,episode_0145,2475,2477,"E,F","{E,F}","{""E"": 0.9812, ""F"": 0.9802}",W,union:sliding_window:2475:2477|heu_like:heu:2475:2477,Y3
+event_00838,episode_0146,2483,2484,"A,B","{A,B}","{""A"": 0.957, ""B"": 0.8755}",W,union:heu_like:heu:2483:2484,Y3
+event_00839,episode_0146,2487,2489,"B,G","{B,G}","{""B"": 0.9342, ""G"": 0.8884}",W,union:sliding_window:2487:2489|heu_like:heu:2487:2487,Y3
+event_00840,episode_0146,2488,2488,"A,B,G","{A,B,G}","{""A"": 0.8536, ""B"": 0.9572, ""G"": 0.9469}",W,union:heu_like:heu:2488:2488,Y3
+event_00841,episode_0146,2489,2489,"B,G,H","{B,G,H}","{""B"": 0.9723, ""G"": 0.9705, ""H"": 0.8123}",W,union:heu_like:heu:2489:2489,Y3
+event_00842,episode_0146,2492,2494,"E,F","{E,F}","{""E"": 0.9492, ""F"": 0.9465}",W,union:sliding_window:2492:2494|heu_like:heu:2492:2493,Y3
+event_00843,episode_0146,2494,2494,"B,E,F","{B,E,F}","{""B"": 0.8365, ""E"": 0.9705, ""F"": 0.9704}",W,union:heu_like:heu:2494:2494,Y3
+event_00844,episode_0147,2499,2501,"A,B","{A,B}","{""A"": 0.9282, ""B"": 0.9321}",Z,union:sliding_window:2499:2501|heu_like:heu:2499:2500,Y2
+event_00845,episode_0147,2501,2501,"A,B,E","{A,B,E}","{""A"": 0.9699, ""B"": 0.9699, ""E"": 0.8108}",Z,union:heu_like:heu:2501:2501,Y2
+event_00846,episode_0147,2504,2506,"B,E","{B,E}","{""B"": 0.9487, ""E"": 0.952}",Z,union:sliding_window:2504:2506|heu_like:heu:2504:2506,Y2
+event_00847,episode_0147,2509,2511,"E,F","{E,F}","{""E"": 0.9466, ""F"": 0.9727}",Z,union:sliding_window:2509:2511|heu_like:heu:2509:2511,Y2
+event_00848,episode_0148,2516,2516,"A,B,G","{A,B,G}","{""A"": 0.8, ""B"": 0.8, ""G"": 0.8}",X,union:heu_like:heu:2516:2516,Y1
+event_00849,episode_0148,2516,2518,"A,B","{A,B}","{""A"": 0.9811, ""B"": 0.9601}",X,union:sliding_window:2516:2518|heu_like:heu:2517:2517,Y1
+event_00850,episode_0148,2518,2518,"A,B,H","{A,B,H}","{""A"": 0.9699, ""B"": 0.9699, ""H"": 0.8113}",X,union:heu_like:heu:2518:2518,Y1
+event_00851,episode_0148,2521,2521,"B,C,E","{B,C,E}","{""B"": 0.8739, ""C"": 0.8148, ""E"": 0.8156}",X,union:heu_like:heu:2521:2521,Y1
+event_00852,episode_0148,2521,2523,"B,C","{B,C}","{""B"": 1.0035, ""C"": 0.9696}",X,union:sliding_window:2521:2523|heu_like:heu:2522:2523,Y1
+event_00853,episode_0148,2526,2528,"E,F","{E,F}","{""E"": 0.9863, ""F"": 0.9399}",X,union:sliding_window:2526:2528|heu_like:heu:2526:2528,Y1
+event_00854,episode_0149,2533,2535,"A,B","{A,B}","{""A"": 0.9565, ""B"": 0.9367}",X,union:sliding_window:2533:2535|heu_like:heu:2533:2535,Y1
+event_00855,episode_0149,2537,2537,"D,F","{D,F}","{""D"": 0.815, ""F"": 0.8138}",X,union:heu_like:heu:2537:2537,Y1
+event_00856,episode_0149,2538,2538,"B,C,H","{B,C,H}","{""B"": 0.8736, ""C"": 0.8137, ""H"": 0.8161}",X,union:heu_like:heu:2538:2538,Y1
+event_00857,episode_0149,2538,2540,"B,C","{B,C}","{""B"": 0.981, ""C"": 0.9878}",X,union:sliding_window:2538:2540|heu_like:heu:2539:2539,Y1
+event_00858,episode_0149,2540,2540,"B,C,F","{B,C,F}","{""B"": 0.9723, ""C"": 0.9704, ""F"": 0.8639}",X,union:heu_like:heu:2540:2540,Y1
+event_00859,episode_0149,2543,2545,"E,F","{E,F}","{""E"": 0.9382, ""F"": 0.9552}",X,union:sliding_window:2543:2545|heu_like:heu:2543:2545,Y1
+event_00860,episode_0150,2550,2552,"A,B","{A,B}","{""A"": 0.9383, ""B"": 0.9261}",Z,union:sliding_window:2550:2552|heu_like:heu:2550:2552,Y2
+event_00861,episode_0150,2555,2555,"A,B,E","{A,B,E}","{""A"": 0.873, ""B"": 0.8757, ""E"": 0.811}",Z,union:heu_like:heu:2555:2555,Y2
+event_00862,episode_0150,2555,2557,"B,E","{B,E}","{""B"": 0.9591, ""E"": 0.9653}",Z,union:sliding_window:2555:2557|heu_like:heu:2556:2557,Y2
+event_00863,episode_0150,2560,2562,"E,F","{E,F}","{""E"": 0.954, ""F"": 0.9364}",Z,union:sliding_window:2560:2562|heu_like:heu:2560:2561,Y2
+event_00864,episode_0150,2562,2562,"E,F,G","{E,F,G}","{""E"": 0.9723, ""F"": 0.9703, ""G"": 0.8144}",Z,union:heu_like:heu:2562:2562,Y2
+event_00865,episode_0151,2567,2569,"A,B","{A,B}","{""A"": 0.9519, ""B"": 0.9443}",W,union:sliding_window:2567:2569|heu_like:heu:2567:2569,Y3
+event_00866,episode_0151,2572,2572,"B,G,H","{B,G,H}","{""B"": 0.8738, ""G"": 0.8136, ""H"": 0.8128}",W,union:heu_like:heu:2572:2572,Y3
+event_00867,episode_0151,2572,2574,"B,G","{B,G}","{""B"": 0.9918, ""G"": 0.9908}",W,union:sliding_window:2572:2574|heu_like:heu:2573:2574,Y3
+event_00868,episode_0151,2577,2579,"E,F","{E,F}","{""E"": 0.9552, ""F"": 0.9688}",W,union:sliding_window:2577:2579|heu_like:heu:2577:2579,Y3
+event_00869,episode_0152,2584,2584,"A,B,H","{A,B,H}","{""A"": 0.8, ""B"": 0.8, ""H"": 0.8}",X,union:heu_like:heu:2584:2584,Y1
+event_00870,episode_0152,2584,2586,"A,B","{A,B}","{""A"": 0.9819, ""B"": 0.9909}",X,union:sliding_window:2584:2586|heu_like:heu:2585:2586,Y1
+event_00871,episode_0152,2589,2589,"B,C,D","{B,C,D}","{""B"": 0.8722, ""C"": 0.8128, ""D"": 0.8161}",X,union:heu_like:heu:2589:2589,Y1
+event_00872,episode_0152,2589,2591,"B,C","{B,C}","{""B"": 1.0589, ""C"": 1.0171}",X,union:sliding_window:2589:2591,Y1
+event_00873,episode_0152,2590,2590,"B,C,E","{B,C,E}","{""B"": 0.957, ""C"": 0.9463, ""E"": 0.8134}",X,union:heu_like:heu:2590:2590,Y1
+event_00874,episode_0152,2591,2591,"B,C,F","{B,C,F}","{""B"": 0.9723, ""C"": 0.9703, ""F"": 0.8151}",X,union:heu_like:heu:2591:2591,Y1
+event_00875,episode_0152,2594,2594,"D,E,F,G","{D,E,F,G}","{""D"": 0.832, ""E"": 0.8462, ""F"": 0.8644, ""G"": 0.8206}",X,union:heu_like:heu:2594:2594,Y1
+event_00876,episode_0152,2594,2596,"E,F","{E,F}","{""E"": 0.966, ""F"": 0.9893}",X,union:sliding_window:2594:2596|heu_like:heu:2595:2595,Y1
+event_00877,episode_0152,2596,2596,"A,E,F","{A,E,F}","{""A"": 0.8165, ""E"": 0.9714, ""F"": 0.972}",X,union:heu_like:heu:2596:2596,Y1
+event_00878,episode_0153,2601,2601,"A,B,H","{A,B,H}","{""A"": 0.8, ""B"": 0.8, ""H"": 0.8}",Z,union:heu_like:heu:2601:2601,Y2
+event_00879,episode_0153,2601,2603,"A,B","{A,B}","{""A"": 0.9696, ""B"": 0.9871}",Z,union:sliding_window:2601:2603|heu_like:heu:2602:2603,Y2
+event_00880,episode_0153,2606,2607,"B,D,E","{B,D,E}","{""B"": 0.9179, ""D"": 0.8786, ""E"": 0.8798}",Z,union:heu_like:heu:2606:2607,Y2
+event_00881,episode_0153,2606,2608,"B,E","{B,E}","{""B"": 1.0072, ""E"": 0.9792}",Z,union:sliding_window:2606:2608|heu_like:heu:2608:2608,Y2
+event_00882,episode_0153,2611,2612,"E,F","{E,F}","{""E"": 0.916, ""F"": 0.8808}",Z,union:heu_like:heu:2611:2612,Y2
+event_00883,episode_0153,2613,2613,"D,F","{D,F}","{""D"": 0.8293, ""F"": 0.9704}",Z,union:heu_like:heu:2613:2613,Y2
+event_00884,episode_0154,2618,2618,"A,B,C","{A,B,C}","{""A"": 0.8, ""B"": 0.8, ""C"": 0.8}",W,union:heu_like:heu:2618:2618,Y3
+event_00885,episode_0154,2618,2620,"A,B","{A,B}","{""A"": 0.9999, ""B"": 0.9934}",W,union:sliding_window:2618:2620|heu_like:heu:2620:2620,Y3
+event_00886,episode_0154,2619,2619,"A,B,H","{A,B,H}","{""A"": 0.944, ""B"": 0.944, ""H"": 0.8072}",W,union:heu_like:heu:2619:2619,Y3
+event_00887,episode_0154,2623,2625,"B,G","{B,G}","{""B"": 0.961, ""G"": 0.9462}",W,union:sliding_window:2623:2625|heu_like:heu:2623:2623|heu_like:heu:2625:2625,Y3
+event_00888,episode_0154,2624,2624,"B,D,G","{B,D,G}","{""B"": 0.9576, ""D"": 0.8135, ""G"": 0.9457}",W,union:heu_like:heu:2624:2624,Y3
+event_00889,episode_0154,2628,2630,"E,F","{E,F}","{""E"": 0.9685, ""F"": 0.9526}",W,union:sliding_window:2628:2630|heu_like:heu:2628:2630,Y3
+event_00890,episode_0155,2635,2637,"A,B","{A,B}","{""A"": 0.9364, ""B"": 0.929}",X,union:sliding_window:2635:2637|heu_like:heu:2635:2635|heu_like:heu:2637:2637,Y1
+event_00891,episode_0155,2636,2636,"A,B,H","{A,B,H}","{""A"": 0.944, ""B"": 0.944, ""H"": 0.808}",X,union:heu_like:heu:2636:2636,Y1
+event_00892,episode_0155,2640,2642,"B,C","{B,C}","{""B"": 0.9722, ""C"": 0.9509}",X,union:sliding_window:2640:2642|heu_like:heu:2640:2642,Y1
+event_00893,episode_0155,2645,2645,"C,E,F","{C,E,F}","{""C"": 0.8738, ""E"": 0.8148, ""F"": 0.8181}",X,union:heu_like:heu:2645:2645,Y1
+event_00894,episode_0155,2645,2647,"E,F","{E,F}","{""E"": 0.9907, ""F"": 0.9807}",X,union:sliding_window:2645:2647|heu_like:heu:2646:2647,Y1
+event_00895,episode_0156,2652,2654,"A,B","{A,B}","{""A"": 0.9524, ""B"": 0.9413}",Z,union:sliding_window:2652:2654|heu_like:heu:2652:2654,Y2
+event_00896,episode_0156,2657,2657,"B,E","{B,E}","{""B"": 0.8732, ""E"": 0.8142}",Z,union:heu_like:heu:2657:2657,Y2
+event_00897,episode_0156,2658,2658,"B,D,E","{B,D,E}","{""B"": 0.9572, ""D"": 0.8143, ""E"": 0.9466}",Z,union:heu_like:heu:2658:2658,Y2
+event_00898,episode_0156,2662,2664,"E,F","{E,F}","{""E"": 0.9871, ""F"": 0.9388}",Z,union:sliding_window:2662:2664|heu_like:heu:2662:2664,Y2
+event_00899,episode_0157,2669,2669,"A,F","{A,F}","{""A"": 0.8, ""F"": 0.8}",W,union:heu_like:heu:2669:2669,Y3
+event_00900,episode_0157,2670,2671,"A,B","{A,B}","{""A"": 0.957, ""B"": 0.8747}",W,union:heu_like:heu:2670:2671,Y3
+event_00901,episode_0157,2672,2672,"C,G","{C,G}","{""C"": 0.8097, ""G"": 0.8148}",W,union:heu_like:heu:2672:2672,Y3
+event_00902,episode_0157,2674,2675,"B,G","{B,G}","{""B"": 0.9153, ""G"": 0.9284}",W,union:heu_like:heu:2674:2675,Y3
+event_00903,episode_0157,2676,2676,"B,E","{B,E}","{""B"": 0.9723, ""E"": 0.8138}",W,union:heu_like:heu:2676:2676,Y3
+event_00904,episode_0157,2679,2681,"E,F","{E,F}","{""E"": 0.9489, ""F"": 0.9432}",W,union:sliding_window:2679:2681|heu_like:heu:2679:2680,Y3
+event_00905,episode_0157,2681,2681,"A,E,F,G","{A,E,F,G}","{""A"": 0.8642, ""E"": 0.9719, ""F"": 0.9705, ""G"": 0.8293}",W,union:heu_like:heu:2681:2681,Y3
+event_00906,episode_0157,2683,2683,"A,F,G","{A,F,G}","{""A"": 0.9008, ""F"": 0.913, ""G"": 0.8963}",W,union:heu_like:heu:2683:2683,Y3
+event_00907,episode_0158,2686,2688,"A,B","{A,B}","{""A"": 0.978, ""B"": 0.9685}",Z,union:sliding_window:2686:2688|heu_like:heu:2686:2688,Y2
+event_00908,episode_0158,2691,2693,"B,E","{B,E}","{""B"": 0.9561, ""E"": 0.961}",Z,union:sliding_window:2691:2693|heu_like:heu:2691:2692,Y2
+event_00909,episode_0158,2693,2693,"B,E,H","{B,E,H}","{""B"": 0.9723, ""E"": 0.9704, ""H"": 0.8132}",Z,union:heu_like:heu:2693:2693,Y2
+event_00910,episode_0158,2696,2698,"E,F","{E,F}","{""E"": 0.9639, ""F"": 0.9627}",Z,union:sliding_window:2696:2698|heu_like:heu:2696:2698,Y2
+event_00911,episode_0159,2703,2703,"A,B","{A,B}","{""A"": 0.8, ""B"": 0.8}",X,union:heu_like:heu:2703:2703,Y1
+event_00912,episode_0159,2705,2705,"A,B","{A,B}","{""A"": 0.8938, ""B"": 0.9699}",X,union:heu_like:heu:2705:2705,Y1
+event_00913,episode_0159,2708,2710,"B,C","{B,C}","{""B"": 0.9594, ""C"": 0.9778}",X,union:sliding_window:2708:2710|heu_like:heu:2708:2710,Y1
+event_00914,episode_0159,2713,2715,"E,F","{E,F}","{""E"": 0.9266, ""F"": 0.9707}",X,union:sliding_window:2713:2715|heu_like:heu:2713:2714,Y1
+event_00915,episode_0159,2715,2715,"E,F,H","{E,F,H}","{""E"": 0.9704, ""F"": 0.9706, ""H"": 0.8145}",X,union:heu_like:heu:2715:2715,Y1
+event_00916,episode_0160,2720,2722,"A,B","{A,B}","{""A"": 0.9304, ""B"": 0.9154}",W,union:sliding_window:2720:2722|heu_like:heu:2720:2721,Y3
+event_00917,episode_0160,2722,2722,"A,B,D","{A,B,D}","{""A"": 0.9699, ""B"": 0.9699, ""D"": 0.8104}",W,union:heu_like:heu:2722:2722,Y3
+event_00918,episode_0160,2725,2727,"B,G","{B,G}","{""B"": 0.9393, ""G"": 0.9278}",W,union:sliding_window:2725:2727|heu_like:heu:2725:2726,Y3
+event_00919,episode_0160,2727,2727,"B,E,G","{B,E,G}","{""B"": 0.9723, ""E"": 0.8159, ""G"": 0.9704}",W,union:heu_like:heu:2727:2727,Y3
+event_00920,episode_0160,2730,2732,"E,F","{E,F}","{""E"": 0.9472, ""F"": 0.9485}",W,union:sliding_window:2730:2732|heu_like:heu:2730:2732,Y3
+event_00921,episode_0161,2737,2737,"A,B,G","{A,B,G}","{""A"": 0.8, ""B"": 0.8, ""G"": 0.8}",Z,union:heu_like:heu:2737:2737,Y2
+event_00922,episode_0161,2737,2739,"A,B","{A,B}","{""A"": 0.9622, ""B"": 0.9966}",Z,union:sliding_window:2737:2739|heu_like:heu:2738:2739,Y2
+event_00923,episode_0161,2742,2742,"B,C,E","{B,C,E}","{""B"": 0.8726, ""C"": 0.8152, ""E"": 0.8145}",Z,union:heu_like:heu:2742:2742,Y2
+event_00924,episode_0161,2742,2744,"B,E","{B,E}","{""B"": 0.9699, ""E"": 0.9701}",Z,union:sliding_window:2742:2744|heu_like:heu:2743:2743,Y2
+event_00925,episode_0161,2744,2744,"A,B,E","{A,B,E}","{""A"": 0.833, ""B"": 0.9723, ""E"": 0.9704}",Z,union:heu_like:heu:2744:2744,Y2
+event_00926,episode_0161,2745,2745,"B,C","{B,C}","{""B"": 0.975, ""C"": 0.8608}",Z,union:heu_like:heu:2745:2745,Y2
+event_00927,episode_0161,2746,2749,"E,F","{E,F}","{""E"": 0.9692, ""F"": 0.9459}",Z,union:sliding_window:2746:2749|heu_like:heu:2746:2747|heu_like:heu:2749:2749,Y2
+event_00928,episode_0161,2748,2748,"D,E,F,G","{D,E,F,G}","{""D"": 0.8131, ""E"": 0.9736, ""F"": 0.9703, ""G"": 0.8149}",Z,union:heu_like:heu:2748:2748,Y2
+event_00929,episode_0162,2754,2754,"A,B,H","{A,B,H}","{""A"": 0.8, ""B"": 0.8, ""H"": 0.8}",X,union:heu_like:heu:2754:2754,Y1
+event_00930,episode_0162,2759,2761,"B,C","{B,C}","{""B"": 0.9751, ""C"": 0.9572}",X,union:sliding_window:2759:2761|heu_like:heu:2759:2760,Y1
+event_00931,episode_0162,2761,2761,"A,B,C","{A,B,C}","{""A"": 0.8204, ""B"": 0.9723, ""C"": 0.9747}",X,union:heu_like:heu:2761:2761,Y1
+event_00932,episode_0162,2764,2766,"E,F","{E,F}","{""E"": 0.9169, ""F"": 0.9402}",X,union:sliding_window:2764:2766|heu_like:heu:2764:2766,Y1
+event_00933,episode_0163,2771,2773,"A,B","{A,B}","{""A"": 0.9301, ""B"": 0.9391}",W,union:sliding_window:2771:2773|heu_like:heu:2771:2771|heu_like:heu:2773:2773,Y3
+event_00934,episode_0163,2772,2772,"A,B,H","{A,B,H}","{""A"": 0.944, ""B"": 0.944, ""H"": 0.8071}",W,union:heu_like:heu:2772:2772,Y3
+event_00935,episode_0163,2776,2777,"B,G,H","{B,G,H}","{""B"": 0.9173, ""G"": 0.8803, ""H"": 0.8971}",W,union:heu_like:heu:2776:2777,Y3
+event_00936,episode_0163,2776,2778,"B,G","{B,G}","{""B"": 0.9934, ""G"": 0.9843}",W,union:sliding_window:2776:2778|heu_like:heu:2778:2778,Y3
+event_00937,episode_0163,2781,2783,"E,F","{E,F}","{""E"": 0.9653, ""F"": 0.9677}",W,union:sliding_window:2781:2783|heu_like:heu:2781:2783,Y3
+event_00938,episode_0163,2785,2785,"A,F","{A,F}","{""A"": 0.8173, ""F"": 0.9128}",W,union:heu_like:heu:2785:2785,Y3
+event_00939,episode_0164,2788,2790,"A,B","{A,B}","{""A"": 0.9557, ""B"": 0.9627}",Z,union:sliding_window:2788:2790|heu_like:heu:2788:2790,Y2
+event_00940,episode_0164,2793,2795,"B,E","{B,E}","{""B"": 0.9659, ""E"": 0.9748}",Z,union:sliding_window:2793:2795|heu_like:heu:2793:2795,Y2
+event_00941,episode_0164,2798,2800,"E,F","{E,F}","{""E"": 0.9137, ""F"": 0.9264}",Z,union:sliding_window:2798:2800|heu_like:heu:2798:2798,Y2
+event_00942,episode_0164,2799,2799,"C,E,F,H","{C,E,F,H}","{""C"": 0.8152, ""E"": 0.9572, ""F"": 0.9468, ""H"": 0.8145}",Z,union:heu_like:heu:2799:2799,Y2
+event_00943,episode_0164,2800,2800,"A,E,F","{A,E,F}","{""A"": 0.8487, ""E"": 0.9723, ""F"": 0.9704}",Z,union:heu_like:heu:2800:2800,Y2
+event_00944,episode_0165,2805,2807,"A,B","{A,B}","{""A"": 0.964, ""B"": 0.9503}",X,union:sliding_window:2805:2807|heu_like:heu:2805:2807,Y1
+event_00945,episode_0165,2810,2812,"B,C","{B,C}","{""B"": 0.9432, ""C"": 0.9513}",X,union:sliding_window:2810:2812|heu_like:heu:2810:2811,Y1
+event_00946,episode_0165,2812,2812,"B,C,H","{B,C,H}","{""B"": 0.9723, ""C"": 0.9703, ""H"": 0.8118}",X,union:heu_like:heu:2812:2812,Y1
+event_00947,episode_0165,2815,2815,"D,E,F","{D,E,F}","{""D"": 0.8139, ""E"": 0.811, ""F"": 0.8157}",X,union:heu_like:heu:2815:2815,Y1
+event_00948,episode_0165,2816,2816,"F,H","{F,H}","{""F"": 0.9468, ""H"": 0.8472}",X,union:heu_like:heu:2816:2816,Y1
+event_00949,episode_0165,2817,2817,"E,F","{E,F}","{""E"": 0.8968, ""F"": 0.9704}",X,union:heu_like:heu:2817:2817,Y1
+event_00950,episode_0166,2822,2824,"A,B","{A,B}","{""A"": 0.8988, ""B"": 0.8984}",W,union:sliding_window:2822:2824|heu_like:heu:2822:2822,Y3
+event_00951,episode_0166,2823,2823,"A,B,F","{A,B,F}","{""A"": 0.944, ""B"": 0.944, ""F"": 0.8077}",W,union:heu_like:heu:2823:2823,Y3
+event_00952,episode_0166,2824,2824,"A,B,G","{A,B,G}","{""A"": 0.9699, ""B"": 0.9699, ""G"": 0.8092}",W,union:heu_like:heu:2824:2824,Y3
+event_00953,episode_0166,2827,2829,"B,G","{B,G}","{""B"": 0.9585, ""G"": 0.9501}",W,union:sliding_window:2827:2829|heu_like:heu:2827:2827|heu_like:heu:2829:2829,Y3
+event_00954,episode_0166,2828,2828,"B,F,G,H","{B,F,G,H}","{""B"": 0.9643, ""F"": 0.8362, ""G"": 0.9556, ""H"": 0.8159}",W,union:heu_like:heu:2828:2828,Y3
+event_00955,episode_0166,2832,2834,"E,F","{E,F}","{""E"": 0.9655, ""F"": 0.9507}",W,union:sliding_window:2832:2834|heu_like:heu:2832:2834,Y3
+event_00956,episode_0167,2839,2839,"A,B,H","{A,B,H}","{""A"": 0.8, ""B"": 0.8, ""H"": 0.8}",W,union:heu_like:heu:2839:2839,Y3
+event_00957,episode_0167,2839,2841,"A,B","{A,B}","{""A"": 0.9836, ""B"": 0.9673}",W,union:sliding_window:2839:2841|heu_like:heu:2840:2841,Y3
+event_00958,episode_0167,2844,2844,"B,G","{B,G}","{""B"": 0.8748, ""G"": 0.8152}",W,union:heu_like:heu:2844:2844,Y3
+event_00959,episode_0167,2845,2845,"C,G","{C,G}","{""C"": 0.8151, ""G"": 0.9467}",W,union:heu_like:heu:2845:2845,Y3
+event_00960,episode_0167,2846,2846,"B,G","{B,G}","{""B"": 0.9012, ""G"": 0.9704}",W,union:heu_like:heu:2846:2846,Y3
+event_00961,episode_0167,2849,2851,"E,F","{E,F}","{""E"": 0.9818, ""F"": 0.9213}",W,union:sliding_window:2849:2851|heu_like:heu:2849:2850,Y3
+event_00962,episode_0167,2851,2851,"A,E,F","{A,E,F}","{""A"": 0.8149, ""E"": 0.973, ""F"": 0.9704}",W,union:heu_like:heu:2851:2851,Y3
+event_00963,episode_0167,2853,2853,"F,H","{F,H}","{""F"": 0.9116, ""H"": 0.8133}",W,union:heu_like:heu:2853:2853,Y3
+event_00964,episode_0168,2856,2858,"A,B","{A,B}","{""A"": 0.9402, ""B"": 0.9347}",Z,union:sliding_window:2856:2858|heu_like:heu:2856:2856|heu_like:heu:2858:2858,Y2
+event_00965,episode_0168,2857,2857,"A,B,F","{A,B,F}","{""A"": 0.944, ""B"": 0.944, ""F"": 0.8034}",Z,union:heu_like:heu:2857:2857,Y2
+event_00966,episode_0168,2861,2863,"B,E","{B,E}","{""B"": 0.9619, ""E"": 0.9635}",Z,union:sliding_window:2861:2863|heu_like:heu:2861:2863,Y2
+event_00967,episode_0168,2866,2866,"E,F,G","{E,F,G}","{""E"": 0.8725, ""F"": 0.815, ""G"": 0.9465}",Z,union:heu_like:heu:2866:2866,Y2
+event_00968,episode_0168,2866,2868,"E,F","{E,F}","{""E"": 0.991, ""F"": 0.982}",Z,union:sliding_window:2866:2868|heu_like:heu:2867:2868,Y2
+event_00969,episode_0169,2873,2875,"A,B","{A,B}","{""A"": 0.9075, ""B"": 0.8952}",X,union:sliding_window:2873:2875|heu_like:heu:2873:2873,Y1
+event_00970,episode_0169,2874,2874,"A,B,E","{A,B,E}","{""A"": 0.944, ""B"": 0.944, ""E"": 0.8049}",X,union:heu_like:heu:2874:2874,Y1
+event_00971,episode_0169,2875,2875,"A,B,H","{A,B,H}","{""A"": 0.9699, ""B"": 0.9699, ""H"": 0.8087}",X,union:heu_like:heu:2875:2875,Y1
+event_00972,episode_0169,2878,2878,"B,C,F","{B,C,F}","{""B"": 0.8728, ""C"": 0.813, ""F"": 0.8091}",X,union:heu_like:heu:2878:2878,Y1
+event_00973,episode_0169,2878,2880,"B,C","{B,C}","{""B"": 0.9833, ""C"": 0.9663}",X,union:sliding_window:2878:2880|heu_like:heu:2879:2879,Y1
+event_00974,episode_0169,2880,2880,"B,C,F,H","{B,C,F,H}","{""B"": 0.9723, ""C"": 0.9703, ""F"": 0.8962, ""H"": 0.8357}",X,union:heu_like:heu:2880:2880,Y1
+event_00975,episode_0169,2883,2883,"E,F,H","{E,F,H}","{""E"": 0.8206, ""F"": 0.8694, ""H"": 0.8623}",X,union:heu_like:heu:2883:2883,Y1
+event_00976,episode_0169,2883,2885,"E,F","{E,F}","{""E"": 0.9732, ""F"": 0.9492}",X,union:sliding_window:2883:2885|heu_like:heu:2884:2885,Y1
+event_00977,episode_0170,2890,2892,"A,B","{A,B}","{""A"": 0.9446, ""B"": 0.9498}",X,union:sliding_window:2890:2892|heu_like:heu:2890:2892,Y1
+event_00978,episode_0170,2895,2897,"B,C","{B,C}","{""B"": 0.9844, ""C"": 0.944}",X,union:sliding_window:2895:2897|heu_like:heu:2895:2897,Y1
+event_00979,episode_0170,2901,2902,"E,F","{E,F}","{""E"": 0.9586, ""F"": 0.8803}",X,union:heu_like:heu:2901:2902,Y1
+event_00980,episode_0171,2907,2909,"A,B","{A,B}","{""A"": 0.9524, ""B"": 0.951}",W,union:sliding_window:2907:2909|heu_like:heu:2907:2909,Y3
+event_00981,episode_0171,2912,2914,"B,G","{B,G}","{""B"": 0.9933, ""G"": 0.937}",W,union:sliding_window:2912:2914|heu_like:heu:2912:2914,Y3
+event_00982,episode_0171,2917,2917,"E,F,H","{E,F,H}","{""E"": 0.8145, ""F"": 0.8093, ""H"": 0.8956}",W,union:heu_like:heu:2917:2917,Y3
+event_00983,episode_0171,2917,2919,"E,F","{E,F}","{""E"": 0.9929, ""F"": 0.9655}",W,union:sliding_window:2917:2919|heu_like:heu:2918:2918,Y3
+event_00984,episode_0171,2919,2919,"A,E,F","{A,E,F}","{""A"": 0.8193, ""E"": 0.9704, ""F"": 0.9702}",W,union:heu_like:heu:2919:2919,Y3
+event_00985,episode_0172,2924,2924,"A,B,E","{A,B,E}","{""A"": 0.8, ""B"": 0.8, ""E"": 0.8}",Z,union:heu_like:heu:2924:2924,Y2
+event_00986,episode_0172,2924,2926,"A,B","{A,B}","{""A"": 0.9877, ""B"": 0.9794}",Z,union:sliding_window:2924:2926|heu_like:heu:2925:2926,Y2
+event_00987,episode_0172,2929,2929,"A,B,E","{A,B,E}","{""A"": 0.8752, ""B"": 0.8744, ""E"": 0.8316}",Z,union:heu_like:heu:2929:2929,Y2
+event_00988,episode_0172,2929,2931,"B,E","{B,E}","{""B"": 1.0164, ""E"": 0.9681}",Z,union:sliding_window:2929:2931,Y2
+event_00989,episode_0172,2930,2931,"B,E,F","{B,E,F}","{""B"": 0.9649, ""E"": 0.9603, ""F"": 0.8788}",Z,union:heu_like:heu:2930:2931,Y2
+event_00990,episode_0172,2934,2934,"A,E,F","{A,E,F}","{""A"": 0.8358, ""E"": 0.8738, ""F"": 0.871}",Z,union:heu_like:heu:2934:2934,Y2
+event_00991,episode_0172,2934,2936,"E,F","{E,F}","{""E"": 0.9631, ""F"": 0.9532}",Z,union:sliding_window:2934:2936|heu_like:heu:2935:2936,Y2
+event_00992,episode_0173,2941,2943,"A,B","{A,B}","{""A"": 0.9371, ""B"": 0.9496}",X,union:sliding_window:2941:2943|heu_like:heu:2941:2943,Y1
+event_00993,episode_0173,2945,2945,"A,C","{A,C}","{""A"": 0.913, ""C"": 0.816}",X,union:heu_like:heu:2945:2945,Y1
+event_00994,episode_0173,2946,2946,"B,C,H","{B,C,H}","{""B"": 0.8725, ""C"": 0.9469, ""H"": 0.8106}",X,union:heu_like:heu:2946:2946,Y1
+event_00995,episode_0173,2946,2948,"B,C","{B,C}","{""B"": 0.9892, ""C"": 0.9817}",X,union:sliding_window:2946:2948|heu_like:heu:2948:2948,Y1
+event_00996,episode_0173,2947,2947,"B,C,D","{B,C,D}","{""B"": 0.957, ""C"": 0.9704, ""D"": 0.8137}",X,union:heu_like:heu:2947:2947,Y1
+event_00997,episode_0173,2951,2951,"A,E,F","{A,E,F}","{""A"": 0.8266, ""E"": 0.8945, ""F"": 0.8112}",X,union:heu_like:heu:2951:2951,Y1
+event_00998,episode_0173,2951,2953,"E,F","{E,F}","{""E"": 0.9578, ""F"": 0.9894}",X,union:sliding_window:2951:2953|heu_like:heu:2952:2953,Y1
+event_00999,episode_0173,2955,2955,"A,F","{A,F}","{""A"": 0.8483, ""F"": 0.9138}",X,union:heu_like:heu:2955:2955,Y1
+event_01000,episode_0174,2958,2958,"A,B,D","{A,B,D}","{""A"": 0.8, ""B"": 0.8, ""D"": 0.8}",W,union:heu_like:heu:2958:2958,Y3
+event_01001,episode_0174,2958,2960,"A,B","{A,B}","{""A"": 0.9792, ""B"": 1.0456}",W,union:sliding_window:2958:2960,Y3
+event_01002,episode_0174,2959,2959,"A,B,G","{A,B,G}","{""A"": 0.944, ""B"": 0.944, ""G"": 0.8069}",W,union:heu_like:heu:2959:2959,Y3
+event_01003,episode_0174,2960,2960,"A,B,D","{A,B,D}","{""A"": 0.9699, ""B"": 0.9699, ""D"": 0.8931}",W,union:heu_like:heu:2960:2960,Y3
+event_01004,episode_0174,2963,2963,"B,C,G","{B,C,G}","{""B"": 0.8746, ""C"": 0.8145, ""G"": 0.8452}",W,union:heu_like:heu:2963:2963,Y3
+event_01005,episode_0174,2963,2965,"B,G","{B,G}","{""B"": 0.9913, ""G"": 0.9867}",W,union:sliding_window:2963:2965|heu_like:heu:2965:2965,Y3
+event_01006,episode_0174,2964,2964,"B,E,G,H","{B,E,G,H}","{""B"": 0.9574, ""E"": 0.8151, ""G"": 0.9521, ""H"": 0.8143}",W,union:heu_like:heu:2964:2964,Y3
+event_01007,episode_0174,2968,2970,"E,F","{E,F}","{""E"": 0.9396, ""F"": 0.9565}",W,union:sliding_window:2968:2970|heu_like:heu:2968:2970,Y3
+event_01008,episode_0175,2975,2977,"A,B","{A,B}","{""A"": 0.9459, ""B"": 0.9405}",Z,union:sliding_window:2975:2977|heu_like:heu:2975:2977,Y2
+event_01009,episode_0175,2980,2980,"B,E","{B,E}","{""B"": 0.8746, ""E"": 0.8124}",Z,union:heu_like:heu:2980:2980,Y2
+event_01010,episode_0175,2981,2981,"B,D","{B,D}","{""B"": 0.9574, ""D"": 0.814}",Z,union:heu_like:heu:2981:2981,Y2
+event_01011,episode_0175,2982,2982,"B,E","{B,E}","{""B"": 0.9723, ""E"": 0.8964}",Z,union:heu_like:heu:2982:2982,Y2
+event_01012,episode_0175,2985,2987,"E,F","{E,F}","{""E"": 0.9555, ""F"": 0.9365}",Z,union:sliding_window:2985:2987|heu_like:heu:2985:2985|heu_like:heu:2987:2987,Y2
+event_01013,episode_0175,2986,2986,"B,E,F","{B,E,F}","{""B"": 0.8493, ""E"": 0.9564, ""F"": 0.9468}",Z,union:heu_like:heu:2986:2986,Y2
+event_01014,episode_0176,2992,2993,"A,B","{A,B}","{""A"": 0.872, ""B"": 0.872}",X,union:heu_like:heu:2992:2993,Y1
+event_01015,episode_0176,2994,2994,"A,G","{A,G}","{""A"": 0.9699, ""G"": 0.8104}",X,union:heu_like:heu:2994:2994,Y1
+event_01016,episode_0176,2997,2999,"B,C","{B,C}","{""B"": 0.9294, ""C"": 0.9553}",X,union:sliding_window:2997:2999|heu_like:heu:2997:2999,Y1
+event_01017,episode_0176,3002,3004,"E,F","{E,F}","{""E"": 0.9698, ""F"": 0.9449}",X,union:sliding_window:3002:3004|heu_like:heu:3002:3004,Y1
+event_01018,episode_0177,3009,3011,"A,B","{A,B}","{""A"": 0.9295, ""B"": 0.9686}",W,union:sliding_window:3009:3011|heu_like:heu:3009:3011,Y3
+event_01019,episode_0177,3014,3016,"B,G","{B,G}","{""B"": 0.9576, ""G"": 0.9618}",W,union:sliding_window:3014:3016|heu_like:heu:3014:3014|heu_like:heu:3016:3016,Y3
+event_01020,episode_0177,3015,3015,"B,F,G","{B,F,G}","{""B"": 0.9575, ""F"": 0.867, ""G"": 0.9703}",W,union:heu_like:heu:3015:3015,Y3
+event_01021,episode_0177,3019,3021,"E,F","{E,F}","{""E"": 0.9483, ""F"": 0.9537}",W,union:sliding_window:3019:3021|heu_like:heu:3019:3021,Y3
+event_01022,episode_0178,3026,3028,"A,B","{A,B}","{""A"": 0.9481, ""B"": 0.9532}",Z,union:sliding_window:3026:3028|heu_like:heu:3026:3028,Y2
+event_01023,episode_0178,3032,3033,"B,E","{B,E}","{""B"": 0.9039, ""E"": 0.958}",Z,union:heu_like:heu:3032:3033,Y2
+event_01024,episode_0178,3037,3038,"E,F","{E,F}","{""E"": 0.9021, ""F"": 0.9587}",Z,union:heu_like:heu:3037:3038,Y2
+event_01025,episode_0179,3043,3045,"A,B","{A,B}","{""A"": 0.9559, ""B"": 0.9336}",W,union:sliding_window:3043:3045|heu_like:heu:3043:3045,Y3
+event_01026,episode_0179,3048,3049,"B,G","{B,G}","{""B"": 0.9162, ""G"": 0.8784}",W,union:heu_like:heu:3048:3049,Y3
+event_01027,episode_0179,3053,3055,"E,F","{E,F}","{""E"": 0.9832, ""F"": 0.9418}",W,union:sliding_window:3053:3055|heu_like:heu:3053:3054,Y3
+event_01028,episode_0179,3055,3055,"E,F,H","{E,F,H}","{""E"": 0.9746, ""F"": 0.9703, ""H"": 0.8117}",W,union:heu_like:heu:3055:3055,Y3
+event_01029,episode_0180,3060,3060,"A,B","{A,B}","{""A"": 0.8, ""B"": 0.8}",X,union:heu_like:heu:3060:3060,Y1
+event_01030,episode_0180,3061,3061,"B,C","{B,C}","{""B"": 0.944, ""C"": 0.8037}",X,union:heu_like:heu:3061:3061,Y1
+event_01031,episode_0180,3062,3062,"A,B,C","{A,B,C}","{""A"": 0.8922, ""B"": 0.9699, ""C"": 0.9447}",X,union:heu_like:heu:3062:3062,Y1
+event_01032,episode_0180,3066,3067,"B,C","{B,C}","{""B"": 0.903, ""C"": 0.9647}",X,union:heu_like:heu:3066:3067,Y1
+event_01033,episode_0180,3070,3072,"E,F","{E,F}","{""E"": 0.9437, ""F"": 0.9495}",X,union:sliding_window:3070:3072|heu_like:heu:3070:3072,Y1
+event_01034,episode_0181,3077,3077,"A,C,H","{A,C,H}","{""A"": 0.8, ""C"": 0.8, ""H"": 0.8}",Z,union:heu_like:heu:3077:3077,Y2
+event_01035,episode_0181,3078,3079,"A,B","{A,B}","{""A"": 0.957, ""B"": 0.875}",Z,union:heu_like:heu:3078:3079,Y2
+event_01036,episode_0181,3082,3083,"B,E","{B,E}","{""B"": 0.9156, ""E"": 0.8841}",Z,union:heu_like:heu:3082:3083,Y2
+event_01037,episode_0181,3087,3089,"E,F","{E,F}","{""E"": 0.9468, ""F"": 0.9874}",Z,union:sliding_window:3087:3089|heu_like:heu:3087:3089,Y2
+event_01038,episode_0182,3094,3096,"A,B","{A,B}","{""A"": 0.9382, ""B"": 0.9655}",Z,union:sliding_window:3094:3096|heu_like:heu:3094:3096,Y2
+event_01039,episode_0182,3099,3101,"B,E","{B,E}","{""B"": 0.9728, ""E"": 0.9526}",Z,union:sliding_window:3099:3101|heu_like:heu:3099:3101,Y2
+event_01040,episode_0182,3104,3104,"E,F","{E,F}","{""E"": 0.8762, ""F"": 0.8155}",Z,union:heu_like:heu:3104:3104,Y2
+event_01041,episode_0182,3106,3106,"D,E,F","{D,E,F}","{""D"": 0.8169, ""E"": 0.9724, ""F"": 0.8977}",Z,union:heu_like:heu:3106:3106,Y2
+event_01042,episode_0183,3111,3113,"A,B","{A,B}","{""A"": 0.9662, ""B"": 0.9478}",X,union:sliding_window:3111:3113|heu_like:heu:3111:3113,Y1
+event_01043,episode_0183,3117,3118,"B,C","{B,C}","{""B"": 0.9649, ""C"": 0.8822}",X,union:heu_like:heu:3117:3118,Y1
+event_01044,episode_0183,3119,3119,"E,F","{E,F}","{""E"": 0.8159, ""F"": 0.8168}",X,union:heu_like:heu:3119:3119,Y1
+event_01045,episode_0183,3121,3123,"E,F","{E,F}","{""E"": 0.9496, ""F"": 0.9668}",X,union:sliding_window:3121:3123|heu_like:heu:3121:3123,Y1
+event_01046,episode_0184,3128,3128,"A,B,F","{A,B,F}","{""A"": 0.8, ""B"": 0.8, ""F"": 0.8}",W,union:heu_like:heu:3128:3128,Y3
+event_01047,episode_0184,3128,3130,"A,B","{A,B}","{""A"": 0.9574, ""B"": 0.9884}",W,union:sliding_window:3128:3130|heu_like:heu:3129:3130,Y3
+event_01048,episode_0184,3133,3133,"A,B,G","{A,B,G}","{""A"": 0.8732, ""B"": 0.8746, ""G"": 0.8141}",W,union:heu_like:heu:3133:3133,Y3
+event_01049,episode_0184,3133,3135,"B,G","{B,G}","{""B"": 0.9502, ""G"": 0.959}",W,union:sliding_window:3133:3135|heu_like:heu:3134:3135,Y3
+event_01050,episode_0184,3138,3138,"E,F,G","{E,F,G}","{""E"": 0.81, ""F"": 0.818, ""G"": 0.876}",W,union:heu_like:heu:3138:3138,Y3
+event_01051,episode_0184,3138,3141,"E,F","{E,F}","{""E"": 0.9801, ""F"": 0.9407}",W,union:sliding_window:3138:3141|heu_like:heu:3139:3140,Y3
+event_01052,episode_0184,3141,3141,"C,E,F","{C,E,F}","{""C"": 0.8148, ""E"": 0.9746, ""F"": 0.9747}",W,union:heu_like:heu:3141:3141,Y3
+event_01053,episode_0185,3145,3145,"A,B","{A,B}","{""A"": 0.8, ""B"": 0.8}",Z,union:heu_like:heu:3145:3145,Y2
+event_01054,episode_0185,3146,3146,"B,F","{B,F}","{""B"": 0.944, ""F"": 0.8041}",Z,union:heu_like:heu:3146:3146,Y2
+event_01055,episode_0185,3147,3147,"A,B","{A,B}","{""A"": 0.8949, ""B"": 0.9699}",Z,union:heu_like:heu:3147:3147,Y2
+event_01056,episode_0185,3150,3152,"B,E","{B,E}","{""B"": 0.9587, ""E"": 0.9321}",Z,union:sliding_window:3150:3152|heu_like:heu:3150:3150|heu_like:heu:3152:3152,Y2
+event_01057,episode_0185,3151,3151,"A,B,E","{A,B,E}","{""A"": 0.8474, ""B"": 0.9574, ""E"": 0.9466}",Z,union:heu_like:heu:3151:3151,Y2
+event_01058,episode_0185,3155,3155,"E,F","{E,F}","{""E"": 0.8749, ""F"": 0.8162}",Z,union:heu_like:heu:3155:3155,Y2
+event_01059,episode_0185,3156,3156,"C,F","{C,F}","{""C"": 0.8172, ""F"": 0.9469}",Z,union:heu_like:heu:3156:3156,Y2
+event_01060,episode_0185,3157,3157,"E,F","{E,F}","{""E"": 0.902, ""F"": 0.9704}",Z,union:heu_like:heu:3157:3157,Y2
+event_01061,episode_0186,3162,3164,"A,B","{A,B}","{""A"": 0.9551, ""B"": 0.931}",W,union:sliding_window:3162:3164|heu_like:heu:3162:3164,Y3
+event_01062,episode_0186,3168,3168,"B,D,G","{B,D,G}","{""B"": 0.9642, ""D"": 0.8125, ""G"": 0.8132}",W,union:heu_like:heu:3168:3168,Y3
+event_01063,episode_0186,3169,3169,"B,G","{B,G}","{""B"": 0.9736, ""G"": 0.9464}",W,union:heu_like:heu:3169:3169,Y3
+event_01064,episode_0186,3172,3173,"E,F","{E,F}","{""E"": 0.881, ""F"": 0.8812}",W,union:heu_like:heu:3172:3173,Y3
+event_01065,episode_0186,3174,3174,"E,H","{E,H}","{""E"": 0.9704, ""H"": 0.8169}",W,union:heu_like:heu:3174:3174,Y3
+event_01066,episode_0186,3175,3175,"B,H","{B,H}","{""B"": 0.8297, ""H"": 0.947}",W,union:heu_like:heu:3175:3175,Y3
+event_01067,episode_0187,3179,3181,"A,B","{A,B}","{""A"": 0.9529, ""B"": 0.9582}",X,union:sliding_window:3179:3181|heu_like:heu:3179:3181,Y1
+event_01068,episode_0187,3184,3184,"A,B,H","{A,B,H}","{""A"": 0.8751, ""B"": 0.8738, ""H"": 0.818}",X,union:heu_like:heu:3184:3184,Y1
+event_01069,episode_0187,3185,3185,"A,B","{A,B}","{""A"": 0.9575, ""B"": 0.9573}",X,union:heu_like:heu:3185:3185,Y1
+event_01070,episode_0187,3186,3186,"B,C,G","{B,C,G}","{""B"": 0.9723, ""C"": 0.8118, ""G"": 0.8159}",X,union:heu_like:heu:3186:3186,Y1
+event_01071,episode_0187,3189,3191,"E,F","{E,F}","{""E"": 0.9263, ""F"": 0.9155}",X,union:sliding_window:3189:3191|heu_like:heu:3189:3190,Y1
+event_01072,episode_0187,3191,3191,"E,F,G","{E,F,G}","{""E"": 0.9705, ""F"": 0.9703, ""G"": 0.8501}",X,union:heu_like:heu:3191:3191,Y1
+event_01073,episode_0188,3197,3198,"A,B","{A,B}","{""A"": 0.8754, ""B"": 0.957}",X,union:heu_like:heu:3197:3198,Y1
+event_01074,episode_0188,3201,3203,"B,C","{B,C}","{""B"": 0.9425, ""C"": 0.9393}",X,union:sliding_window:3201:3203|heu_like:heu:3201:3201|heu_like:heu:3203:3203,Y1
+event_01075,episode_0188,3202,3202,"B,C,E","{B,C,E}","{""B"": 0.9577, ""C"": 0.9467, ""E"": 0.8132}",X,union:heu_like:heu:3202:3202,Y1
+event_01076,episode_0188,3206,3208,"E,F","{E,F}","{""E"": 0.9465, ""F"": 0.9645}",X,union:sliding_window:3206:3208|heu_like:heu:3206:3208,Y1
+event_01077,episode_0189,3213,3213,"A,B","{A,B}","{""A"": 0.8, ""B"": 0.8}",Z,union:heu_like:heu:3213:3213,Y2
+event_01078,episode_0189,3215,3215,"A,B,G","{A,B,G}","{""A"": 0.9699, ""B"": 0.893, ""G"": 0.8052}",Z,union:heu_like:heu:3215:3215,Y2
+event_01079,episode_0189,3218,3220,"B,E","{B,E}","{""B"": 0.9491, ""E"": 0.956}",Z,union:sliding_window:3218:3220|heu_like:heu:3218:3220,Y2
+event_01080,episode_0189,3223,3225,"E,F","{E,F}","{""E"": 0.9561, ""F"": 0.9364}",Z,union:sliding_window:3223:3225|heu_like:heu:3223:3223|heu_like:heu:3225:3225,Y2
+event_01081,episode_0189,3224,3224,"D,E,F","{D,E,F}","{""D"": 0.8644, ""E"": 0.9578, ""F"": 0.9467}",Z,union:heu_like:heu:3224:3224,Y2
+event_01082,episode_0190,3230,3230,"A,B,H","{A,B,H}","{""A"": 0.8, ""B"": 0.8, ""H"": 0.8}",W,union:heu_like:heu:3230:3230,Y3
+event_01083,episode_0190,3230,3232,"A,B","{A,B}","{""A"": 0.9892, ""B"": 0.9603}",W,union:sliding_window:3230:3232|heu_like:heu:3231:3231,Y3
+event_01084,episode_0190,3232,3232,"A,B,G","{A,B,G}","{""A"": 0.9699, ""B"": 0.9699, ""G"": 0.8056}",W,union:heu_like:heu:3232:3232,Y3
+event_01085,episode_0190,3235,3237,"B,G","{B,G}","{""B"": 0.9684, ""G"": 0.9629}",W,union:sliding_window:3235:3237|heu_like:heu:3235:3235|heu_like:heu:3237:3237,Y3
+event_01086,episode_0190,3236,3236,"B,C,G,H","{B,C,G,H}","{""B"": 0.9577, ""C"": 0.8149, ""G"": 0.9557, ""H"": 0.8248}",W,union:heu_like:heu:3236:3236,Y3
+event_01087,episode_0190,3240,3242,"E,F","{E,F}","{""E"": 0.9598, ""F"": 0.9773}",W,union:sliding_window:3240:3242|heu_like:heu:3240:3242,Y3
+event_01088,episode_0191,3247,3247,"A,B,H","{A,B,H}","{""A"": 0.8, ""B"": 0.8, ""H"": 0.8}",X,union:heu_like:heu:3247:3247,Y1
+event_01089,episode_0191,3247,3249,"A,B","{A,B}","{""A"": 0.9601, ""B"": 0.9747}",X,union:sliding_window:3247:3249|heu_like:heu:3248:3248,Y1
+event_01090,episode_0191,3249,3249,"A,B,D","{A,B,D}","{""A"": 0.9699, ""B"": 0.9699, ""D"": 0.8111}",X,union:heu_like:heu:3249:3249,Y1
+event_01091,episode_0191,3252,3252,"B,C,G","{B,C,G}","{""B"": 0.8747, ""C"": 0.8132, ""G"": 0.8952}",X,union:heu_like:heu:3252:3252,Y1
+event_01092,episode_0191,3252,3254,"B,C","{B,C}","{""B"": 0.9666, ""C"": 0.9777}",X,union:sliding_window:3252:3254|heu_like:heu:3253:3254,Y1
+event_01093,episode_0191,3255,3255,"B,D","{B,D}","{""B"": 0.975, ""D"": 0.8251}",X,union:heu_like:heu:3255:3255,Y1
+event_01094,episode_0191,3257,3259,"E,F","{E,F}","{""E"": 0.933, ""F"": 0.9326}",X,union:sliding_window:3257:3259|heu_like:heu:3257:3259,Y1
+event_01095,episode_0192,3264,3264,"A,B,F","{A,B,F}","{""A"": 0.8, ""B"": 0.8, ""F"": 0.8}",Z,union:heu_like:heu:3264:3264,Y2
+event_01096,episode_0192,3266,3266,"A,B","{A,B}","{""A"": 0.9699, ""B"": 0.8915}",Z,union:heu_like:heu:3266:3266,Y2
+event_01097,episode_0192,3269,3271,"B,E","{B,E}","{""B"": 0.9781, ""E"": 0.9388}",Z,union:sliding_window:3269:3271|heu_like:heu:3269:3271,Y2
+event_01098,episode_0192,3274,3276,"E,F","{E,F}","{""E"": 0.9512, ""F"": 0.9567}",Z,union:sliding_window:3274:3276|heu_like:heu:3274:3276,Y2
+event_01099,episode_0193,3281,3283,"A,B","{A,B}","{""A"": 0.9437, ""B"": 0.9322}",W,union:sliding_window:3281:3283|heu_like:heu:3281:3281|heu_like:heu:3283:3283,Y3
+event_01100,episode_0193,3282,3282,"A,B,D","{A,B,D}","{""A"": 0.944, ""B"": 0.944, ""D"": 0.8091}",W,union:heu_like:heu:3282:3282,Y3
+event_01101,episode_0193,3286,3288,"B,G","{B,G}","{""B"": 0.995, ""G"": 0.9418}",W,union:sliding_window:3286:3288|heu_like:heu:3286:3287,Y3
+event_01102,episode_0193,3288,3288,"B,G,H","{B,G,H}","{""B"": 0.9724, ""G"": 0.9731, ""H"": 0.8144}",W,union:heu_like:heu:3288:3288,Y3
+event_01103,episode_0193,3291,3293,"E,F","{E,F}","{""E"": 0.9478, ""F"": 0.9652}",W,union:sliding_window:3291:3293|heu_like:heu:3291:3293,Y3
+event_01104,episode_0194,3299,3300,"A,B,E","{A,B,E}","{""A"": 0.957, ""B"": 0.8747, ""E"": 0.8753}",X,union:heu_like:heu:3299:3300,Y1
+event_01105,episode_0194,3303,3303,"B,C,H","{B,C,H}","{""B"": 0.8744, ""C"": 0.8104, ""H"": 0.815}",X,union:heu_like:heu:3303:3303,Y1
+event_01106,episode_0194,3303,3305,"B,C","{B,C}","{""B"": 0.9567, ""C"": 0.9859}",X,union:sliding_window:3303:3305|heu_like:heu:3304:3305,Y1
+event_01107,episode_0194,3308,3310,"E,F","{E,F}","{""E"": 0.9432, ""F"": 0.9255}",X,union:sliding_window:3308:3310|heu_like:heu:3308:3309,Y1
+event_01108,episode_0194,3310,3310,"D,E,F","{D,E,F}","{""D"": 0.8105, ""E"": 0.9707, ""F"": 0.9705}",X,union:heu_like:heu:3310:3310,Y1
+event_01109,episode_0195,3315,3317,"A,B","{A,B}","{""A"": 0.9359, ""B"": 0.938}",Z,union:sliding_window:3315:3317|heu_like:heu:3315:3315|heu_like:heu:3317:3317,Y2
+event_01110,episode_0195,3316,3316,"A,B,D","{A,B,D}","{""A"": 0.944, ""B"": 0.944, ""D"": 0.8048}",Z,union:heu_like:heu:3316:3316,Y2
+event_01111,episode_0195,3320,3322,"B,E","{B,E}","{""B"": 0.9869, ""E"": 0.9345}",Z,union:sliding_window:3320:3322|heu_like:heu:3320:3322,Y2
+event_01112,episode_0195,3325,3327,"E,F","{E,F}","{""E"": 0.9453, ""F"": 0.9251}",Z,union:sliding_window:3325:3327|heu_like:heu:3325:3325|heu_like:heu:3327:3327,Y2
+event_01113,episode_0195,3326,3326,"A,E,F","{A,E,F}","{""A"": 0.8154, ""E"": 0.9572, ""F"": 0.9461}",Z,union:heu_like:heu:3326:3326,Y2
+event_01114,episode_0195,3328,3328,"F,H","{F,H}","{""F"": 0.9747, ""H"": 0.8164}",Z,union:heu_like:heu:3328:3328,Y2
+event_01115,episode_0195,3329,3329,"B,F","{B,F}","{""B"": 0.8385, ""F"": 0.9754}",Z,union:heu_like:heu:3329:3329,Y2
+event_01116,episode_0196,3332,3334,"A,B","{A,B}","{""A"": 0.9502, ""B"": 0.9446}",W,union:sliding_window:3332:3334|heu_like:heu:3332:3334,Y3
+event_01117,episode_0196,3337,3339,"B,G","{B,G}","{""B"": 0.95, ""G"": 0.9665}",W,union:sliding_window:3337:3339|heu_like:heu:3337:3339,Y3
+event_01118,episode_0196,3341,3341,"D,E","{D,E}","{""D"": 0.8145, ""E"": 0.8186}",W,union:heu_like:heu:3341:3341,Y3
+event_01119,episode_0196,3342,3344,"E,F","{E,F}","{""E"": 0.9726, ""F"": 0.9475}",W,union:sliding_window:3342:3344|heu_like:heu:3342:3342|heu_like:heu:3344:3344,Y3
+event_01120,episode_0196,3343,3343,"E,F,G","{E,F,G}","{""E"": 0.9705, ""F"": 0.9466, ""G"": 0.8536}",W,union:heu_like:heu:3343:3343,Y3
+event_01121,episode_0197,3349,3351,"A,B","{A,B}","{""A"": 0.9386, ""B"": 0.9337}",W,union:sliding_window:3349:3351|heu_like:heu:3349:3349|heu_like:heu:3351:3351,Y3
+event_01122,episode_0197,3350,3350,"A,B,C,H","{A,B,C,H}","{""A"": 0.944, ""B"": 0.944, ""C"": 0.8057, ""H"": 0.8042}",W,union:heu_like:heu:3350:3350,Y3
+event_01123,episode_0197,3354,3356,"B,G","{B,G}","{""B"": 0.9836, ""G"": 0.9809}",W,union:sliding_window:3354:3356|heu_like:heu:3354:3356,Y3
+event_01124,episode_0197,3357,3357,"A,B","{A,B}","{""A"": 0.8263, ""B"": 0.975}",W,union:heu_like:heu:3357:3357,Y3
+event_01125,episode_0197,3359,3361,"E,F","{E,F}","{""E"": 0.9551, ""F"": 0.9711}",W,union:sliding_window:3359:3361|heu_like:heu:3359:3361,Y3
+event_01126,episode_0198,3366,3367,"A,B","{A,B}","{""A"": 0.872, ""B"": 0.872}",Z,union:heu_like:heu:3366:3367,Y2
+event_01127,episode_0198,3368,3368,"B,C","{B,C}","{""B"": 0.9699, ""C"": 0.8099}",Z,union:heu_like:heu:3368:3368,Y2
+event_01128,episode_0198,3371,3373,"B,E","{B,E}","{""B"": 0.9669, ""E"": 0.9526}",Z,union:sliding_window:3371:3373|heu_like:heu:3371:3373,Y2
+event_01129,episode_0198,3376,3378,"E,F","{E,F}","{""E"": 0.9521, ""F"": 0.9373}",Z,union:sliding_window:3376:3378|heu_like:heu:3376:3376|heu_like:heu:3378:3378,Y2
+event_01130,episode_0198,3377,3377,"D,E,F","{D,E,F}","{""D"": 0.8135, ""E"": 0.9572, ""F"": 0.9479}",Z,union:heu_like:heu:3377:3377,Y2
+event_01131,episode_0199,3383,3385,"A,B","{A,B}","{""A"": 0.9371, ""B"": 0.9344}",X,union:sliding_window:3383:3385|heu_like:heu:3383:3383|heu_like:heu:3385:3385,Y1
+event_01132,episode_0199,3384,3384,"A,B,F","{A,B,F}","{""A"": 0.944, ""B"": 0.944, ""F"": 0.8082}",X,union:heu_like:heu:3384:3384,Y1
+event_01133,episode_0199,3388,3390,"B,C","{B,C}","{""B"": 0.9646, ""C"": 0.9531}",X,union:sliding_window:3388:3390|heu_like:heu:3388:3390,Y1
+event_01134,episode_0199,3393,3395,"E,F","{E,F}","{""E"": 0.9484, ""F"": 0.9345}",X,union:sliding_window:3393:3395|heu_like:heu:3393:3395,Y1

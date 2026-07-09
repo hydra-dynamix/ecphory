@@ -1,0 +1,746 @@
+# Event-First Memory Prototype Report
+
+## Question
+
+When the same static graph is produced by different temporal processes, can the event graph distinguish them?
+
+## Result
+
+- Detected events: 2312
+- Detected transitions: 2112
+- Recurrent motifs: 437
+- Event-first next-event accuracy, current event only: 0.000
+- Event-first next-event accuracy, current event plus context: 0.000
+- Event-first next-event accuracy, two-event history: 0.000
+- Collapsed static next-event accuracy: 0.000
+- Ambiguous {A,B} cases: 0
+- Ambiguous {A,B} event-first accuracy: 0.000
+- Ambiguous {A,B} collapsed-static accuracy: 0.000
+
+The current-event model correctly treats `{A,B}` as ambiguous. Context-conditioned events and two-event histories resolve the branch, while the collapsed graph cannot represent either distinction.
+
+The event view preserves temporal ordering and recovers the branches after `{A,B}`:
+
+- `{U06,U27}` -> `{U00,U11}`: 2
+- `{U02,U18}` -> `{U09,U30}`: 2
+- `{U13,U15}` -> `{U05,U13}`: 2
+- `{U19,U36}` -> `{U19,U23}`: 2
+- `{U00,U15}` -> `{U00,U11}`: 2
+- `{U27,U30}` -> `{U04,U06}`: 2
+- `{U08,U28}` -> `{U09,U36}`: 2
+- `{U16,U24}` -> `{U07,U26}`: 2
+
+The collapsed graph contains unit co-occurrence edges, but it has no first-class representation of episode order, context, duration, or branch identity.
+
+## Event Counts
+
+- `{U07,U26}`: 32
+- `{U19,U36}`: 28
+- `{U27,U30}`: 23
+- `{U24,U28}`: 22
+- `{U00,U02}`: 21
+- `{U07,U15}`: 20
+- `{U25,U32}`: 20
+- `{U16,U19}`: 20
+- `{U14,U26}`: 19
+- `{U09,U36}`: 19
+- `{U13,U22}`: 19
+- `{U05,U34}`: 19
+- `{U06,U33}`: 19
+- `{U08,U28}`: 19
+- `{U09,U30}`: 18
+- `{U01,U03}`: 18
+- `{U05,U13}`: 16
+- `{U11,U14}`: 16
+- `{U03,U11}`: 16
+- `{U05,U07}`: 16
+- `{U12,U20}`: 16
+- `{U17,U19}`: 16
+- `{U35,U39}`: 16
+- `{U06,U32}`: 15
+- `{U07,U22}`: 15
+- `{U04,U21}`: 15
+- `{U09,U10}`: 15
+- `{U21,U34}`: 14
+- `{U04,U06}`: 14
+- `{U08,U10}`: 13
+- `{U00,U11}`: 13
+- `{U29,U36}`: 13
+- `{U00,U36}`: 12
+- `{U04,U29}`: 12
+- `{U10,U33}`: 12
+- `{U00,U26}`: 12
+- `{U35,U38}`: 12
+- `{U15,U20}`: 12
+- `{U12,U30}`: 12
+- `{U06,U27}`: 11
+- `{U14,U18}`: 11
+- `{U13,U23}`: 11
+- `{U14,U24}`: 11
+- `{U10,U31}`: 11
+- `{U05,U33}`: 11
+- `{U13,U16}`: 10
+- `{U27,U28}`: 10
+- `{U04,U12}`: 10
+- `{U09,U27}`: 10
+- `{U36,U38}`: 10
+- `{U16,U23}`: 10
+- `{U28,U30}`: 10
+- `{U02,U19}`: 10
+- `{U16,U24}`: 10
+- `{U17,U31}`: 9
+- `{U00,U31}`: 9
+- `{U04,U24}`: 9
+- `{U13,U15}`: 9
+- `{U00,U13}`: 9
+- `{U10,U13}`: 9
+- `{U27,U34}`: 8
+- `{U10,U28}`: 8
+- `{U07,U14}`: 8
+- `{U30,U39}`: 8
+- `{U03,U17}`: 8
+- `{U20,U22}`: 8
+- `{U10,U34}`: 8
+- `{U15,U39}`: 8
+- `{U00,U19}`: 8
+- `{U07,U24}`: 8
+- `{U27,U37}`: 8
+- `{U05,U10}`: 8
+- `{U03,U26}`: 8
+- `{U02,U06}`: 7
+- `{U33,U34}`: 7
+- `{U21,U28}`: 7
+- `{U16,U34}`: 7
+- `{U02,U35}`: 7
+- `{U05,U14}`: 7
+- `{U11,U36}`: 7
+- `{U27,U36}`: 7
+- `{U05,U31}`: 7
+- `{U08,U27}`: 7
+- `{U26,U39}`: 7
+- `{U19,U39}`: 6
+- `{U07,U18}`: 6
+- `{U25,U36}`: 6
+- `{U01,U23}`: 6
+- `{U15,U21}`: 6
+- `{U06,U07}`: 6
+- `{U09,U35}`: 6
+- `{U19,U35}`: 6
+- `{U20,U33}`: 6
+- `{U00,U06}`: 6
+- `{U23,U32}`: 6
+- `{U22,U34}`: 6
+- `{U02,U23}`: 6
+- `{U05,U19}`: 6
+- `{U15,U32}`: 6
+- `{U18,U20}`: 6
+- `{U09,U23}`: 6
+- `{U03,U20}`: 6
+- `{U02,U13}`: 6
+- `{U01,U12}`: 6
+- `{U10,U37}`: 6
+- `{U24,U31}`: 6
+- `{U07,U21}`: 6
+- `{U14,U27}`: 6
+- `{U13,U30}`: 6
+- `{U12,U16}`: 5
+- `{U09,U14}`: 5
+- `{U01,U27}`: 5
+- `{U05,U37}`: 5
+- `{U03,U25}`: 5
+- `{U32,U36}`: 5
+- `{U12,U29}`: 5
+- `{U04,U32}`: 5
+- `{U06,U10}`: 5
+- `{U15,U34}`: 5
+- `{U07,U16}`: 5
+- `{U01,U29}`: 5
+- `{U05,U18}`: 5
+- `{U02,U22}`: 5
+- `{U10,U17}`: 5
+- `{U15,U31}`: 5
+- `{U14,U29}`: 5
+- `{U05,U20}`: 5
+- `{U00,U15}`: 5
+- `{U01,U06}`: 5
+- `{U05,U12}`: 5
+- `{U14,U22}`: 5
+- `{U27,U35}`: 5
+- `{U15,U16}`: 5
+- `{U10,U21}`: 5
+- `{U12,U35}`: 5
+- `{U07,U32}`: 5
+- `{U08,U31}`: 5
+- `{U14,U37}`: 5
+- `{U01,U18}`: 4
+- `{U11,U31}`: 4
+- `{U04,U14}`: 4
+- `{U10,U23}`: 4
+- `{U12,U34}`: 4
+- `{U12,U22}`: 4
+- `{U25,U39}`: 4
+- `{U10,U16}`: 4
+- `{U09,U17}`: 4
+- `{U37,U38}`: 4
+- `{U02,U33}`: 4
+- `{U12,U38}`: 4
+- `{U05,U28}`: 4
+- `{U29,U37}`: 4
+- `{U11,U35}`: 4
+- `{U06,U22}`: 4
+- `{U10,U27}`: 4
+- `{U21,U35}`: 4
+- `{U32,U34}`: 4
+- `{U26,U35}`: 4
+- `{U21,U29}`: 4
+- `{U10,U30}`: 4
+- `{U12,U31}`: 4
+- `{U31,U36}`: 4
+- `{U03,U10}`: 4
+- `{U09,U31}`: 4
+- `{U13,U34}`: 4
+- `{U18,U32}`: 4
+- `{U22,U38}`: 4
+- `{U06,U29}`: 4
+- `{U23,U24}`: 4
+- `{U10,U18}`: 4
+- `{U21,U24}`: 4
+- `{U22,U35}`: 4
+- `{U17,U23}`: 4
+- `{U24,U34}`: 4
+- `{U12,U28}`: 4
+- `{U18,U35}`: 4
+- `{U19,U33}`: 4
+- `{U34,U39}`: 4
+- `{U19,U30}`: 4
+- `{U04,U09}`: 4
+- `{U03,U39}`: 4
+- `{U00,U18}`: 4
+- `{U03,U38}`: 4
+- `{U21,U33}`: 4
+- `{U22,U28}`: 4
+- `{U08,U26}`: 4
+- `{U15,U38}`: 3
+- `{U08,U12}`: 3
+- `{U00,U03}`: 3
+- `{U04,U39}`: 3
+- `{U23,U29}`: 3
+- `{U00,U10}`: 3
+- `{U01,U38}`: 3
+- `{U15,U19}`: 3
+- `{U36,U37}`: 3
+- `{U25,U38}`: 3
+- `{U31,U33}`: 3
+- `{U02,U18}`: 3
+- `{U02,U28}`: 3
+- `{U08,U09}`: 3
+- `{U03,U29}`: 3
+- `{U26,U31}`: 3
+- `{U20,U28}`: 3
+- `{U07,U33}`: 3
+- `{U00,U21}`: 3
+- `{U18,U26}`: 3
+- `{U26,U28}`: 3
+- `{U18,U31}`: 3
+- `{U09,U12}`: 3
+- `{U23,U37}`: 3
+- `{U03,U04}`: 3
+- `{U08,U29}`: 3
+- `{U13,U38}`: 3
+- `{U25,U30}`: 3
+- `{U14,U19}`: 3
+- `{U07,U12}`: 3
+- `{U19,U29}`: 3
+- `{U12,U17}`: 3
+- `{U08,U24}`: 3
+- `{U18,U36}`: 3
+- `{U08,U36}`: 3
+- `{U11,U33}`: 3
+- `{U09,U28}`: 3
+- `{U11,U13}`: 3
+- `{U35,U36}`: 3
+- `{U05,U39}`: 3
+- `{U03,U22}`: 3
+- `{U09,U25}`: 3
+- `{U06,U18}`: 3
+- `{U12,U36}`: 3
+- `{U02,U04}`: 3
+- `{U34,U35}`: 3
+- `{U12,U37}`: 3
+- `{U26,U27}`: 3
+- `{U22,U33}`: 3
+- `{U30,U38}`: 3
+- `{U35,U37}`: 3
+- `{U19,U22}`: 3
+- `{U02,U36}`: 3
+- `{U08,U18}`: 3
+- `{U13,U39}`: 3
+- `{U32,U35}`: 3
+- `{U15,U24}`: 3
+- `{U09,U19}`: 3
+- `{U02,U08}`: 3
+- `{U01,U21}`: 3
+- `{U09,U13}`: 3
+- `{U28,U37}`: 3
+- `{U04,U11}`: 3
+- `{U03,U19}`: 3
+- `{U11,U26}`: 3
+- `{U14,U23}`: 3
+- `{U06,U20}`: 3
+- `{U00,U34}`: 3
+- `{U11,U38}`: 3
+- `{U21,U26}`: 3
+- `{U17,U32}`: 3
+- `{U07,U29}`: 3
+- `{U02,U07}`: 3
+- `{U04,U26}`: 3
+- `{U02,U34}`: 3
+- `{U06,U08}`: 3
+- `{U25,U27}`: 3
+- `{U23,U38}`: 3
+- `{U05,U38}`: 3
+- `{U00,U35}`: 3
+- `{U31,U39}`: 3
+- `{U09,U26}`: 3
+- `{U26,U30}`: 3
+- `{U19,U37}`: 3
+- `{U07,U08}`: 3
+- `{U15,U26}`: 3
+- `{U17,U25}`: 3
+- `{U00,U17}`: 3
+- `{U03,U06}`: 3
+- `{U11,U18}`: 2
+- `{U28,U38}`: 2
+- `{U24,U30}`: 2
+- `{U04,U36}`: 2
+- `{U16,U20}`: 2
+- `{U00,U20}`: 2
+- `{U01,U20}`: 2
+- `{U01,U34}`: 2
+- `{U28,U31}`: 2
+- `{U24,U32}`: 2
+- `{U33,U36}`: 2
+- `{U16,U39}`: 2
+- `{U30,U33}`: 2
+- `{U17,U38}`: 2
+- `{U14,U21}`: 2
+- `{U09,U39}`: 2
+- `{U34,U37}`: 2
+- `{U09,U37}`: 2
+- `{U12,U24}`: 2
+- `{U11,U32}`: 2
+- `{U16,U22}`: 2
+- `{U18,U27}`: 2
+- `{U31,U37}`: 2
+- `{U10,U15}`: 2
+- `{U00,U01}`: 2
+- `{U19,U23}`: 2
+- `{U02,U14}`: 2
+- `{U18,U30}`: 2
+- `{U16,U29}`: 2
+- `{U07,U31}`: 2
+- `{U27,U31}`: 2
+- `{U23,U39}`: 2
+- `{U26,U37}`: 2
+- `{U00,U08}`: 2
+- `{U11,U22}`: 2
+- `{U24,U38}`: 2
+- `{U00,U07}`: 2
+- `{U07,U20}`: 2
+- `{U05,U36}`: 2
+- `{U13,U35}`: 2
+- `{U15,U35}`: 2
+- `{U22,U36}`: 2
+- `{U22,U29}`: 2
+- `{U16,U33}`: 2
+- `{U01,U19}`: 2
+- `{U05,U32}`: 2
+- `{U24,U36}`: 2
+- `{U09,U38}`: 2
+- `{U27,U32}`: 2
+- `{U02,U39}`: 2
+- `{U07,U38}`: 2
+- `{U19,U38}`: 2
+- `{U31,U38}`: 2
+- `{U02,U32}`: 2
+- `{U05,U17}`: 2
+- `{U00,U28}`: 2
+- `{U16,U27}`: 2
+- `{U31,U34}`: 2
+- `{U06,U37}`: 2
+- `{U05,U24}`: 2
+- `{U00,U05}`: 2
+- `{U02,U16}`: 2
+- `{U19,U25}`: 2
+- `{U30,U32}`: 2
+- `{U13,U19}`: 2
+- `{U15,U17}`: 2
+- `{U01,U28}`: 2
+- `{U07,U30}`: 2
+- `{U28,U32}`: 2
+- `{U01,U04}`: 2
+- `{U17,U30}`: 2
+- `{U06,U09}`: 2
+- `{U25,U35}`: 2
+- `{U14,U17}`: 2
+- `{U14,U34}`: 2
+- `{U03,U15}`: 2
+- `{U24,U37}`: 2
+- `{U05,U23}`: 2
+- `{U16,U17}`: 2
+- `{U09,U33}`: 2
+- `{U22,U30}`: 2
+- `{U01,U17}`: 2
+- `{U00,U04}`: 2
+- `{U12,U19}`: 2
+- `{U08,U39}`: 2
+- `{U08,U11}`: 2
+- `{U01,U14}`: 2
+- `{U13,U32}`: 2
+- `{U21,U32}`: 2
+- `{U19,U21}`: 2
+- `{U20,U37}`: 2
+- `{U15,U27}`: 2
+- `{U19,U34}`: 2
+- `{U07,U11}`: 2
+- `{U05,U08}`: 2
+- `{U12,U25}`: 2
+- `{U05,U29}`: 2
+- `{U04,U30}`: 2
+- `{U04,U37}`: 2
+- `{U26,U33}`: 2
+- `{U10,U26}`: 2
+- `{U33,U37}`: 2
+- `{U30,U34}`: 2
+- `{U30,U31}`: 2
+- `{U08,U33}`: 2
+- `{U10,U25}`: 2
+- `{U00,U32}`: 2
+- `{U09,U34}`: 2
+- `{U05,U26}`: 2
+- `{U00,U39}`: 2
+- `{U29,U31}`: 2
+- `{U11,U27}`: 2
+- `{U02,U31}`: 2
+- `{U13,U36}`: 2
+- `{U04,U08}`: 2
+- `{U09,U11}`: 2
+- `{U13,U27}`: 2
+- `{U21,U39}`: 2
+- `{U09,U16}`: 2
+- `{U06,U13}`: 2
+- `{U02,U27}`: 2
+- `{U10,U14}`: 2
+- `{U08,U16}`: 2
+- `{U15,U18}`: 2
+- `{U32,U39}`: 2
+- `{U01,U31}`: 2
+- `{U14,U15}`: 2
+- `{U00,U16}`: 2
+- `{U14,U39}`: 2
+- `{U19,U27}`: 2
+- `{U03,U16}`: 2
+- `{U05,U30}`: 2
+- `{U24,U27}`: 2
+- `{U38,U39}`: 2
+- `{U18,U21}`: 2
+- `{U13,U25}`: 2
+- `{U20,U26}`: 2
+- `{U28,U39}`: 2
+- `{U24,U35}`: 2
+- `{U31,U35}`: 2
+- `{U20,U27}`: 2
+- `{U04,U31}`: 1
+- `{U08,U35}`: 1
+- `{U23,U27}`: 1
+- `{U13,U14}`: 1
+- `{U03,U05}`: 1
+- `{U00,U38}`: 1
+- `{U17,U24}`: 1
+- `{U20,U34}`: 1
+- `{U04,U20}`: 1
+- `{U28,U35}`: 1
+- `{U08,U15}`: 1
+- `{U03,U36}`: 1
+- `{U07,U09}`: 1
+- `{U08,U32}`: 1
+- `{U25,U28}`: 1
+- `{U08,U38}`: 1
+- `{U29,U39}`: 1
+- `{U14,U28}`: 1
+- `{U18,U28}`: 1
+- `{U10,U19}`: 1
+- `{U09,U22}`: 1
+- `{U06,U31}`: 1
+- `{U13,U33}`: 1
+- `{U01,U33}`: 1
+- `{U02,U26}`: 1
+- `{U02,U21}`: 1
+- `{U20,U36}`: 1
+- `{U06,U26}`: 1
+- `{U20,U39}`: 1
+- `{U04,U33}`: 1
+- `{U04,U22}`: 1
+- `{U02,U11}`: 1
+- `{U19,U31}`: 1
+- `{U22,U39}`: 1
+- `{U01,U02}`: 1
+- `{U18,U23}`: 1
+- `{U03,U24}`: 1
+- `{U34,U36}`: 1
+- `{U12,U26}`: 1
+- `{U06,U17}`: 1
+- `{U15,U28}`: 1
+- `{U12,U32}`: 1
+- `{U17,U22}`: 1
+- `{U12,U18}`: 1
+- `{U08,U34}`: 1
+- `{U14,U35}`: 1
+- `{U03,U30}`: 1
+- `{U37,U39}`: 1
+- `{U24,U25}`: 1
+- `{U07,U19}`: 1
+- `{U01,U24}`: 1
+- `{U09,U32}`: 1
+- `{U11,U23}`: 1
+- `{U16,U36}`: 1
+- `{U09,U15}`: 1
+- `{U12,U23}`: 1
+- `{U13,U26}`: 1
+- `{U07,U39}`: 1
+- `{U01,U39}`: 1
+- `{U20,U25}`: 1
+- `{U06,U21}`: 1
+- `{U18,U24}`: 1
+- `{U07,U34}`: 1
+- `{U17,U35}`: 1
+- `{U01,U09}`: 1
+- `{U09,U29}`: 1
+- `{U19,U28}`: 1
+- `{U18,U37}`: 1
+- `{U13,U37}`: 1
+- `{U04,U17}`: 1
+- `{U01,U26}`: 1
+- `{U16,U30}`: 1
+- `{U17,U20}`: 1
+- `{U17,U26}`: 1
+- `{U11,U28}`: 1
+- `{U10,U38}`: 1
+- `{U15,U29}`: 1
+- `{U01,U37}`: 1
+- `{U03,U35}`: 1
+- `{U03,U32}`: 1
+- `{U00,U25}`: 1
+- `{U09,U24}`: 1
+- `{U16,U18}`: 1
+- `{U21,U27}`: 1
+- `{U19,U20}`: 1
+- `{U21,U36}`: 1
+- `{U13,U31}`: 1
+- `{U06,U39}`: 1
+- `{U06,U36}`: 1
+- `{U04,U19}`: 1
+- `{U26,U29}`: 1
+- `{U30,U37}`: 1
+- `{U17,U37}`: 1
+- `{U15,U37}`: 1
+- `{U09,U21}`: 1
+- `{U07,U10}`: 1
+- `{U05,U16}`: 1
+- `{U21,U25}`: 1
+- `{U00,U30}`: 1
+- `{U00,U37}`: 1
+- `{U26,U32}`: 1
+- `{U29,U34}`: 1
+- `{U03,U18}`: 1
+- `{U09,U20}`: 1
+- `{U02,U29}`: 1
+- `{U11,U20}`: 1
+- `{U12,U33}`: 1
+- `{U12,U15}`: 1
+- `{U16,U38}`: 1
+- `{U15,U30}`: 1
+- `{U22,U32}`: 1
+- `{U15,U33}`: 1
+- `{U26,U36}`: 1
+- `{U17,U36}`: 1
+- `{U15,U36}`: 1
+- `{U29,U35}`: 1
+- `{U14,U20}`: 1
+- `{U12,U13}`: 1
+- `{U18,U39}`: 1
+- `{U04,U10}`: 1
+- `{U27,U38}`: 1
+- `{U16,U37}`: 1
+- `{U02,U37}`: 1
+- `{U11,U24}`: 1
+- `{U36,U39}`: 1
+- `{U24,U29}`: 1
+- `{U11,U16}`: 1
+- `{U12,U21}`: 1
+- `{U20,U31}`: 1
+- `{U07,U35}`: 1
+- `{U06,U25}`: 1
+- `{U06,U11}`: 1
+- `{U04,U28}`: 1
+- `{U11,U12}`: 1
+- `{U24,U33}`: 1
+- `{U23,U34}`: 1
+- `{U17,U29}`: 1
+- `{U16,U25}`: 1
+- `{U09,U18}`: 1
+- `{U03,U21}`: 1
+- `{U16,U32}`: 1
+- `{U00,U14}`: 1
+- `{U14,U30}`: 1
+- `{U14,U16}`: 1
+- `{U03,U08}`: 1
+- `{U25,U26}`: 1
+- `{U05,U06}`: 1
+- `{U06,U34}`: 1
+- `{U02,U38}`: 1
+- `{U10,U12}`: 1
+- `{U10,U24}`: 1
+- `{U11,U29}`: 1
+- `{U10,U35}`: 1
+- `{U04,U05}`: 1
+- `{U20,U32}`: 1
+- `{U00,U24}`: 1
+- `{U20,U23}`: 1
+- `{U08,U22}`: 1
+- `{U25,U29}`: 1
+- `{U01,U32}`: 1
+- `{U02,U05}`: 1
+- `{U03,U07}`: 1
+- `{U07,U17}`: 1
+- `{U23,U33}`: 1
+- `{U01,U10}`: 1
+- `{U29,U33}`: 1
+- `{U04,U18}`: 1
+- `{U28,U29}`: 1
+- `{U04,U27}`: 1
+- `{U15,U23}`: 1
+- `{U22,U24}`: 1
+- `{U33,U35}`: 1
+- `{U26,U34}`: 1
+- `{U08,U14}`: 1
+- `{U11,U37}`: 1
+- `{U07,U13}`: 1
+- `{U27,U29}`: 1
+- `{U23,U36}`: 1
+- `{U19,U24}`: 1
+- `{U08,U30}`: 1
+- `{U12,U39}`: 1
+- `{U07,U25}`: 1
+- `{U03,U34}`: 1
+- `{U07,U36}`: 1
+- `{U29,U30}`: 1
+- `{U18,U25}`: 1
+- `{U06,U35}`: 1
+- `{U30,U35}`: 1
+- `{U00,U29}`: 1
+- `{U05,U27}`: 1
+- `{U25,U34}`: 1
+- `{U03,U23}`: 1
+- `{U02,U09}`: 1
+- `{U33,U39}`: 1
+- `{U02,U25}`: 1
+- `{U20,U30}`: 1
+- `{U14,U31}`: 1
+- `{U13,U21}`: 1
+- `{U02,U12}`: 1
+- `{U03,U13}`: 1
+- `{U06,U14}`: 1
+- `{U06,U16}`: 1
+- `{U05,U15}`: 1
+- `{U21,U23}`: 1
+- `{U02,U17}`: 1
+- `{U18,U34}`: 1
+- `{U22,U26}`: 1
+- `{U02,U03}`: 1
+- `{U07,U27}`: 1
+- `{U14,U38}`: 1
+- `{U04,U35}`: 1
+- `{U22,U27}`: 1
+- `{U10,U11}`: 1
+- `{U01,U05}`: 1
+- `{U00,U33}`: 1
+- `{U01,U16}`: 1
+- `{U01,U22}`: 1
+- `{U08,U23}`: 1
+- `{U10,U39}`: 1
+- `{U25,U37}`: 1
+- `{U04,U34}`: 1
+- `{U16,U26}`: 1
+- `{U06,U12}`: 1
+- `{U12,U14}`: 1
+- `{U03,U37}`: 1
+- `{U00,U22}`: 1
+
+## Top Motifs
+
+- `{U07,U26}` support=32; next={U09,U36}, {U08,U32}, {U02,U11}, {U01,U03}, {U12,U26}, {U07,U20}, {U09,U10}, {U05,U13}, {U19,U36}, {U08,U28}, {U25,U39}, {U14,U17}, {U07,U12}, {U00,U04}, {U06,U27}, {U11,U22}, {U21,U26}, {U01,U12}, {U01,U23}, {U16,U23}, {U03,U21}, {U07,U14}, {U15,U32}, {U28,U30}, {U04,U08}, {U24,U35}, {U07,U36}, {U07,U27}, {U02,U07}; contexts=CTX_0029:2, CTX_0070:2, CTX_0009:1, CTX_0023:1, CTX_0034:1, CTX_0040:1, CTX_0046:1, CTX_0047:1, CTX_0057:1, CTX_0058:1, CTX_0063:1, CTX_0064:1, CTX_0068:1, CTX_0092:1, CTX_0093:1, CTX_0105:1, CTX_0108:1, CTX_0110:1, CTX_0111:1, CTX_0115:1, CTX_0117:1, CTX_0118:1, CTX_0131:1, CTX_0151:1, CTX_0152:1, CTX_0153:1, CTX_0160:1, CTX_0163:1, CTX_0186:1, CTX_0197:1; outcomes=OUT_0029:2, OUT_0070:2, OUT_0009:1, OUT_0023:1, OUT_0034:1, OUT_0040:1, OUT_0046:1, OUT_0047:1, OUT_0057:1, OUT_0058:1, OUT_0063:1, OUT_0064:1, OUT_0068:1, OUT_0092:1, OUT_0093:1, OUT_0105:1, OUT_0108:1, OUT_0110:1, OUT_0111:1, OUT_0115:1, OUT_0117:1, OUT_0118:1, OUT_0131:1, OUT_0151:1, OUT_0152:1, OUT_0153:1, OUT_0160:1, OUT_0163:1, OUT_0186:1, OUT_0197:1
+- `{U19,U36}` support=28; next={U19,U23}, {U10,U31}, {U10,U19}, {U19,U29}, {U34,U36}, {U16,U36}, {U02,U32}, {U02,U04}, {U09,U24}, {U02,U19}, {U27,U36}, {U34,U39}, {U35,U38}, {U17,U32}, {U15,U36}, {U03,U26}, {U07,U15}, {U08,U33}, {U12,U30}, {U27,U29}, {U28,U39}, {U29,U31}, {U05,U27}, {U11,U14}; contexts=CTX_0051:2, CTX_0016:1, CTX_0023:1, CTX_0024:1, CTX_0028:1, CTX_0042:1, CTX_0043:1, CTX_0047:1, CTX_0070:1, CTX_0074:1, CTX_0076:1, CTX_0082:1, CTX_0083:1, CTX_0085:1, CTX_0091:1, CTX_0093:1, CTX_0095:1, CTX_0129:1, CTX_0130:1, CTX_0132:1, CTX_0137:1, CTX_0148:1, CTX_0155:1, CTX_0157:1, CTX_0161:1, CTX_0168:1, CTX_0170:1; outcomes=OUT_0051:2, OUT_0016:1, OUT_0023:1, OUT_0024:1, OUT_0028:1, OUT_0042:1, OUT_0043:1, OUT_0047:1, OUT_0070:1, OUT_0074:1, OUT_0076:1, OUT_0082:1, OUT_0083:1, OUT_0085:1, OUT_0091:1, OUT_0093:1, OUT_0095:1, OUT_0129:1, OUT_0130:1, OUT_0132:1, OUT_0137:1, OUT_0148:1, OUT_0155:1, OUT_0157:1, OUT_0161:1, OUT_0168:1, OUT_0170:1
+- `{U27,U30}` support=23; next={U04,U06}, {U07,U15}, {U03,U17}, {U28,U38}, {U18,U27}, {U13,U23}, {U10,U33}, {U27,U34}, {U09,U27}, {U27,U30}, {U05,U28}, {U10,U21}, {U13,U27}, {U21,U39}, {U08,U27}, {U14,U37}, {U15,U26}, {U07,U21}, {U24,U27}, {U07,U14}, {U28,U30}; contexts=CTX_0058:2, CTX_0007:1, CTX_0012:1, CTX_0013:1, CTX_0020:1, CTX_0025:1, CTX_0030:1, CTX_0031:1, CTX_0045:1, CTX_0050:1, CTX_0071:1, CTX_0094:1, CTX_0116:1, CTX_0140:1, CTX_0145:1, CTX_0146:1, CTX_0148:1, CTX_0152:1, CTX_0172:1, CTX_0186:1, CTX_0187:1, CTX_0190:1; outcomes=OUT_0058:2, OUT_0007:1, OUT_0012:1, OUT_0013:1, OUT_0020:1, OUT_0025:1, OUT_0030:1, OUT_0031:1, OUT_0045:1, OUT_0050:1, OUT_0071:1, OUT_0094:1, OUT_0116:1, OUT_0140:1, OUT_0145:1, OUT_0146:1, OUT_0148:1, OUT_0152:1, OUT_0172:1, OUT_0186:1, OUT_0187:1, OUT_0190:1
+- `{U24,U28}` support=22; next={U28,U38}, {U17,U24}, {U00,U11}, {U24,U25}, {U01,U28}, {U10,U34}, {U09,U30}, {U24,U33}, {U12,U35}, {U14,U24}, {U28,U32}, {U19,U24}, {U00,U31}, {U05,U31}, {U27,U37}, {U31,U36}, {U27,U30}, {U35,U39}, {U08,U23}; contexts=CTX_0004:2, CTX_0182:2, CTX_0001:1, CTX_0015:1, CTX_0040:1, CTX_0056:1, CTX_0059:1, CTX_0062:1, CTX_0103:1, CTX_0113:1, CTX_0114:1, CTX_0129:1, CTX_0146:1, CTX_0158:1, CTX_0164:1, CTX_0167:1, CTX_0179:1, CTX_0186:1, CTX_0193:1, CTX_0194:1; outcomes=OUT_0004:2, OUT_0182:2, OUT_0001:1, OUT_0015:1, OUT_0040:1, OUT_0056:1, OUT_0059:1, OUT_0062:1, OUT_0103:1, OUT_0113:1, OUT_0114:1, OUT_0129:1, OUT_0146:1, OUT_0158:1, OUT_0164:1, OUT_0167:1, OUT_0179:1, OUT_0186:1, OUT_0193:1, OUT_0194:1
+- `{U00,U02}` support=21; next={U02,U35}, {U00,U21}, {U00,U36}, {U07,U38}, {U17,U19}, {U00,U03}, {U09,U30}, {U07,U24}, {U02,U06}, {U07,U26}, {U00,U34}, {U06,U34}, {U27,U30}, {U26,U28}, {U20,U30}, {U36,U38}, {U09,U10}; contexts=CTX_0000:1, CTX_0002:1, CTX_0044:1, CTX_0047:1, CTX_0063:1, CTX_0064:1, CTX_0069:1, CTX_0085:1, CTX_0089:1, CTX_0105:1, CTX_0108:1, CTX_0111:1, CTX_0112:1, CTX_0121:1, CTX_0145:1, CTX_0147:1, CTX_0166:1, CTX_0168:1, CTX_0173:1, CTX_0176:1, CTX_0185:1; outcomes=OUT_0000:1, OUT_0002:1, OUT_0044:1, OUT_0047:1, OUT_0063:1, OUT_0064:1, OUT_0069:1, OUT_0085:1, OUT_0089:1, OUT_0105:1, OUT_0108:1, OUT_0111:1, OUT_0112:1, OUT_0121:1, OUT_0145:1, OUT_0147:1, OUT_0166:1, OUT_0168:1, OUT_0173:1, OUT_0176:1, OUT_0185:1
+- `{U07,U15}` support=20; next={U36,U37}, {U02,U06}, {U32,U36}, {U10,U15}, {U31,U38}, {U10,U31}, {U24,U30}, {U05,U07}, {U02,U07}, {U07,U29}, {U07,U26}, {U13,U15}, {U00,U36}, {U26,U35}, {U15,U20}, {U10,U23}, {U11,U36}, {U21,U34}, {U15,U34}; contexts=CTX_0079:2, CTX_0096:2, CTX_0124:2, CTX_0006:1, CTX_0007:1, CTX_0010:1, CTX_0021:1, CTX_0084:1, CTX_0093:1, CTX_0115:1, CTX_0117:1, CTX_0130:1, CTX_0150:1, CTX_0154:1, CTX_0157:1, CTX_0174:1, CTX_0184:1; outcomes=OUT_0079:2, OUT_0096:2, OUT_0124:2, OUT_0006:1, OUT_0007:1, OUT_0010:1, OUT_0021:1, OUT_0084:1, OUT_0093:1, OUT_0115:1, OUT_0117:1, OUT_0130:1, OUT_0150:1, OUT_0154:1, OUT_0157:1, OUT_0174:1, OUT_0184:1
+- `{U25,U32}` support=20; next={U25,U38}, {U03,U25}, {U02,U35}, {U23,U24}, {U12,U25}, {U06,U25}, {U16,U32}, {U29,U36}, {U17,U32}, {U10,U27}, {U14,U29}, {U35,U38}, {U11,U27}, {U32,U35}, {U17,U25}, {U13,U25}, {U06,U33}, {U19,U37}; contexts=CTX_0008:2, CTX_0092:2, CTX_0135:2, CTX_0195:2, CTX_0017:1, CTX_0045:1, CTX_0107:1, CTX_0118:1, CTX_0122:1, CTX_0125:1, CTX_0128:1, CTX_0131:1, CTX_0145:1, CTX_0175:1, CTX_0184:1, CTX_0196:1; outcomes=OUT_0008:2, OUT_0092:2, OUT_0135:2, OUT_0195:2, OUT_0017:1, OUT_0045:1, OUT_0107:1, OUT_0118:1, OUT_0122:1, OUT_0125:1, OUT_0128:1, OUT_0131:1, OUT_0145:1, OUT_0175:1, OUT_0184:1, OUT_0196:1
+- `{U16,U19}` support=20; next={U17,U31}, {U08,U29}, {U35,U36}, {U05,U32}, {U11,U36}, {U15,U16}, {U05,U39}, {U01,U04}, {U06,U20}, {U09,U13}, {U01,U29}, {U08,U28}, {U17,U19}, {U11,U31}, {U02,U19}, {U10,U34}, {U35,U39}, {U16,U23}; contexts=CTX_0010:1, CTX_0020:1, CTX_0038:1, CTX_0040:1, CTX_0067:1, CTX_0068:1, CTX_0081:1, CTX_0090:1, CTX_0105:1, CTX_0106:1, CTX_0118:1, CTX_0133:1, CTX_0136:1, CTX_0143:1, CTX_0151:1, CTX_0157:1, CTX_0160:1, CTX_0165:1, CTX_0173:1, CTX_0174:1; outcomes=OUT_0010:1, OUT_0020:1, OUT_0038:1, OUT_0040:1, OUT_0067:1, OUT_0068:1, OUT_0081:1, OUT_0090:1, OUT_0105:1, OUT_0106:1, OUT_0118:1, OUT_0133:1, OUT_0136:1, OUT_0143:1, OUT_0151:1, OUT_0157:1, OUT_0160:1, OUT_0165:1, OUT_0173:1, OUT_0174:1
+- `{U14,U26}` support=19; next={U09,U36}, {U00,U11}, {U05,U34}, {U00,U21}, {U26,U37}, {U17,U26}, {U10,U28}, {U14,U24}, {U02,U29}, {U02,U33}, {U25,U27}, {U05,U13}, {U14,U31}, {U10,U25}, {U26,U27}, {U19,U37}, {U03,U37}; contexts=CTX_0003:1, CTX_0014:1, CTX_0017:1, CTX_0018:1, CTX_0028:1, CTX_0062:1, CTX_0072:1, CTX_0075:1, CTX_0077:1, CTX_0086:1, CTX_0087:1, CTX_0138:1, CTX_0142:1, CTX_0154:1, CTX_0175:1, CTX_0179:1, CTX_0192:1, CTX_0196:1, CTX_0198:1; outcomes=OUT_0003:1, OUT_0014:1, OUT_0017:1, OUT_0018:1, OUT_0028:1, OUT_0062:1, OUT_0072:1, OUT_0075:1, OUT_0077:1, OUT_0086:1, OUT_0087:1, OUT_0138:1, OUT_0142:1, OUT_0154:1, OUT_0175:1, OUT_0179:1, OUT_0192:1, OUT_0196:1, OUT_0198:1
+- `{U09,U36}` support=19; next={U07,U22}, {U00,U11}, {U32,U34}, {U08,U28}, {U04,U39}, {U31,U34}, {U02,U16}, {U35,U39}, {U17,U19}, {U32,U36}, {U09,U30}, {U09,U26}, {U20,U22}, {U04,U14}, {U07,U15}, {U04,U29}; contexts=CTX_0134:2, CTX_0003:1, CTX_0016:1, CTX_0029:1, CTX_0032:1, CTX_0050:1, CTX_0054:1, CTX_0055:1, CTX_0058:1, CTX_0060:1, CTX_0088:1, CTX_0110:1, CTX_0124:1, CTX_0127:1, CTX_0129:1, CTX_0143:1, CTX_0174:1, CTX_0183:1; outcomes=OUT_0134:2, OUT_0003:1, OUT_0016:1, OUT_0029:1, OUT_0032:1, OUT_0050:1, OUT_0054:1, OUT_0055:1, OUT_0058:1, OUT_0060:1, OUT_0088:1, OUT_0110:1, OUT_0124:1, OUT_0127:1, OUT_0129:1, OUT_0143:1, OUT_0174:1, OUT_0183:1
+
+## Layer Information Loss
+
+- `RawSignal` -> `Event` `record_count_ratio` = 0.019267: Event compression stores one detected coactivation object instead of every unit-time sample.
+- `RawSignal` -> `Event` `active_signal_cell_coverage_ratio` = 0.712943: Ratio of event participant-duration cells to threshold-active unit-time cells; values above 1.0 indicate overcapture.
+- `RawSignal` -> `Event` `active_signal_cell_overcapture_ratio` = 0.000000: Excess event participant-duration coverage beyond threshold-active unit-time cells.
+- `RawSignal` -> `Event` `raw_sample_value_loss_fraction` = 0.945650: Fraction of original scalar sample positions not preserved as event participant-duration cells.
+- `Event` -> `Transition` `record_count_ratio` = 0.913495: Transitions preserve adjacency pairs but drop standalone event payload unless joined back to events.
+- `Event` -> `Transition` `event_payload_loss_fraction_without_join` = 0.555556: Transitions directly omit intensities, full participant set, source window, duration, and outcome.
+- `Episode` -> `Motif` `recurring_three_event_window_retention` = 0.000000: Fraction of length-3 episode windows retained as recurrent motifs with support >= 2.
+- `Event` -> `Motif` `motif_record_count_ratio` = 0.189014: Motifs are compressed recurring templates, not event-instance records.
+- `Event` -> `StaticProjection` `node_count_ratio` = 0.017301: Static projection collapses event instances into participant unit nodes.
+- `Event` -> `StaticProjection` `edge_count_ratio` = 0.303977: Static projection stores co-participant edges, not temporal event-transition edges.
+- `Event` -> `StaticProjection` `event_instance_loss_fraction` = 1.000000: No event IDs, timestamps, durations, source windows, intensities, contexts, or outcomes survive as first-class static graph records.
+- `Transition` -> `StaticProjection` `temporal_order_loss_fraction` = 1.000000: Directed temporal adjacency is absent from the collapsed undirected unit graph.
+- `Event` -> `StaticProjection` `context_entropy_lost_bits` = 7.621854: Bits of event-context distribution that are not represented in the static projection.
+- `Event` -> `StaticProjection` `outcome_entropy_lost_bits` = 7.621854: Bits of event-outcome distribution that are not represented in the static projection.
+- `Event` -> `StaticProjection` `event_label_entropy_bits` = 8.684696: Entropy of event participant-set labels before static collapse.
+- `Transition` -> `StaticProjection` `transition_entropy_lost_bits` = 11.024508: Bits of event-transition distribution erased by removing temporal adjacency.
+- `EventHistory` -> `StaticProjection` `predictive_accuracy_delta` = 0.000000: Next-event accuracy lost when two-event temporal history is replaced by static co-occurrence.
+- `EventContext` -> `StaticProjection` `contextual_predictive_accuracy_delta` = 0.000000: Next-event accuracy lost when event context is replaced by static co-occurrence.
+
+## Information Envelope
+
+- `RawSignal` `active_set_unique_count` = 2283.000000: Distinct threshold-active unit sets observed directly in the signal stream.
+- `RawSignal` `active_set_entropy_bits` = 10.860815: Entropy of threshold-active unit sets before event commitment.
+- `Event` `event_label_unique_count` = 642.000000: Distinct first-class coactivation event labels.
+- `Event` `event_label_entropy_bits` = 8.684696: Entropy of committed event participant sets.
+- `Event` `event_label_redundancy_fraction` = 0.068808: How much event-label entropy falls below maximum entropy; higher values indicate recurrence and compression opportunity.
+- `Event` `repeated_event_instance_fraction` = 0.902249: Fraction of event instances whose participant set appears more than once.
+- `Transition` `transition_unique_count` = 2091.000000: Distinct observed event-transition label pairs.
+- `Transition` `transition_entropy_bits` = 11.024508: Entropy of temporal adjacency after event commitment.
+- `Transition` `transition_redundancy_fraction` = 0.000496: How much transition entropy falls below maximum entropy; higher values indicate repeated temporal structure.
+- `Episode` `episode_signature_unique_count` = 200.000000: Distinct ordered event-label sequences.
+- `Episode` `episode_signature_entropy_bits` = 7.643856: Entropy of ordered episode signatures.
+- `Episode` `repeated_episode_instance_fraction` = 0.000000: Fraction of episodes whose full event signature recurs.
+- `Motif` `motif_count` = 437.000000: Number of recurring event patterns with support >= 2.
+- `Motif` `motif_support_mass` = 2128.000000: Total support represented by recurring motifs across all motif lengths.
+- `Motif` `recurring_three_event_window_fraction` = 0.000000: Fraction of length-3 episode windows captured by recurring motifs.
+- `StaticProjection` `static_node_count` = 40.000000: Participant nodes retained after collapsing event instances.
+- `StaticProjection` `static_edge_count` = 642.000000: Co-participation edges retained after collapsing event instances.
+- `System` `compressibility_index` = 0.023101: Composite recurrence signal across events, transitions, and length-3 motifs.
+
+## Artifacts
+
+- `raw_signals.csv`: generated temporal signal stream
+- `events.csv`: detected coactivation hyperedges as first-class objects
+- `transitions.csv`: temporal adjacency between detected events
+- `episodes.csv`: ordered event sequences
+- `motifs.csv`: recurrent event-transition patterns
+- `layer_information_loss.csv`: compression and information-loss metrics by layer
+- `information_envelope.csv`: entropy, redundancy, recurrence, and compressibility metrics
+- `static_projection.graphml`: lossy collapsed unit co-occurrence graph
+- `event_transition_graph.graphml`: event-level temporal graph
+- `event_first_temporal_process_validation.md`: validation summary and interpretation

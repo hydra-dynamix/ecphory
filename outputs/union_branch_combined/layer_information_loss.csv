@@ -1,0 +1,19 @@
+from_layer,to_layer,metric,value,interpretation
+RawSignal,Event,record_count_ratio,0.048274,Event compression stores one detected coactivation object instead of every unit-time sample.
+RawSignal,Event,active_signal_cell_coverage_ratio,1.072118,Ratio of event participant-duration cells to threshold-active unit-time cells; values above 1.0 indicate overcapture.
+RawSignal,Event,active_signal_cell_overcapture_ratio,0.072118,Excess event participant-duration coverage beyond threshold-active unit-time cells.
+RawSignal,Event,raw_sample_value_loss_fraction,0.801786,Fraction of original scalar sample positions not preserved as event participant-duration cells.
+Event,Transition,record_count_ratio,0.827374,Transitions preserve adjacency pairs but drop standalone event payload unless joined back to events.
+Event,Transition,event_payload_loss_fraction_without_join,0.555556,"Transitions directly omit intensities, full participant set, source window, duration, and outcome."
+Episode,Motif,recurring_three_event_window_retention,0.293785,Fraction of length-3 episode windows retained as recurrent motifs with support >= 2.
+Event,Motif,motif_record_count_ratio,0.276202,"Motifs are compressed recurring templates, not event-instance records."
+Event,StaticProjection,node_count_ratio,0.009864,Static projection collapses event instances into participant unit nodes.
+Event,StaticProjection,edge_count_ratio,0.041729,"Static projection stores co-participant edges, not temporal event-transition edges."
+Event,StaticProjection,event_instance_loss_fraction,1.0,"No event IDs, timestamps, durations, source windows, intensities, contexts, or outcomes survive as first-class static graph records."
+Transition,StaticProjection,temporal_order_loss_fraction,1.0,Directed temporal adjacency is absent from the collapsed undirected unit graph.
+Event,StaticProjection,context_entropy_lost_bits,1.456388,Bits of event-context distribution that are not represented in the static projection.
+Event,StaticProjection,outcome_entropy_lost_bits,1.456388,Bits of event-outcome distribution that are not represented in the static projection.
+Event,StaticProjection,event_label_entropy_bits,5.189002,Entropy of event participant-set labels before static collapse.
+Transition,StaticProjection,transition_entropy_lost_bits,7.78923,Bits of event-transition distribution erased by removing temporal adjacency.
+EventHistory,StaticProjection,predictive_accuracy_delta,0.267327,Next-event accuracy lost when two-event temporal history is replaced by static co-occurrence.
+EventContext,StaticProjection,contextual_predictive_accuracy_delta,0.315217,Next-event accuracy lost when event context is replaced by static co-occurrence.
