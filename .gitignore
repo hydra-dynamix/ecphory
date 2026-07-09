@@ -14,3 +14,7 @@ build/
 
 *.tmp
 *.log
+
+# Large generated evidence dumps. Reports/CSVs summarize these for git; move
+# full payload dumps to external artifact storage when they need publication.
+outputs/signature_index_payloads_*.jsonl

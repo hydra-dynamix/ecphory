@@ -77,6 +77,26 @@ class Motif:
 
 
 @dataclass(frozen=True)
+class PatternEvidence:
+    pattern: tuple[EventLabel, ...]
+    support: int
+    expected_support: float
+    lift: float
+    context_entropy_bits: float
+    outcome_entropy_bits: float
+    context_purity: float
+    outcome_purity: float
+    next_entropy_bits: float
+    next_purity: float
+    evidence_episode_ids: tuple[str, ...]
+    contexts: tuple[str, ...]
+    outcomes: tuple[str, ...]
+    predicted_next_events: tuple[str, ...]
+    index_status: str
+    index_reason: str
+
+
+@dataclass(frozen=True)
 class LayerLoss:
     from_layer: str
     to_layer: str
@@ -1104,6 +1124,171 @@ def mine_motifs(events: list[Event], episodes: list[Episode], motif_lengths: tup
     return motifs
 
 
+def counter_purity(counter: Counter[str]) -> float:
+    total = sum(counter.values())
+    if total == 0:
+        return 0.0
+    return max(counter.values()) / total
+
+
+def classify_pattern_evidence(
+    support: int,
+    expected_support: float,
+    lift: float,
+    context_purity: float,
+    outcome_purity: float,
+    next_purity: float,
+    full_sequence: bool,
+) -> tuple[str, str]:
+    if support <= 1:
+        return "singleton_evidence", "observed_once_preserve_as_episode_evidence"
+    if outcome_purity < 0.50:
+        return "ambiguous_evidence", "same_signature_family_has_conflicting_outcomes"
+    if context_purity < 0.10 and outcome_purity < 0.75:
+        return "latent_alias_candidate", "same_signature_family_spans_many_contexts_and_outcomes"
+    if lift < 1.25 and not full_sequence:
+        return "background_recurrence", "recurrence_is_near_chance_for_local_vocabulary"
+    if next_purity < 0.50 and not full_sequence:
+        return "branching_fragment", "signature_retrieves_multiple_continuations"
+    if full_sequence and support >= 2:
+        return "episode_template_index", "full_sequence_repeats_and_is_worth_retrieving"
+    return "retrieval_index", "recurrence_is_distinct_enough_to_index_as_evidence"
+
+
+def mine_pattern_evidence(
+    events: list[Event],
+    episodes: list[Episode],
+    pattern_lengths: tuple[int, ...],
+) -> list[PatternEvidence]:
+    event_by_id = {event.event_id: event for event in events}
+    event_label_counter = Counter(event.label for event in events)
+    event_total = sum(event_label_counter.values())
+    event_probabilities = {
+        label: count / event_total for label, count in event_label_counter.items()
+    }
+    counts: Counter[tuple[EventLabel, ...]] = Counter()
+    contexts: dict[tuple[EventLabel, ...], Counter[str]] = defaultdict(Counter)
+    outcomes: dict[tuple[EventLabel, ...], Counter[str]] = defaultdict(Counter)
+    next_events: dict[tuple[EventLabel, ...], Counter[EventLabel]] = defaultdict(Counter)
+    evidence_episode_ids: dict[tuple[EventLabel, ...], set[str]] = defaultdict(set)
+    window_counts_by_length: Counter[int] = Counter()
+
+    for episode in episodes:
+        labels = tuple(event_by_id[event_id].label for event_id in episode.ordered_events)
+        for pattern_length in pattern_lengths:
+            for index in range(0, len(labels) - pattern_length + 1):
+                pattern = labels[index : index + pattern_length]
+                counts[pattern] += 1
+                contexts[pattern][episode.context] += 1
+                outcomes[pattern][episode.outcome] += 1
+                evidence_episode_ids[pattern].add(episode.episode_id)
+                window_counts_by_length[pattern_length] += 1
+                if index + pattern_length < len(labels):
+                    next_events[pattern][labels[index + pattern_length]] += 1
+
+    evidence_rows: list[PatternEvidence] = []
+    max_pattern_length = max(pattern_lengths) if pattern_lengths else 0
+    for pattern, support in counts.most_common():
+        expected_probability = 1.0
+        for label in pattern:
+            expected_probability *= event_probabilities.get(label, 0.0)
+        expected_support = window_counts_by_length[len(pattern)] * expected_probability
+        lift = support / expected_support if expected_support > 0.0 else 0.0
+        context_counter = contexts[pattern]
+        outcome_counter = outcomes[pattern]
+        next_counter = next_events[pattern]
+        context_purity = counter_purity(context_counter)
+        outcome_purity = counter_purity(outcome_counter)
+        next_purity = counter_purity(next_counter)
+        index_status, index_reason = classify_pattern_evidence(
+            support=support,
+            expected_support=expected_support,
+            lift=lift,
+            context_purity=context_purity,
+            outcome_purity=outcome_purity,
+            next_purity=next_purity,
+            full_sequence=len(pattern) == max_pattern_length,
+        )
+        evidence_rows.append(
+            PatternEvidence(
+                pattern=pattern,
+                support=support,
+                expected_support=expected_support,
+                lift=lift,
+                context_entropy_bits=shannon_entropy(context_counter),
+                outcome_entropy_bits=shannon_entropy(outcome_counter),
+                context_purity=context_purity,
+                outcome_purity=outcome_purity,
+                next_entropy_bits=shannon_entropy(next_counter),
+                next_purity=next_purity,
+                evidence_episode_ids=tuple(sorted(evidence_episode_ids[pattern])),
+                contexts=tuple(
+                    f"{context}:{count}" for context, count in context_counter.most_common()
+                ),
+                outcomes=tuple(
+                    f"{outcome}:{count}" for outcome, count in outcome_counter.most_common()
+                ),
+                predicted_next_events=tuple(
+                    f"{label}:{count}" for label, count in next_counter.most_common()
+                ),
+                index_status=index_status,
+                index_reason=index_reason,
+            )
+        )
+    return evidence_rows
+
+
+def pattern_evidence_payload_records(
+    case_id: str,
+    scale_id: str,
+    sequence_length: int,
+    classifier_mode: str,
+    seed: int,
+    pattern_evidence: list[PatternEvidence],
+    include_annotations: bool,
+) -> list[dict[str, object]]:
+    records: list[dict[str, object]] = []
+    for evidence in pattern_evidence:
+        key = {
+            "signature": list(evidence.pattern),
+            "signature_length": len(evidence.pattern),
+        }
+        payload: dict[str, object] = {
+            "case_id": case_id,
+            "scale_id": scale_id,
+            "sequence_length": sequence_length,
+            "classifier_mode": classifier_mode,
+            "seed": seed,
+            "support": evidence.support,
+            "expected_support": round(evidence.expected_support, 6),
+            "lift": round(evidence.lift, 6),
+            "evidence_episode_ids": list(evidence.evidence_episode_ids),
+            "contexts": list(evidence.contexts),
+            "outcomes": list(evidence.outcomes),
+            "predicted_next_events": list(evidence.predicted_next_events),
+            "context_entropy_bits": round(evidence.context_entropy_bits, 6),
+            "outcome_entropy_bits": round(evidence.outcome_entropy_bits, 6),
+            "context_purity": round(evidence.context_purity, 6),
+            "outcome_purity": round(evidence.outcome_purity, 6),
+            "next_entropy_bits": round(evidence.next_entropy_bits, 6),
+            "next_purity": round(evidence.next_purity, 6),
+        }
+        if include_annotations:
+            payload["annotations"] = {
+                "index_status": evidence.index_status,
+                "index_reason": evidence.index_reason,
+            }
+        records.append({"key": key, "payload": payload})
+    return records
+
+
+def write_jsonl(path: Path, rows: Iterable[dict[str, object]]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8") as handle:
+        for row in rows:
+            handle.write(json.dumps(row, sort_keys=True) + "\n")
+
+
 def split_episodes(episodes: list[Episode], train_fraction: float) -> tuple[set[str], set[str]]:
     train_count = math.floor(len(episodes) * train_fraction)
     train_ids = {episode.episode_id for episode in episodes[:train_count]}
@@ -2067,6 +2252,10 @@ def run_experiment(args: argparse.Namespace) -> Path:
         run_motif_fault_tolerance_sweep(args, output_dir)
     if args.null_ablation_package:
         run_null_ablation_package(args, output_dir)
+    if args.representation_gain_noise_grid:
+        run_representation_gain_noise_grid(args, output_dir)
+    if args.adversarial_falsification_battery:
+        run_adversarial_falsification_battery(args, output_dir)
     return output_dir
 
 
@@ -4220,6 +4409,1093 @@ def write_null_ablation_report(path: Path, rows: list[dict[str, object]]) -> Non
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def noise_grid_variant_specs() -> list[tuple[str, str, dict[str, object]]]:
+    return [
+        (
+            "sliding_window_low_threshold",
+            "sliding_window",
+            {"activation_threshold": 0.60},
+        ),
+        (
+            "sliding_low_temporal_consensus_pair",
+            "sliding_window",
+            {"activation_threshold": 0.60, "event_decoder": "temporal_consensus_pair"},
+        ),
+        (
+            "union_temporal_consensus_pair",
+            "union_state_window",
+            {"event_decoder": "temporal_consensus_pair"},
+        ),
+    ]
+
+
+def classify_noise_region(row: dict[str, object]) -> str:
+    world = str(row["world"])
+    if world == "hostile_unique":
+        compressibility = float(row["compressibility_index"])
+        support_mass = float(row["length3_motif_support_mass"])
+        recurring_length3 = float(row["recurring_three_event_window_fraction"])
+        if compressibility <= 0.05 and support_mass <= 0.0 and recurring_length3 <= 0.05:
+            return "hostile_collapse"
+        return "hostile_leak"
+
+    coverage = float(row["active_signal_cell_coverage_ratio"])
+    gain = float(row["representation_gain"])
+    motif_fraction = float(row["canonical_length3_support_fraction"])
+    event_fraction = float(row["canonical_event_support_fraction"])
+
+    if coverage < 0.70:
+        return "undercapture"
+    if gain < 0.0 and event_fraction > motif_fraction:
+        return "identity_collapse"
+    if gain < 0.0:
+        return "negative_gain"
+    if motif_fraction < 0.50:
+        return "identity_collapse"
+    if gain > 0.0:
+        return "positive_gain"
+    return "borderline"
+
+
+def run_representation_gain_noise_grid(args: argparse.Namespace, output_dir: Path) -> None:
+    seeds = (args.seed, args.seed + 101, args.seed + 202)
+    worlds = ("branch", "overlap", "hostile_unique")
+    variants = noise_grid_variant_specs()
+    dropout_values = (0.0, 0.05, 0.10, 0.15, 0.20)
+    spurious_values = (0.0, 0.05, 0.10, 0.15, 0.20)
+    rows: list[dict[str, object]] = []
+
+    for seed_index, seed in enumerate(seeds):
+        for world in worlds:
+            canonical_motifs = canonical_motifs_for_world(world)
+            for dropout_probability in dropout_values:
+                for spurious_probability in spurious_values:
+                    for variant_id, detector, overrides in variants:
+                        case_args = argparse.Namespace(**vars(args))
+                        case_args.seed = seed
+                        case_args.world = world
+                        case_args.detector = detector
+                        case_args.dropout_probability = dropout_probability
+                        case_args.spurious_probability = spurious_probability
+                        case_args.sweep = False
+                        case_args.compare_detectors = False
+                        case_args.detector_robustness_map = False
+                        case_args.dropout_spurious_pareto = False
+                        case_args.temporal_decoder_seed_sweep = False
+                        case_args.motif_fault_tolerance_sweep = False
+                        case_args.null_ablation_package = False
+                        case_args.representation_gain_noise_grid = False
+                        for key, value in overrides.items():
+                            setattr(case_args, key, value)
+
+                        result = execute_experiment(case_args)
+                        summary = summarize_detector_result(
+                            result,
+                            world,
+                            case_args.motif_repetitions,
+                        )
+                        motif_metrics = canonical_motif_metrics(
+                            result.motifs,
+                            canonical_motifs,
+                        )
+                        layer_metrics = canonical_layer_support_metrics(
+                            result.events,
+                            result.transitions,
+                            canonical_motifs,
+                        )
+                        representation_gain = (
+                            float(motif_metrics["canonical_length3_support_fraction"])
+                            - float(summary["canonical_motif_recovery"])
+                        )
+                        row = {
+                            "seed_index": seed_index,
+                            "seed": seed,
+                            "world": world,
+                            "detector_variant": variant_id,
+                            "detector": detector,
+                            "event_decoder": case_args.event_decoder,
+                            "dropout_probability": dropout_probability,
+                            "spurious_probability": spurious_probability,
+                            **summary,
+                            **motif_metrics,
+                            **layer_metrics,
+                            "representation_gain": round(representation_gain, 6),
+                        }
+                        row["noise_region"] = classify_noise_region(row)
+                        rows.append(row)
+
+    fieldnames = [
+        "seed_index",
+        "seed",
+        "world",
+        "detector_variant",
+        "detector",
+        "event_decoder",
+        "dropout_probability",
+        "spurious_probability",
+        "noise_region",
+        "status",
+        "failure_modes",
+        "event_count",
+        "transition_count",
+        "motif_count",
+        "canonical_motif_supports",
+        "canonical_motif_recovery",
+        "canonical_length3_supports",
+        "canonical_length3_support_min",
+        "canonical_length3_support_mass",
+        "canonical_length3_support_fraction",
+        "representation_gain",
+        "canonical_length3_ranks",
+        "canonical_length3_rank_worst",
+        "canonical_event_support_fraction",
+        "canonical_transition_support_fraction",
+        "canonical_event_support_mass",
+        "canonical_transition_support_mass",
+        "length3_motif_support_mass",
+        "length3_motif_count",
+        "top5_length3_patterns",
+        "active_signal_cell_coverage_ratio",
+        "active_signal_cell_overcapture_ratio",
+        "event_history_accuracy",
+        "event_context_accuracy",
+        "collapsed_static_accuracy",
+        "predictive_accuracy_delta",
+        "compressibility_index",
+        "recurring_three_event_window_fraction",
+        "repeated_episode_instance_fraction",
+    ]
+    write_csv(output_dir / "representation_gain_noise_grid.csv", rows, fieldnames)
+    write_representation_gain_noise_report(
+        output_dir / "representation_gain_noise_envelope.md",
+        rows,
+        dropout_values,
+        spurious_values,
+    )
+
+
+def aggregate_noise_rows(rows: list[dict[str, object]]) -> dict[str, object]:
+    gain_values = [float(row["representation_gain"]) for row in rows]
+    recovery_values = [float(row["canonical_motif_recovery"]) for row in rows]
+    support_values = [
+        float(row["canonical_length3_support_fraction"]) for row in rows
+    ]
+    coverage_values = [
+        float(row["active_signal_cell_coverage_ratio"]) for row in rows
+    ]
+    region_counts = Counter(str(row["noise_region"]) for row in rows)
+    return {
+        "representation_gain_mean": mean(gain_values) if gain_values else 0.0,
+        "representation_gain_min": min(gain_values) if gain_values else 0.0,
+        "exact_recovery_mean": mean(recovery_values) if recovery_values else 0.0,
+        "canonical_support_fraction_mean": (
+            mean(support_values) if support_values else 0.0
+        ),
+        "coverage_mean": mean(coverage_values) if coverage_values else 0.0,
+        "region": region_counts.most_common(1)[0][0] if region_counts else "none",
+        "region_counts": dict(region_counts),
+    }
+
+
+def noise_region_symbol(region: str) -> str:
+    symbols = {
+        "positive_gain": "+",
+        "negative_gain": "-",
+        "identity_collapse": "I",
+        "undercapture": "U",
+        "hostile_collapse": "H",
+        "hostile_leak": "L",
+        "borderline": "B",
+    }
+    return symbols.get(region, "?")
+
+
+def write_noise_grid_table(
+    lines: list[str],
+    rows: list[dict[str, object]],
+    world: str,
+    variant_id: str,
+    dropout_values: tuple[float, ...],
+    spurious_values: tuple[float, ...],
+) -> None:
+    lines.append(f"#### {world} / {variant_id}")
+    lines.append("")
+    lines.append("| dropout \\ spurious | " + " | ".join(f"{value:.2f}" for value in spurious_values) + " |")
+    lines.append("| --- | " + " | ".join("---" for _ in spurious_values) + " |")
+    for dropout_probability in dropout_values:
+        cells: list[str] = []
+        for spurious_probability in spurious_values:
+            cell_rows = [
+                row
+                for row in rows
+                if str(row["world"]) == world
+                and str(row["detector_variant"]) == variant_id
+                and float(row["dropout_probability"]) == dropout_probability
+                and float(row["spurious_probability"]) == spurious_probability
+            ]
+            aggregate = aggregate_noise_rows(cell_rows)
+            cells.append(noise_region_symbol(str(aggregate["region"])))
+        lines.append(f"| {dropout_probability:.2f} | " + " | ".join(cells) + " |")
+    lines.append("")
+
+
+def write_representation_gain_noise_report(
+    path: Path,
+    rows: list[dict[str, object]],
+    dropout_values: tuple[float, ...],
+    spurious_values: tuple[float, ...],
+) -> None:
+    grouped: dict[tuple[str, str], list[dict[str, object]]] = defaultdict(list)
+    cell_grouped: dict[tuple[str, str, float, float], list[dict[str, object]]] = defaultdict(list)
+    for row in rows:
+        key = (str(row["world"]), str(row["detector_variant"]))
+        grouped[key].append(row)
+        cell_grouped[
+            (
+                str(row["world"]),
+                str(row["detector_variant"]),
+                float(row["dropout_probability"]),
+                float(row["spurious_probability"]),
+            )
+        ].append(row)
+
+    lines = [
+        "# Representation Gain Noise Envelope",
+        "",
+        "This grid varies dropout and spurious activation while holding the downstream event-first hierarchy fixed.",
+        "",
+        "Region symbols: `+` positive gain, `-` negative gain, `I` identity collapse, `U` undercapture, `H` hostile collapse, `L` hostile leak, `B` borderline.",
+        "",
+        "## Region Counts",
+        "",
+    ]
+
+    for world in ("branch", "overlap", "hostile_unique"):
+        lines.append(f"### {world}")
+        lines.append("")
+        for variant_id, _detector, _overrides in noise_grid_variant_specs():
+            variant_rows = grouped[(world, variant_id)]
+            if not variant_rows:
+                continue
+            aggregate = aggregate_noise_rows(variant_rows)
+            lines.append(
+                f"- `{variant_id}` region_counts={aggregate['region_counts']} "
+                f"gain_mean={float(aggregate['representation_gain_mean']):.6f} "
+                f"gain_min={float(aggregate['representation_gain_min']):.6f} "
+                f"exact_mean={float(aggregate['exact_recovery_mean']):.6f} "
+                f"support_mean={float(aggregate['canonical_support_fraction_mean']):.6f} "
+                f"coverage_mean={float(aggregate['coverage_mean']):.6f}"
+            )
+        lines.append("")
+
+    lines.extend(["## Envelope Maps", ""])
+    for world in ("branch", "overlap", "hostile_unique"):
+        lines.append(f"### {world}")
+        lines.append("")
+        for variant_id, _detector, _overrides in noise_grid_variant_specs():
+            write_noise_grid_table(
+                lines,
+                rows,
+                world,
+                variant_id,
+                dropout_values,
+                spurious_values,
+            )
+
+    lines.extend(["## Cell Metrics", ""])
+    for world in ("branch", "overlap"):
+        lines.append(f"### {world}")
+        lines.append("")
+        for variant_id, _detector, _overrides in noise_grid_variant_specs():
+            lines.append(f"#### {variant_id}")
+            lines.append("")
+            for dropout_probability in dropout_values:
+                for spurious_probability in spurious_values:
+                    cell_rows = cell_grouped[
+                        (
+                            world,
+                            variant_id,
+                            dropout_probability,
+                            spurious_probability,
+                        )
+                    ]
+                    aggregate = aggregate_noise_rows(cell_rows)
+                    lines.append(
+                        f"- dropout={dropout_probability:.2f} spurious={spurious_probability:.2f} "
+                        f"region={aggregate['region']} "
+                        f"gain_mean={float(aggregate['representation_gain_mean']):.6f} "
+                        f"exact_mean={float(aggregate['exact_recovery_mean']):.6f} "
+                        f"support_mean={float(aggregate['canonical_support_fraction_mean']):.6f} "
+                        f"coverage_mean={float(aggregate['coverage_mean']):.6f}"
+                    )
+            lines.append("")
+
+    lines.extend(
+        [
+            "## Interpretation",
+            "",
+            "The useful envelope is the region where exact event recovery degrades before canonical motif support does. Negative gain marks over-entropic identity collapse rather than useful compression.",
+            "",
+            "Hostile unique worlds are expected to remain in hostile collapse across the grid; hostile leak indicates recurrence induced by the detector/decoder rather than by the world.",
+        ]
+    )
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def pair_label(prefix: str, index: int) -> tuple[UnitId, UnitId]:
+    return (f"{prefix}{index:04d}a", f"{prefix}{index:04d}b")
+
+
+def adversarial_case_sequences(
+    case_id: str,
+    episode_count: int,
+    sequence_length: int,
+    rng: np.random.Generator,
+) -> tuple[list[tuple[tuple[UnitId, ...], ...]], list[str], list[str], str]:
+    sequences: list[tuple[tuple[UnitId, ...], ...]] = []
+    contexts: list[str] = []
+    outcomes: list[str] = []
+
+    if case_id == "unique_triplets":
+        for episode_index in range(episode_count):
+            sequences.append(
+                tuple(
+                    pair_label("A", episode_index * sequence_length + offset)
+                    for offset in range(sequence_length)
+                )
+            )
+            contexts.append(f"CTX_{episode_index:04d}")
+            outcomes.append(f"OUT_{episode_index:04d}")
+        return sequences, contexts, outcomes, "no_recurrence"
+
+    if case_id == "shared_edges_unique_middle":
+        for episode_index in range(episode_count):
+            sequences.append(
+                (("A", "B"),)
+                + tuple(
+                    pair_label("M", episode_index * sequence_length + offset)
+                    for offset in range(max(0, sequence_length - 2))
+                )
+                + (("C", "D"),)
+            )
+            contexts.append(f"CTX_{episode_index:04d}")
+            outcomes.append(f"OUT_{episode_index:04d}")
+        return sequences, contexts, outcomes, "partial_recurrence_only"
+
+    if case_id == "near_miss_drift":
+        for episode_index in range(episode_count):
+            sequence: list[tuple[UnitId, ...]] = [("A", "B")]
+            previous_right = "B"
+            for offset in range(max(0, sequence_length - 1)):
+                next_right = f"C{episode_index:04d}_{offset:02d}"
+                sequence.append((previous_right, next_right))
+                previous_right = next_right
+            sequences.append(tuple(sequence[:sequence_length]))
+            contexts.append(f"CTX_{episode_index:04d}")
+            outcomes.append(f"OUT_{episode_index:04d}")
+        return sequences, contexts, outcomes, "partial_recurrence_only"
+
+    if case_id == "hidden_novelty_alias_collision":
+        base_sequence = tuple(
+            (chr(ord("A") + offset), chr(ord("B") + offset))
+            for offset in range(sequence_length)
+        )
+        for episode_index in range(episode_count):
+            sequences.append(base_sequence)
+            contexts.append(f"LATENT_CTX_{episode_index:04d}")
+            outcomes.append(f"LATENT_OUT_{episode_index:04d}")
+        return sequences, contexts, outcomes, "hidden_novelty"
+
+    if case_id == "contradictory_outcomes":
+        outcome_count = max(4, int(math.sqrt(episode_count)))
+        base_sequence = tuple(
+            (chr(ord("A") + offset), chr(ord("B") + offset))
+            for offset in range(sequence_length)
+        )
+        for episode_index in range(episode_count):
+            sequences.append(base_sequence)
+            contexts.append("CTX_SHARED")
+            outcomes.append(f"OUT_{episode_index % outcome_count:04d}")
+        return sequences, contexts, outcomes, "outcome_contradiction"
+
+    if case_id == "random_small_vocab":
+        vocabulary = (
+            ("A", "B"),
+            ("B", "C"),
+            ("C", "D"),
+            ("D", "E"),
+            ("E", "F"),
+            ("F", "G"),
+            ("G", "H"),
+            ("H", "A"),
+        )
+        for episode_index in range(episode_count):
+            sampled_indices = rng.integers(0, len(vocabulary), size=sequence_length)
+            sequences.append(tuple(vocabulary[int(index)] for index in sampled_indices))
+            contexts.append(f"CTX_{episode_index:04d}")
+            outcomes.append(f"OUT_{episode_index:04d}")
+        return sequences, contexts, outcomes, "chance_recurrence"
+
+    if case_id == "uniform_branching":
+        branch_events = (
+            ("B", "C"),
+            ("B", "E"),
+            ("B", "G"),
+            ("B", "I"),
+            ("B", "K"),
+            ("B", "M"),
+        )
+        suffix_events = (
+            ("C", "D"),
+            ("E", "F"),
+            ("G", "H"),
+            ("I", "J"),
+            ("K", "L"),
+            ("M", "N"),
+        )
+        for episode_index in range(episode_count):
+            sequence = [("A", "B")]
+            branch_index = 0
+            suffix_index = 0
+            for offset in range(max(0, sequence_length - 1)):
+                branch_index = int(rng.integers(0, len(branch_events)))
+                suffix_index = int(rng.integers(0, len(suffix_events)))
+                sequence.append(
+                    branch_events[branch_index]
+                    if offset % 2 == 0
+                    else suffix_events[suffix_index]
+                )
+            sequences.append(tuple(sequence[:sequence_length]))
+            contexts.append("CTX_BRANCH")
+            outcomes.append(f"OUT_{branch_index}_{suffix_index}")
+        return sequences, contexts, outcomes, "high_branch_entropy"
+
+    raise ValueError(f"unknown adversarial case: {case_id}")
+
+
+def events_from_sequences(
+    sequences: list[tuple[tuple[UnitId, ...], ...]],
+    contexts: list[str],
+    outcomes: list[str],
+    event_duration: int,
+    event_gap: int,
+) -> list[Event]:
+    events: list[Event] = []
+    event_index = 0
+    for episode_index, sequence in enumerate(sequences):
+        episode_id = f"episode_{episode_index:05d}"
+        for sequence_index, participants in enumerate(sequence):
+            t_start = sequence_index * (event_duration + event_gap)
+            event_index += 1
+            events.append(
+                Event(
+                    event_id=f"event_{event_index:08d}",
+                    episode_id=episode_id,
+                    t_start=t_start,
+                    t_end=t_start + event_duration,
+                    participants=tuple(sorted(participants)),
+                    intensities={unit_id: 1.0 for unit_id in participants},
+                    context=contexts[episode_index],
+                    source_window="adversarial:exact_event_stream",
+                    outcome=outcomes[episode_index],
+                )
+            )
+    return events
+
+
+def motif_count_entropy(encoded_counts: tuple[str, ...]) -> float:
+    counter: Counter[str] = Counter()
+    for encoded in encoded_counts:
+        if ":" not in encoded:
+            continue
+        label, count_text = encoded.rsplit(":", 1)
+        counter[label] += int(count_text)
+    return shannon_entropy(counter)
+
+
+def motif_max_purity(encoded_counts: tuple[str, ...], support: int) -> float:
+    counts: list[int] = []
+    for encoded in encoded_counts:
+        if ":" not in encoded:
+            continue
+        _label, count_text = encoded.rsplit(":", 1)
+        counts.append(int(count_text))
+    if support <= 0 or not counts:
+        return 0.0
+    return max(counts) / support
+
+
+def summarize_adversarial_event_stream(
+    case_id: str,
+    scale_id: str,
+    sequence_length: int,
+    expectation: str,
+    seed: int,
+    events: list[Event],
+    use_evidence_index_classifier: bool,
+    args: argparse.Namespace,
+) -> dict[str, object]:
+    episodes = assemble_episodes(events)
+    transitions = build_transitions(events, episodes)
+    motif_lengths = tuple(sorted({1, 2, 3, sequence_length}))
+    motifs = mine_motifs(events, episodes, motif_lengths=motif_lengths)
+    pattern_evidence = (
+        mine_pattern_evidence(
+            events,
+            episodes,
+            pattern_lengths=motif_lengths,
+        )
+        if use_evidence_index_classifier
+        else []
+    )
+    train_episode_ids, test_episode_ids = split_episodes(episodes, args.train_fraction)
+    metrics = evaluate_prediction(events, episodes, train_episode_ids, test_episode_ids)
+    envelope = quantify_information_envelope(
+        raw_signals=[],
+        events=events,
+        transitions=transitions,
+        episodes=episodes,
+        motifs=motifs,
+        activation_threshold=args.activation_threshold,
+    )
+    envelope_by_measure = {item.measure: item.value for item in envelope}
+    length_three_motifs = [motif for motif in motifs if len(motif.pattern) == 3]
+    full_sequence_motifs = [
+        motif for motif in motifs if len(motif.pattern) == sequence_length
+    ]
+    length_three_evidence = [
+        row for row in pattern_evidence if len(row.pattern) == 3 and row.support >= 2
+    ]
+    full_sequence_evidence = [
+        row
+        for row in pattern_evidence
+        if len(row.pattern) == sequence_length and row.support >= 2
+    ]
+    length_three_status_counts = Counter(
+        row.index_status for row in length_three_evidence
+    )
+    full_sequence_status_counts = Counter(
+        row.index_status for row in full_sequence_evidence
+    )
+    total_length_three_windows = sum(
+        max(0, len(episode.ordered_events) - 2) for episode in episodes
+    )
+    length_three_support_mass = sum(motif.support for motif in length_three_motifs)
+    length_three_top_support = (
+        max((motif.support for motif in length_three_motifs), default=0)
+    )
+    full_sequence_support_mass = sum(motif.support for motif in full_sequence_motifs)
+    full_sequence_top_support = (
+        max((motif.support for motif in full_sequence_motifs), default=0)
+    )
+    length_three_top_support_fraction = (
+        length_three_top_support / total_length_three_windows
+        if total_length_three_windows
+        else 0.0
+    )
+    full_sequence_top_support_fraction = (
+        full_sequence_top_support / len(episodes) if episodes else 0.0
+    )
+    recurring_full_sequence_fraction = (
+        full_sequence_support_mass / len(episodes) if episodes else 0.0
+    )
+    outcome_purities = [
+        motif_max_purity(motif.outcomes, motif.support)
+        for motif in length_three_motifs
+    ]
+    context_purities = [
+        motif_max_purity(motif.contexts, motif.support)
+        for motif in length_three_motifs
+    ]
+    outcome_entropies = [
+        motif_count_entropy(motif.outcomes) for motif in length_three_motifs
+    ]
+    context_entropies = [
+        motif_count_entropy(motif.contexts) for motif in length_three_motifs
+    ]
+    recurring_length_three_fraction = (
+        length_three_support_mass / total_length_three_windows
+        if total_length_three_windows
+        else 0.0
+    )
+    top_patterns = " | ".join(
+        " -> ".join(motif.pattern)
+        for motif in sorted(length_three_motifs, key=lambda item: item.support, reverse=True)[:5]
+    )
+    top_indexed_patterns = " | ".join(
+        f"{' -> '.join(row.pattern)} [{row.index_status}]"
+        for row in sorted(
+            full_sequence_evidence,
+            key=lambda item: (item.support, item.lift),
+            reverse=True,
+        )[:5]
+    )
+
+    novelty_failure = False
+    failure_modes: list[str] = []
+    if expectation == "no_recurrence" and recurring_length_three_fraction > 0.0:
+        novelty_failure = True
+        failure_modes.append("invented_length3_recurrence")
+    if expectation == "no_recurrence" and recurring_full_sequence_fraction > 0.0:
+        novelty_failure = True
+        failure_modes.append("invented_full_sequence_recurrence")
+    if expectation in {"hidden_novelty", "outcome_contradiction"}:
+        if recurring_full_sequence_fraction >= 0.95:
+            novelty_failure = True
+            failure_modes.append("compressed_hidden_or_contradictory_novelty")
+        if outcome_purities and max(outcome_purities) < 0.50:
+            failure_modes.append("low_outcome_purity")
+    if expectation == "chance_recurrence" and recurring_length_three_fraction > 0.50:
+        novelty_failure = True
+        failure_modes.append("chance_subsequence_recurrence_overcompressed")
+    if expectation == "chance_recurrence" and recurring_full_sequence_fraction > 0.10:
+        novelty_failure = True
+        failure_modes.append("chance_full_sequence_recurrence_overcompressed")
+    if expectation == "high_branch_entropy" and float(metrics["event_history_accuracy"]) < 0.40:
+        failure_modes.append("low_predictive_utility")
+    if expectation == "partial_recurrence_only" and length_three_top_support_fraction > 0.10:
+        novelty_failure = True
+        failure_modes.append("near_miss_or_partial_recurrence_overcompressed")
+
+    evidence_index_failure = False
+    evidence_failure_modes: list[str] = []
+    resolved_statuses = {"retrieval_index", "episode_template_index"}
+    if expectation in {"hidden_novelty", "outcome_contradiction"}:
+        if any(row.index_status in resolved_statuses for row in full_sequence_evidence):
+            evidence_index_failure = True
+            evidence_failure_modes.append("ambiguous_signature_promoted_as_resolved")
+    if expectation == "chance_recurrence":
+        if any(row.index_status in resolved_statuses for row in length_three_evidence):
+            evidence_index_failure = True
+            evidence_failure_modes.append("chance_subsequence_promoted_as_resolved")
+        if any(row.index_status in resolved_statuses for row in full_sequence_evidence):
+            evidence_index_failure = True
+            evidence_failure_modes.append("chance_full_sequence_promoted_as_resolved")
+
+    return {
+        "case_id": case_id,
+        "scale_id": scale_id,
+        "sequence_length": sequence_length,
+        "classifier_mode": (
+            "evidence_index" if use_evidence_index_classifier else "naive_recurrence"
+        ),
+        "seed": seed,
+        "expectation": expectation,
+        "episode_count": len(episodes),
+        "event_count": len(events),
+        "transition_count": len(transitions),
+        "motif_count": len(motifs),
+        "length3_motif_count": len(length_three_motifs),
+        "length3_support_mass": length_three_support_mass,
+        "length3_top_support": length_three_top_support,
+        "length3_top_support_fraction": round(length_three_top_support_fraction, 6),
+        "recurring_length3_fraction": round(recurring_length_three_fraction, 6),
+        "full_sequence_motif_count": len(full_sequence_motifs),
+        "full_sequence_support_mass": full_sequence_support_mass,
+        "full_sequence_top_support": full_sequence_top_support,
+        "full_sequence_top_support_fraction": round(full_sequence_top_support_fraction, 6),
+        "recurring_full_sequence_fraction": round(recurring_full_sequence_fraction, 6),
+        "length3_index_status_counts": ";".join(
+            f"{status}:{count}" for status, count in sorted(length_three_status_counts.items())
+        ),
+        "full_sequence_index_status_counts": ";".join(
+            f"{status}:{count}" for status, count in sorted(full_sequence_status_counts.items())
+        ),
+        "length3_background_recurrence_count": length_three_status_counts["background_recurrence"],
+        "length3_ambiguous_evidence_count": length_three_status_counts["ambiguous_evidence"],
+        "full_sequence_background_recurrence_count": full_sequence_status_counts[
+            "background_recurrence"
+        ],
+        "full_sequence_ambiguous_evidence_count": full_sequence_status_counts[
+            "ambiguous_evidence"
+        ],
+        "repeated_episode_instance_fraction": round(
+            float(envelope_by_measure.get("repeated_episode_instance_fraction", 0.0)),
+            6,
+        ),
+        "event_label_redundancy_fraction": round(
+            float(envelope_by_measure.get("event_label_redundancy_fraction", 0.0)),
+            6,
+        ),
+        "transition_redundancy_fraction": round(
+            float(envelope_by_measure.get("transition_redundancy_fraction", 0.0)),
+            6,
+        ),
+        "compressibility_index": round(
+            float(envelope_by_measure.get("compressibility_index", 0.0)),
+            6,
+        ),
+        "event_history_accuracy": round(float(metrics["event_history_accuracy"]), 6),
+        "collapsed_static_accuracy": round(float(metrics["collapsed_static_accuracy"]), 6),
+        "predictive_accuracy_delta": round(
+            float(metrics["event_first_accuracy"])
+            - float(metrics["collapsed_static_accuracy"]),
+            6,
+        ),
+        "length3_outcome_purity_max": round(max(outcome_purities, default=0.0), 6),
+        "length3_outcome_purity_mean": round(mean(outcome_purities) if outcome_purities else 0.0, 6),
+        "length3_context_purity_max": round(max(context_purities, default=0.0), 6),
+        "length3_context_purity_mean": round(mean(context_purities) if context_purities else 0.0, 6),
+        "length3_outcome_entropy_max": round(max(outcome_entropies, default=0.0), 6),
+        "length3_context_entropy_max": round(max(context_entropies, default=0.0), 6),
+        "novelty_failure": novelty_failure,
+        "failure_modes": ";".join(failure_modes),
+        "evidence_index_failure": evidence_index_failure,
+        "evidence_failure_modes": ";".join(evidence_failure_modes),
+        "top5_length3_patterns": top_patterns,
+        "top5_full_sequence_indexed_patterns": top_indexed_patterns,
+    }
+
+
+def run_adversarial_falsification_battery(args: argparse.Namespace, output_dir: Path) -> None:
+    case_ids = (
+        "unique_triplets",
+        "shared_edges_unique_middle",
+        "near_miss_drift",
+        "hidden_novelty_alias_collision",
+        "contradictory_outcomes",
+        "random_small_vocab",
+        "uniform_branching",
+    )
+    scales = (("small", 60), ("scaled", 600))
+    sequence_lengths = (3, 5, 8)
+    seeds = (args.seed, args.seed + 101, args.seed + 202)
+    rows: list[dict[str, object]] = []
+    signature_payload_records: list[dict[str, object]] = []
+    classifier_mode = "evidence_index" if args.evidence_index_classifier else "naive_recurrence"
+
+    for scale_id, episode_count in scales:
+        for sequence_length in sequence_lengths:
+            for case_id in case_ids:
+                for seed in seeds:
+                    rng = np.random.default_rng(seed)
+                    sequences, contexts, outcomes, expectation = adversarial_case_sequences(
+                        case_id,
+                        episode_count,
+                        sequence_length,
+                        rng,
+                    )
+                    events = events_from_sequences(
+                        sequences,
+                        contexts,
+                        outcomes,
+                        args.event_duration,
+                        args.event_gap,
+                    )
+                    motif_lengths = tuple(sorted({1, 2, 3, sequence_length}))
+                    signature_payload_records.extend(
+                        pattern_evidence_payload_records(
+                            case_id=case_id,
+                            scale_id=scale_id,
+                            sequence_length=sequence_length,
+                            classifier_mode=classifier_mode,
+                            seed=seed,
+                            pattern_evidence=mine_pattern_evidence(
+                                events,
+                                assemble_episodes(events),
+                                motif_lengths,
+                            ),
+                            include_annotations=args.evidence_index_classifier,
+                        )
+                    )
+                    rows.append(
+                        summarize_adversarial_event_stream(
+                            case_id,
+                            scale_id,
+                            sequence_length,
+                            expectation,
+                            seed,
+                            events,
+                            args.evidence_index_classifier,
+                            args,
+                        )
+                    )
+
+    fieldnames = [
+        "case_id",
+        "scale_id",
+        "sequence_length",
+        "classifier_mode",
+        "seed",
+        "expectation",
+        "episode_count",
+        "event_count",
+        "transition_count",
+        "motif_count",
+        "length3_motif_count",
+        "length3_support_mass",
+        "length3_top_support",
+        "length3_top_support_fraction",
+        "recurring_length3_fraction",
+        "full_sequence_motif_count",
+        "full_sequence_support_mass",
+        "full_sequence_top_support",
+        "full_sequence_top_support_fraction",
+        "recurring_full_sequence_fraction",
+        "length3_index_status_counts",
+        "full_sequence_index_status_counts",
+        "length3_background_recurrence_count",
+        "length3_ambiguous_evidence_count",
+        "full_sequence_background_recurrence_count",
+        "full_sequence_ambiguous_evidence_count",
+        "repeated_episode_instance_fraction",
+        "event_label_redundancy_fraction",
+        "transition_redundancy_fraction",
+        "compressibility_index",
+        "event_history_accuracy",
+        "collapsed_static_accuracy",
+        "predictive_accuracy_delta",
+        "length3_outcome_purity_max",
+        "length3_outcome_purity_mean",
+        "length3_context_purity_max",
+        "length3_context_purity_mean",
+        "length3_outcome_entropy_max",
+        "length3_context_entropy_max",
+        "novelty_failure",
+        "failure_modes",
+        "evidence_index_failure",
+        "evidence_failure_modes",
+        "top5_length3_patterns",
+        "top5_full_sequence_indexed_patterns",
+    ]
+    output_suffix = "evidence_index" if args.evidence_index_classifier else "naive"
+    write_csv(
+        output_dir / f"adversarial_falsification_battery_{output_suffix}.csv",
+        rows,
+        fieldnames,
+    )
+    write_jsonl(
+        output_dir / f"signature_index_payloads_{output_suffix}.jsonl",
+        signature_payload_records,
+    )
+    write_adversarial_falsification_report(
+        output_dir / f"adversarial_falsification_findings_{output_suffix}.md",
+        rows,
+        classifier_mode=output_suffix,
+    )
+
+
+def write_adversarial_falsification_report(
+    path: Path,
+    rows: list[dict[str, object]],
+    classifier_mode: str,
+) -> None:
+    grouped: dict[tuple[str, int, str], list[dict[str, object]]] = defaultdict(list)
+    for row in rows:
+        grouped[
+            (
+                str(row["scale_id"]),
+                int(row["sequence_length"]),
+                str(row["case_id"]),
+            )
+        ].append(row)
+
+    lines = [
+        "# Adversarial Falsification Battery",
+        "",
+        "This battery tries to break the event-first hierarchy after event identity has already been discretized. That means failures here are not detector failures; they are representation, novelty-gate, or metric failures.",
+        "",
+        f"Classifier mode: `{classifier_mode}`.",
+        "",
+        "## Summary",
+        "",
+    ]
+    for scale_id in ("small", "scaled"):
+        for sequence_length in (3, 5, 8):
+            lines.append(f"### {scale_id} length {sequence_length}")
+            lines.append("")
+            for case_id in (
+                "unique_triplets",
+                "shared_edges_unique_middle",
+                "near_miss_drift",
+                "hidden_novelty_alias_collision",
+                "contradictory_outcomes",
+                "random_small_vocab",
+                "uniform_branching",
+            ):
+                case_rows = grouped[(scale_id, sequence_length, case_id)]
+                if not case_rows:
+                    continue
+                failure_count = sum(1 for row in case_rows if str(row["novelty_failure"]) == "True")
+                evidence_failure_count = sum(
+                    1 for row in case_rows if str(row["evidence_index_failure"]) == "True"
+                )
+                recurring_values = [float(row["recurring_length3_fraction"]) for row in case_rows]
+                full_recurring_values = [
+                    float(row["recurring_full_sequence_fraction"]) for row in case_rows
+                ]
+                compressibility_values = [float(row["compressibility_index"]) for row in case_rows]
+                history_values = [float(row["event_history_accuracy"]) for row in case_rows]
+                outcome_purity_values = [float(row["length3_outcome_purity_max"]) for row in case_rows]
+                failure_modes = Counter(
+                    mode
+                    for row in case_rows
+                    for mode in str(row["failure_modes"]).split(";")
+                    if mode
+                )
+                evidence_failure_modes = Counter(
+                    mode
+                    for row in case_rows
+                    for mode in str(row["evidence_failure_modes"]).split(";")
+                    if mode
+                )
+                full_status_counts = Counter()
+                length_three_status_counts = Counter()
+                for row in case_rows:
+                    for encoded_count in str(row["full_sequence_index_status_counts"]).split(";"):
+                        if ":" not in encoded_count:
+                            continue
+                        status, count_text = encoded_count.rsplit(":", 1)
+                        full_status_counts[status] += int(count_text)
+                    for encoded_count in str(row["length3_index_status_counts"]).split(";"):
+                        if ":" not in encoded_count:
+                            continue
+                        status, count_text = encoded_count.rsplit(":", 1)
+                        length_three_status_counts[status] += int(count_text)
+                lines.append(
+                    f"- `{case_id}` expectation={case_rows[0]['expectation']} "
+                    f"naive_failures={failure_count}/{len(case_rows)} "
+                    f"evidence_index_failures={evidence_failure_count}/{len(case_rows)} "
+                    f"len3_mean={mean(recurring_values):.6f} "
+                    f"full_sequence_mean={mean(full_recurring_values):.6f} "
+                    f"compressibility_mean={mean(compressibility_values):.6f} "
+                    f"history_accuracy_mean={mean(history_values):.6f} "
+                    f"outcome_purity_max_mean={mean(outcome_purity_values):.6f} "
+                    f"failure_modes={dict(failure_modes)} "
+                    f"evidence_failure_modes={dict(evidence_failure_modes)} "
+                    f"len3_index_statuses={dict(length_three_status_counts)} "
+                    f"full_index_statuses={dict(full_status_counts)}"
+                )
+            lines.append("")
+
+    lines.extend(["## Failure Interpretation", ""])
+    lines.extend(
+        [
+            "- `hidden_novelty_alias_collision` is an information-theoretic failure: if distinct latent episodes project to the same event identity, the current representation compresses them as one motif.",
+            "- `contradictory_outcomes` shows that recurrence alone is insufficient; a motif can be structurally stable while carrying low outcome purity.",
+            "- `random_small_vocab` attacks support-count novelty gating. At scale, chance recurrence becomes expected and support >= 2 is not a sufficient motif criterion.",
+            "- `shared_edges_unique_middle` and `near_miss_drift` check whether partial overlap is incorrectly promoted to full length-3 recurrence.",
+            "- `unique_triplets` remains the clean hostile control: any length-3 recurrence there is invented by the representation itself.",
+        ]
+    )
+    lines.extend(["", "## Layer Decomposition", ""])
+    for scale_id in ("small", "scaled"):
+        for sequence_length in (3, 5, 8):
+            lines.append(f"### {scale_id} length {sequence_length}")
+            lines.append("")
+            lines.append(
+                "| case | event redundancy | transition redundancy | repeated episodes | length-3 recurrence | full-sequence recurrence | outcome purity max | history accuracy |"
+            )
+            lines.append("| --- | --- | --- | --- | --- | --- | --- | --- |")
+            for case_id in (
+                "unique_triplets",
+                "shared_edges_unique_middle",
+                "near_miss_drift",
+                "hidden_novelty_alias_collision",
+                "contradictory_outcomes",
+                "random_small_vocab",
+                "uniform_branching",
+            ):
+                case_rows = grouped[(scale_id, sequence_length, case_id)]
+                if not case_rows:
+                    continue
+                event_redundancy = mean(
+                    float(row["event_label_redundancy_fraction"]) for row in case_rows
+                )
+                transition_redundancy = mean(
+                    float(row["transition_redundancy_fraction"]) for row in case_rows
+                )
+                repeated_episodes = mean(
+                    float(row["repeated_episode_instance_fraction"]) for row in case_rows
+                )
+                length_three_recurrence = mean(
+                    float(row["recurring_length3_fraction"]) for row in case_rows
+                )
+                full_sequence_recurrence = mean(
+                    float(row["recurring_full_sequence_fraction"]) for row in case_rows
+                )
+                outcome_purity = mean(
+                    float(row["length3_outcome_purity_max"]) for row in case_rows
+                )
+                history_accuracy = mean(
+                    float(row["event_history_accuracy"]) for row in case_rows
+                )
+                lines.append(
+                    f"| `{case_id}` | {event_redundancy:.6f} | {transition_redundancy:.6f} | "
+                    f"{repeated_episodes:.6f} | {length_three_recurrence:.6f} | "
+                    f"{full_sequence_recurrence:.6f} | {outcome_purity:.6f} | "
+                    f"{history_accuracy:.6f} |"
+                )
+            lines.append("")
+
+    lines.extend(["## Sequence-Length Effects", ""])
+    for scale_id in ("small", "scaled"):
+        lines.append(f"### {scale_id}")
+        lines.append("")
+        lines.append(
+            "| case | len3 recurrence at 3/5/8 | full recurrence at 3/5/8 |"
+        )
+        lines.append("| --- | --- | --- |")
+        for case_id in (
+            "unique_triplets",
+            "shared_edges_unique_middle",
+            "near_miss_drift",
+            "hidden_novelty_alias_collision",
+            "contradictory_outcomes",
+            "random_small_vocab",
+            "uniform_branching",
+        ):
+            len3_values: list[str] = []
+            full_values: list[str] = []
+            for sequence_length in (3, 5, 8):
+                case_rows = grouped[(scale_id, sequence_length, case_id)]
+                if not case_rows:
+                    continue
+                len3_values.append(
+                    f"{mean(float(row['recurring_length3_fraction']) for row in case_rows):.6f}"
+                )
+                full_values.append(
+                    f"{mean(float(row['recurring_full_sequence_fraction']) for row in case_rows):.6f}"
+                )
+            lines.append(
+                f"| `{case_id}` | {' / '.join(len3_values)} | {' / '.join(full_values)} |"
+            )
+        lines.append("")
+
+    lines.extend(["## Scale Effects", ""])
+    for case_id in (
+        "unique_triplets",
+        "shared_edges_unique_middle",
+        "near_miss_drift",
+        "hidden_novelty_alias_collision",
+        "contradictory_outcomes",
+        "random_small_vocab",
+        "uniform_branching",
+    ):
+        small_rows = grouped[("small", 3, case_id)]
+        scaled_rows = grouped[("scaled", 3, case_id)]
+        if not small_rows or not scaled_rows:
+            continue
+        small_recurrence = mean(
+            float(row["recurring_length3_fraction"]) for row in small_rows
+        )
+        scaled_recurrence = mean(
+            float(row["recurring_length3_fraction"]) for row in scaled_rows
+        )
+        small_compressibility = mean(
+            float(row["compressibility_index"]) for row in small_rows
+        )
+        scaled_compressibility = mean(
+            float(row["compressibility_index"]) for row in scaled_rows
+        )
+        lines.append(
+            f"- `{case_id}` length3_delta={scaled_recurrence - small_recurrence:.6f} "
+            f"compressibility_delta={scaled_compressibility - small_compressibility:.6f}"
+        )
+
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def write_detector_robustness_report(path: Path, rows: list[dict[str, object]]) -> None:
     detector_counts: dict[str, Counter[str]] = defaultdict(Counter)
     environment_counts: dict[str, Counter[str]] = defaultdict(Counter)
@@ -4362,6 +5638,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--temporal-decoder-seed-sweep", action="store_true")
     parser.add_argument("--motif-fault-tolerance-sweep", action="store_true")
     parser.add_argument("--null-ablation-package", action="store_true")
+    parser.add_argument("--representation-gain-noise-grid", action="store_true")
+    parser.add_argument("--adversarial-falsification-battery", action="store_true")
+    parser.add_argument("--evidence-index-classifier", action="store_true")
     return parser.parse_args()
 
 
